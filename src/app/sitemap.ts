@@ -1,0 +1,33 @@
+import { MetadataRoute } from 'next';
+import { getPublishedProjects } from '@/content/portfolio';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sjentertainmentchoreography.com';
+
+  const routes = [
+    '',
+    '/wedding-choreography',
+    '/couple-entries-entertainment',
+    '/our-work',
+    '/packages',
+    '/about',
+    '/contact',
+    '/privacy',
+    '/terms',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1.0 : 0.8,
+  }));
+
+  // Dynamic published project routes
+  const projectRoutes = getPublishedProjects().map((project) => ({
+    url: `${baseUrl}/our-work/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...projectRoutes];
+}
