@@ -232,6 +232,62 @@ export default function CoupleEntriesEntertainmentPage() {
       </section>
 
       {/* =========================================================================
+          OTHER DEDICATED CELEBRATION PAGES
+          ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-t border-[#E8DFD5] pt-16">
+        <SectionHeading
+          eyebrow="Explore More"
+          title="Other Celebration Categories"
+          description="Explore our dedicated pages for wedding choreography and curated service packages."
+          className="mb-10"
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Link
+            href="/wedding-choreography"
+            className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
+          >
+            <div>
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+                Dedicated Page 01
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
+                Wedding Choreography
+              </h3>
+              <p className="text-sm text-[#575253] leading-relaxed">
+                Sangeet routines, couple dance, bride & groom solos, and our signature “Dance Along with SJ” guest session.
+              </p>
+            </div>
+            <div className="pt-6 mt-4 border-t border-[#F4ECE1] flex items-center justify-between text-xs font-semibold text-[#4A1525]">
+              <span>Open Wedding Choreography page</span>
+              <ArrowRight className="w-4 h-4 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
+            </div>
+          </Link>
+
+          <Link
+            href="/packages"
+            className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
+          >
+            <div>
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+                Dedicated Page 03
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
+                Experiences & Packages
+              </h3>
+              <p className="text-sm text-[#575253] leading-relaxed">
+                Thoughtfully curated service combinations, planning frameworks, and transparent quotation factors.
+              </p>
+            </div>
+            <div className="pt-6 mt-4 border-t border-[#F4ECE1] flex items-center justify-between text-xs font-semibold text-[#4A1525]">
+              <span>Open Packages & Quotes page</span>
+              <ArrowRight className="w-4 h-4 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* =========================================================================
           FINAL ENQUIRY CTA
           ========================================================================= */}
       <EnquiryCTA

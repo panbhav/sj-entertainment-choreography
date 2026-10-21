@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Experiences Links */}
           <div className="space-y-3">
             <h3 className="text-xs uppercase tracking-widest font-semibold text-[#D4B272]">
-              Experiences
+              Celebration Pages
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -49,7 +49,7 @@ export default function Footer() {
                   href="/wedding-choreography"
                   className="text-[#EAD9B7]/80 hover:text-white transition-colors"
                 >
-                  Wedding Choreography
+                  01. Wedding Choreography
                 </Link>
               </li>
               <li>
@@ -57,7 +57,7 @@ export default function Footer() {
                   href="/couple-entries-entertainment"
                   className="text-[#EAD9B7]/80 hover:text-white transition-colors"
                 >
-                  Couple Entries & Acts
+                  02. Entries & Entertainment
                 </Link>
               </li>
               <li>
@@ -65,7 +65,7 @@ export default function Footer() {
                   href="/packages"
                   className="text-[#EAD9B7]/80 hover:text-white transition-colors"
                 >
-                  Curated Combinations
+                  03. Experiences & Packages
                 </Link>
               </li>
               <li>
