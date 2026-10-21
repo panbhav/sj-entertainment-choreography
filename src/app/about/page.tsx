@@ -5,6 +5,7 @@ import { Sparkles, Calendar, MapPin } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { ownersData } from '@/content/about';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
+import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
@@ -195,33 +196,33 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-3">
-            <ResponsiveImage
+            <VideoPreview
               media={btsRehearsalMedia}
               variant="ivory"
-              className="rounded-2xl shadow-sm"
+              className="rounded-2xl shadow-sm overflow-hidden"
             />
             <div className="px-2">
               <h4 className="font-serif text-lg font-bold text-[#2C0713]">
-                Rehearsal Studio Sessions
+                {btsRehearsalMedia.title}
               </h4>
               <p className="text-xs sm:text-sm text-[#575253]">
-                Patient, private step-by-step sessions adapted to your schedule and comfort level.
+                {btsRehearsalMedia.caption}
               </p>
             </div>
           </div>
 
           <div className="space-y-3">
-            <ResponsiveImage
+            <VideoPreview
               media={btsStageMedia}
               variant="ivory"
-              className="rounded-2xl shadow-sm"
+              className="rounded-2xl shadow-sm overflow-hidden"
             />
             <div className="px-2">
               <h4 className="font-serif text-lg font-bold text-[#2C0713]">
-                On-Ground Stage Coordination
+                {btsStageMedia.title}
               </h4>
               <p className="text-xs sm:text-sm text-[#575253]">
-                Aligning audio cues, lighting changes, and line-ups with your event production team.
+                {btsStageMedia.caption}
               </p>
             </div>
           </div>

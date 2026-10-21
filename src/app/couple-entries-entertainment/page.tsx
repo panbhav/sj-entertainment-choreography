@@ -5,6 +5,7 @@ import { Sparkles, Calendar, ArrowRight, CheckCircle2, Info } from 'lucide-react
 import { getMedia } from '@/content/media';
 import { coupleEntryConcepts, artistCategories } from '@/content/entriesAndArtists';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
+import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
@@ -65,11 +66,10 @@ export default function CoupleEntriesEntertainmentPage() {
 
             <div className="lg:col-span-6">
               <div className="rounded-3xl p-2 bg-gradient-to-b from-[#DFCBB0]/40 to-transparent shadow-xl">
-                <ResponsiveImage
+                <VideoPreview
                   media={heroMedia}
                   variant="wine"
-                  className="rounded-2xl"
-                  priority
+                  className="rounded-2xl overflow-hidden"
                 />
               </div>
             </div>

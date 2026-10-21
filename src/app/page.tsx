@@ -4,6 +4,7 @@ import { getMedia } from '@/content/media';
 import { getPublishedTestimonials } from '@/content/testimonials';
 import VideoPreview from '@/components/media/VideoPreview';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
+import HeroMedia from '@/components/home/HeroMedia';
 import CelebrationSculpture from '@/components/common/CelebrationSculpture';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
@@ -62,7 +63,7 @@ export default function HomePage() {
           <div className="hero-footnote"><span className="small-rule" /> MADE WITH HEART. CELEBRATED ACROSS INDIA.</div>
         </div>
         <div className="hero-art">
-          {hero.published && hero.sourceUrl ? <VideoPreview media={hero} /> : <CelebrationSculpture />}
+          <HeroMedia media={hero} />
           <div className="art-caption"><span>THE ART OF CELEBRATING YOU</span><span>EST. IN LOVE <Heart size={12} /></span></div>
         </div>
         <div className="hero-bottom"><span>GOOD MUSIC. GREAT MEMORIES. ALL YOUR PEOPLE.</span><a href="#experiences" aria-label="Scroll to our experiences"><ArrowDown size={17} /></a><span>YOUR STORY, BEAUTIFULLY IN MOTION.</span></div>
@@ -145,7 +146,7 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-        <p className="showcase-note"><Sparkles size={13} /> A little anticipation. Our celebration films are coming soon.</p>
+        <p className="showcase-note"><Sparkles size={13} /> Tap any film to watch wedding choreography highlights by Sajid & Joya.</p>
       </section>
 
       <section className="journey-section">

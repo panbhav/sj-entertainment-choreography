@@ -42,11 +42,14 @@ export interface PreviewSlot {
   caption: string;
   label: string;
   note: string;
+  sourceUrl?: string;
+  posterUrl?: string;
+  isAvailable?: boolean;
 }
 
 /**
- * Curated preview gallery slots while genuine media is being prepared.
- * These clearly identify upcoming film & photo slots without fabricating
+ * Curated preview gallery slots featuring real client video highlights.
+ * These accurately showcase actual celebration routines without fabricating
  * fake client identities, dates, or venues.
  */
 export const portfolioPreviewSlots: PreviewSlot[] = [
@@ -57,9 +60,12 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     categoryLabel: 'Choreography',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Cinematic first dance & emotional couple sequence',
+    caption: 'Cinematic first dance & emotional couple sequence choreographed by Sajid & Joya',
     label: 'Couple Choreography Film',
-    note: 'Upcoming film showcase',
+    note: 'Watch celebration film',
+    sourceUrl: '/media/slot-couple.mp4',
+    posterUrl: '/media/slot-couple-poster.jpg',
+    isAvailable: true,
   },
   {
     id: 'slot-sangeet-ensemble',
@@ -68,9 +74,12 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     categoryLabel: 'Choreography',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Multi-generational family choreography and finale',
+    caption: 'Multi-generational family choreography and finale highlight',
     label: 'Family Sangeet Film',
-    note: 'Upcoming celebration highlight',
+    note: 'Watch celebration film',
+    sourceUrl: '/media/hero-main.mp4',
+    posterUrl: '/media/hero-main-poster.jpg',
+    isAvailable: true,
   },
   {
     id: 'slot-royal-entry',
@@ -79,42 +88,54 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     categoryLabel: 'Couple Entries',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Palace courtyard royal entry featuring ceremonial heralds',
+    caption: 'Palace courtyard royal entry featuring cold pyrotechnics and stage production',
     label: 'Royal Couple Entry Film',
-    note: 'Upcoming entry concept showcase',
+    note: 'Watch celebration film',
+    sourceUrl: '/media/entries-showcase.mp4',
+    posterUrl: '/media/entries-showcase-poster.jpg',
+    isAvailable: true,
   },
   {
     id: 'slot-dance-along-session',
-    title: 'Dance Along with SJ Live Session',
+    title: 'Haldi & Sangeet Group Celebration',
     category: 'choreography',
     categoryLabel: 'Choreography',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Interactive guest floor session led by Sajid & Joya',
-    label: 'Guest Interactive Session',
-    note: 'Upcoming party showcase',
+    caption: 'Vibrant group and family wedding celebration dances across ceremonies',
+    label: 'Group Choreography Film',
+    note: 'Watch celebration film',
+    sourceUrl: '/media/choreography-showcase.mp4',
+    posterUrl: '/media/choreography-showcase-poster.jpg',
+    isAvailable: true,
   },
   {
     id: 'slot-dhol-symphony',
-    title: 'Symphonic Dhol & Baraat Rhythm',
+    title: 'Live Wedding Stage Coordination & Show',
     category: 'artists',
     categoryLabel: 'Artists & Entertainment',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Live percussion performance and electric baraat energy',
-    label: 'Live Artist Highlight',
-    note: 'Upcoming artist showcase',
+    caption: 'On-ground live production, sound coordination and stage energy',
+    label: 'Live Stage Highlight',
+    note: 'Watch stage production film',
+    sourceUrl: '/media/stage-production.mp4',
+    posterUrl: '/media/stage-production-poster.jpg',
+    isAvailable: true,
   },
   {
     id: 'slot-floral-walk',
-    title: 'Botanical Floral Canopy Entry',
+    title: 'Theatrical Couple Entry & Stage Reveal',
     category: 'couple-entry',
     categoryLabel: 'Couple Entries',
     aspectRatio: '16/9',
     mediaType: 'video',
-    caption: 'Emotional bridal aisle walk under custom phoolon ki chaadar',
-    label: 'Bridal Entry Showcase',
-    note: 'Upcoming bridal feature',
+    caption: 'Spectacular arrival and couple reveal with stage effects',
+    label: 'Couple Entry Showcase',
+    note: 'Watch couple entry film',
+    sourceUrl: '/media/slot-entry.mp4',
+    posterUrl: '/media/slot-entry-poster.jpg',
+    isAvailable: true,
   },
 ];
 

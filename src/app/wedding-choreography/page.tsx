@@ -11,6 +11,7 @@ import {
 } from '@/content/services';
 import { weddingChoreographyFaqs } from '@/content/faqs';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
+import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import ServiceCard from '@/components/ui/ServiceCard';
 import Accordion from '@/components/ui/Accordion';
@@ -70,11 +71,10 @@ export default function WeddingChoreographyPage() {
 
             <div className="lg:col-span-6">
               <div className="rounded-3xl p-2 bg-gradient-to-b from-[#DFCBB0]/40 to-transparent shadow-xl">
-                <ResponsiveImage
+                <VideoPreview
                   media={heroMedia}
                   variant="ivory"
-                  className="rounded-2xl"
-                  priority
+                  className="rounded-2xl overflow-hidden"
                 />
               </div>
             </div>

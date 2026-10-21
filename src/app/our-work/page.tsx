@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Info, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Sparkles, Info, ArrowRight, Play } from 'lucide-react';
 import { portfolioPreviewSlots, getPublishedProjects, PortfolioCategory } from '@/content/portfolio';
+import { withBasePath } from '@/lib/basePath';
 import MediaPlaceholder from '@/components/media/MediaPlaceholder';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -49,13 +51,13 @@ export default function OurWorkPage() {
             Celebration films, stage highlights, and grand entry captures by Sajid & Joya.
           </p>
 
-          {/* Genuine Status Disclaimer */}
+          {/* Portfolio Note */}
           <div className="mt-8 p-4 rounded-2xl bg-[#FAF6EF] border border-[#DFCBB0] max-w-2xl mx-auto flex items-start gap-3 text-left">
-            <Info className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
+            <Sparkles className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
             <div className="text-xs text-[#575253] leading-relaxed">
-              <span className="font-semibold text-[#4A1525]">Portfolio Notice:</span> Official
-              cinematic performance films and celebration highlight reels are currently being
-              edited and prepared for release. Explore our reserved showcase categories below.
+              <span className="font-semibold text-[#4A1525]">Celebration Films:</span> Tap any
+              showcase card below to watch actual wedding choreography routines, grand couple
+              entries, and behind-the-scenes rehearsals crafted by Sajid & Joya.
             </div>
           </div>
         </div>
@@ -96,21 +98,43 @@ export default function OurWorkPage() {
             >
               <div>
                 <div className="mb-4 overflow-hidden rounded-2xl">
-                  <MediaPlaceholder
-                    aspectRatio={slot.aspectRatio}
-                    label={slot.label}
-                    sublabel={slot.note}
-                    variant="ivory"
-                    isVideoSlot={slot.mediaType === 'video'}
-                  />
+                  {slot.isAvailable && slot.sourceUrl ? (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedVideo({ url: slot.sourceUrl!, title: slot.title })}
+                      className="relative block w-full overflow-hidden rounded-2xl group/btn text-left aspect-video bg-[#2C0713]"
+                      aria-label={`Play film: ${slot.title}`}
+                    >
+                      <Image
+                        src={withBasePath(slot.posterUrl)}
+                        alt={slot.title}
+                        fill
+                        unoptimized
+                        className="object-cover transition-transform duration-500 group-hover/btn:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/25 group-hover/btn:bg-black/15 transition-colors flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-[#BD954E] text-[#2C0713] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover/btn:scale-110">
+                          <Play className="w-6 h-6 fill-current translate-x-0.5" />
+                        </div>
+                      </div>
+                    </button>
+                  ) : (
+                    <MediaPlaceholder
+                      aspectRatio={slot.aspectRatio}
+                      label={slot.label}
+                      sublabel={slot.note}
+                      variant="ivory"
+                      isVideoSlot={slot.mediaType === 'video'}
+                    />
+                  )}
                 </div>
 
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#BD954E]">
                     {slot.categoryLabel}
                   </span>
-                  <span className="text-[10px] text-[#888182] uppercase tracking-wider font-mono">
-                    Coming Soon
+                  <span className="text-[10px] text-[#BD954E] uppercase tracking-wider font-semibold">
+                    {slot.isAvailable ? 'Celebration Film' : 'Coming Soon'}
                   </span>
                 </div>
 
