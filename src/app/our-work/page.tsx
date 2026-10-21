@@ -73,6 +73,7 @@ export default function OurWorkPage() {
               <button
                 key={filter.id}
                 type="button"
+                aria-pressed={isActive}
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#BD954E] ${
                   isActive
@@ -207,6 +208,7 @@ export default function OurWorkPage() {
     </div>
   );
 }
+
 
 
 
