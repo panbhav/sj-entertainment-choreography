@@ -15,12 +15,17 @@ interface ResponsiveImageProps {
 export default function ResponsiveImage({ media, className = '', variant = 'ivory', priority = false }: ResponsiveImageProps) {
   const [failedSource, setFailedSource] = useState<string | null>(null);
   
-  const rawUrl = media.sourceUrl || media.posterUrl;
-  if (!rawUrl || !media.published || failedSource === rawUrl) {
+  // Prefer image URLs (not video files) for <img> rendering
+  const isVideo = (url?: string) => Boolean(url && /\.(mp4|mov|webm|m4v)$/i.test(url));
+  const candidateUrl = (!isVideo(media.sourceUrl) && media.sourceUrl)
+    ? media.sourceUrl
+    : (media.posterUrl && !isVideo(media.posterUrl) ? media.posterUrl : null);
+
+  if (!candidateUrl || !media.published || failedSource === candidateUrl) {
     return <MediaPlaceholder aspectRatio={media.aspectRatio} label={media.title} sublabel={media.caption} className={className} variant={variant} />;
   }
 
-  const resolvedUrl = withBasePath(rawUrl);
+  const resolvedUrl = withBasePath(candidateUrl);
 
   return (
     <div className={`relative w-full overflow-hidden rounded-2xl ${className}`} style={{ aspectRatio: media.aspectRatio }}>
@@ -31,7 +36,7 @@ export default function ResponsiveImage({ media, className = '', variant = 'ivor
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 640px"
         preload={priority}
         unoptimized
-        onError={() => setFailedSource(rawUrl)}
+        onError={() => setFailedSource(candidateUrl)}
         className="object-cover transition-transform duration-500 hover:scale-105"
       />
       {media.caption && (
