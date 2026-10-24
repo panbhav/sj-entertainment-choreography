@@ -12,6 +12,7 @@ export interface CelebrationConcept {
 export interface CelebrationChapter {
   slug: string;
   shortName: string;
+  imageUrl: string;
   introduction: string;
   guidance: string;
   concepts: CelebrationConcept[];
@@ -24,7 +25,9 @@ function concept(id: string, title: string, mood: string, description: string, c
 /** Creative choreography formats, rather than a classification of wedding rituals. */
 export const celebrationChapters: CelebrationChapter[] = [
   {
-    slug: 'destination-weddings', shortName: 'Destination weddings',
+    slug: 'destination-weddings',
+    shortName: 'Destination weddings',
+    imageUrl: '/images/celebrations/destination-weddings.jpg',
     introduction: 'Bring your people together through dance, wherever you celebrate. Explore entry and performance formats designed around the venue, travel schedule and time you have to rehearse.',
     guidance: 'We adapt formations to the actual dance area and plan rehearsals around travelling guests. Venue access, floor conditions and production arrangements are discussed before choreography is finalised.',
     concepts: [
@@ -35,7 +38,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'sangeet', shortName: 'Sangeet',
+    slug: 'sangeet',
+    shortName: 'Sangeet',
+    imageUrl: '/images/celebrations/sangeet.jpg',
     introduction: 'Choose how your sangeet story unfolds: an expressive couple duet, a squad spotlight or a finale with everyone you love. These concepts can be combined into one flowing show.',
     guidance: 'The running order, track edits and rehearsal pace are shaped around your performers. We match movement to confidence, outfits and available stage space.',
     concepts: [
@@ -46,7 +51,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'haldi', shortName: 'Haldi',
+    slug: 'haldi',
+    shortName: 'Haldi',
+    imageUrl: '/images/celebrations/haldi.jpg',
     introduction: 'Haldi choreography can be much more than one group dance. Discover entrances, family routines and guest participation formats that bring movement to your daytime celebration.',
     guidance: 'We keep steps comfortable for daytime outfits and adapt formations to a dry, clear dance area. Your family customs and ceremony timings come first.',
     concepts: [
@@ -57,7 +64,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'mehendi', shortName: 'Mehendi',
+    slug: 'mehendi',
+    shortName: 'Mehendi',
+    imageUrl: '/images/celebrations/mehendi.jpg',
     introduction: 'Choose a bridal squad moment, a folk circle, a graceful fusion performance or a playful couple routine. Every format is designed around comfortable movement and the flow of your gathering.',
     guidance: 'Routines can use gentle footwork and expressive upper-body movement. We discuss henna appointments, clothing and available rehearsal time before planning the performance.',
     concepts: [
@@ -68,7 +77,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'bhaat-mayra', shortName: 'Bhaat / Mayra',
+    slug: 'bhaat-mayra',
+    shortName: 'Bhaat / Mayra',
+    imageUrl: '/images/celebrations/bhaat-mayra.jpg',
     introduction: 'Explore choreography that gives maternal relatives and family generations a meaningful place in the celebration, from a warm dance welcome to an emotional tribute performance.',
     guidance: 'Bhaat and Mayra customs vary between families and regions. These are optional dance concepts, planned around your family’s traditions rather than a replacement for any ritual.',
     concepts: [
@@ -79,7 +90,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'wedding-day', shortName: 'Wedding day',
+    slug: 'wedding-day',
+    shortName: 'Wedding day',
+    imageUrl: '/images/celebrations/wedding-day.jpg',
     introduction: 'From a dancing baraat welcome to a poised bridal walk, plan the choreography around your arrival. Focused movement and musical cues help each entrance feel natural and confident.',
     guidance: 'Entry timing is coordinated around the ceremony schedule, outfits and venue layout. Sacred proceedings follow your family’s and officiant’s preferences; choreography supports the surrounding arrivals.',
     concepts: [
@@ -90,7 +103,9 @@ export const celebrationChapters: CelebrationChapter[] = [
     ],
   },
   {
-    slug: 'reception', shortName: 'Reception',
+    slug: 'reception',
+    shortName: 'Reception',
+    imageUrl: '/images/celebrations/reception.jpg',
     introduction: 'Celebrate as newlyweds with a first dance, a coordinated arrival, a parent duet or an upbeat party opener. Choose an intimate moment or bring your guests onto the floor.',
     guidance: 'We adapt partner steps to your comfort, attire and floor surface. Lifts and advanced turns are optional, discussed individually and included only when appropriate for the performers.',
     concepts: [
@@ -102,23 +117,50 @@ export const celebrationChapters: CelebrationChapter[] = [
   },
 ];
 
-export function getCelebrationChapter(slug: string) {
-  return celebrationChapters.find((chapter) => chapter.slug === slug);
+export function getCelebrationChapter(slug: string): CelebrationChapter | undefined {
+  return celebrationChapters.find((c) => c.slug === slug);
 }
 
 export function getCelebrationService(chapter: CelebrationChapter) {
-  return weddingCelebrations.find((service) => service.id === chapter.slug)!;
-}
-
-export function celebrationConceptHref(chapter: CelebrationChapter, item: CelebrationConcept) {
-  return `/contact?service=${encodeURIComponent(getCelebrationService(chapter).queryParam)}&concept=${encodeURIComponent(item.id)}`;
-}
-
-export function getSelectedCelebrationConcept(id: string, service: string) {
-  for (const chapter of celebrationChapters) {
-    if (getCelebrationService(chapter).queryParam !== service) continue;
-    const selected = chapter.concepts.find((item) => item.id === id);
-    if (selected) return { chapter, concept: selected };
+  const service = weddingCelebrations.find((s) => s.id === chapter.slug);
+  if (!service) {
+    return {
+      name: chapter.shortName,
+      queryParam: chapter.slug,
+    };
   }
-  return undefined;
+  return service;
+}
+
+export function celebrationConceptHref(chapter: CelebrationChapter, concept: CelebrationConcept) {
+  const service = getCelebrationService(chapter);
+  return `/contact?service=${encodeURIComponent(service.queryParam)}&concept=${encodeURIComponent(concept.id)}`;
+}
+
+export function getSelectedCelebrationConcept(conceptId: string, serviceQuery?: string) {
+  if (!conceptId) return null;
+  for (const chapter of celebrationChapters) {
+    if (serviceQuery && chapter.slug !== serviceQuery && getCelebrationService(chapter).queryParam !== serviceQuery) {
+      continue;
+    }
+    const found = chapter.concepts.find((c) => c.id === conceptId);
+    if (found) {
+      return {
+        concept: found,
+        chapter,
+        service: getCelebrationService(chapter),
+      };
+    }
+  }
+  for (const chapter of celebrationChapters) {
+    const found = chapter.concepts.find((c) => c.id === conceptId);
+    if (found) {
+      return {
+        concept: found,
+        chapter,
+        service: getCelebrationService(chapter),
+      };
+    }
+  }
+  return null;
 }
