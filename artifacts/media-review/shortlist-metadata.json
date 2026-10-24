@@ -1,0 +1,47 @@
+[
+  {
+    "file": "Sangeet Highlit\\Anuj x Ramya.MP4",
+    "seconds": 147.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 68545 kb/s, 60 fps, 60 tbr, 600 tbn (default)"
+  },
+  {
+    "file": "Sangeet Highlit\\jaipur highlight.mp4",
+    "seconds": 157.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 16011 kb/s, 60 fps, 60 tbr, 15360 tbn (default)"
+  },
+  {
+    "file": "Sangeet Highlit\\Piyush x Chetna.MOV",
+    "seconds": 13.6,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc, bt709, progressive), 614x1090, 10385 kb/s, 60.07 fps, 60 tbr, 600 tbn (default)"
+  },
+  {
+    "file": "Sangeet Highlit\\Sakshi x Aditya Goa .mp4",
+    "seconds": 95.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt470bg/smpte170m, progressive), 848x478, 1182 kb/s, 25 fps, 25 tbr, 30k tbn (default)"
+  },
+  {
+    "file": "Sangeet Highlit\\Rs Sangeet Highlights.mp4",
+    "seconds": 99.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20012 kb/s, 30 fps, 30 tbr, 15360 tbn (default)"
+  },
+  {
+    "file": "Entry\\Entry Final.mp4",
+    "seconds": 479.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20006 kb/s, 30 fps, 30 tbr, 15360 tbn (default)"
+  },
+  {
+    "file": "BTS Video\\04 BTS VIDEO.mp4",
+    "seconds": 211.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 11986 kb/s, 30 fps, 30 tbr, 15360 tbn (default)"
+  },
+  {
+    "file": "Sajid Practice video\\After Befor.mp4",
+    "seconds": 51.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 18177 kb/s, 60 fps, 60 tbr, 15360 tbn (default)"
+  },
+  {
+    "file": "Sangeet Reels\\Anant Akshita.mp4",
+    "seconds": 216.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 720x1280, 2768 kb/s, 59.94 fps, 59.94 tbr, 600 tbn (default)"
+  }
+]

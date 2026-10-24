@@ -10,6 +10,7 @@ import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const baseServiceOptions = [
   { value: '', label: 'Select celebration service...' },
+  { value: 'destination-weddings', label: 'Destination Wedding Choreography (Pan-India & Global)' },
   { value: 'sangeet-spectacular', label: 'Sangeet Night Spectacular (Family & Couple)' },
   { value: 'couple-dance', label: 'Bespoke Couple Dance Choreography' },
   { value: 'dance-along-with-sj', label: 'Dance Along with SJ (Interactive Floor Session)' },

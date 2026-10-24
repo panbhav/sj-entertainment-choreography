@@ -65,9 +65,13 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Joint Portrait Placeholder */}
+            {/* Joint Portrait */}
             <div className="lg:col-span-6">
-              <div className="rounded-3xl p-3 bg-[#FAF7F2] border border-[#DFCBB0] shadow-xl">
+              <div className="relative rounded-3xl p-3 bg-[#FAF7F2] border border-[#DFCBB0] shadow-xl">
+                <div className="absolute top-6 left-6 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2C0713]/85 backdrop-blur-md text-[#D4B272] border border-[#BD954E]/40 text-xs font-semibold tracking-wider uppercase shadow-lg">
+                  <Sparkles className="w-3 h-3 text-[#D4B272]" />
+                  <span>10+ Years of Craft</span>
+                </div>
                 <ResponsiveImage
                   media={jointMedia}
                   variant="wine"
@@ -77,6 +81,28 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Milestone Stats Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-8 sm:-mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {ownersData.stats.map((stat, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-3xl bg-white border border-[#E8DFD5] shadow-sm text-center space-y-1 hover:border-[#BD954E]/60 transition-colors"
+            >
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#4A1525]">
+                {stat.value}
+              </div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-[#BD954E]">
+                {stat.label}
+              </div>
+              <p className="text-[11px] sm:text-xs text-[#575253] leading-relaxed pt-1">
+                {stat.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 

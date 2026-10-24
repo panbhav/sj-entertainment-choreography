@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Sparkles, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Calendar, ArrowRight, CheckCircle2, Plane, MapPin } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import {
   weddingCelebrations,
@@ -75,6 +75,60 @@ export default function WeddingChoreographyPage() {
                   media={heroMedia}
                   variant="ivory"
                   className="rounded-2xl overflow-hidden"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          DESTINATION WEDDING SPOTLIGHT
+          ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-6">
+        <div className="rounded-3xl bg-[#2C0713] text-[#FAF7F2] p-8 sm:p-12 lg:p-16 border border-[#4A1525] relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#BD954E]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4A1525]/80 text-[#D4B272] border border-[#BD954E]/40 text-xs font-semibold tracking-wider uppercase">
+                <Plane className="w-3.5 h-3.5 text-[#D4B272]" />
+                <span>Specialized Destination Service</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+                Destination Wedding Choreography Across India & Worldwide
+              </h2>
+              <p className="text-sm sm:text-base text-[#EAD9B7]/90 leading-relaxed">
+                Planning a royal palace wedding in Rajasthan, a beachside mandap in Goa, or an overseas celebration? Sajid & Joya bring over 10 years of on-ground destination choreography experience — harmonizing virtual pre-wedding rehearsals across timezones with high-energy on-site tech dry runs, sound-light cues, and multi-ceremony dance direction.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {['Udaipur & Jaipur Palaces', 'Goa Beachfront Resorts', 'Kerala Backwaters', 'Jim Corbett & Hills', 'NRI & Multi-City Relatives'].map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium bg-[#4A1525] border border-[#BD954E]/30 text-[#FAF7F2]/90">
+                    ✦ {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <Link
+                  href="/contact?service=destination-weddings"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-[#BD954E] hover:bg-[#D4B272] text-[#2C0713] transition-all shadow-md hover:scale-105"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Plan Your Destination Wedding</span>
+                </Link>
+                <a
+                  href="#celebrations"
+                  className="text-xs sm:text-sm font-medium text-[#D4B272] hover:text-white transition-colors"
+                >
+                  Explore Ceremony Breakdown ↓
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl overflow-hidden border border-[#BD954E]/30 shadow-lg">
+                <ResponsiveImage
+                  media={getMedia('choreography-hero')}
+                  variant="ivory"
+                  className="rounded-2xl"
                 />
               </div>
             </div>

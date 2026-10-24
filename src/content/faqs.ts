@@ -42,6 +42,13 @@ export const weddingChoreographyFaqs: FAQItem[] = [
     category: 'logistics',
   },
   {
+    id: 'destination-wedding-process',
+    question: 'How does destination wedding choreography work when family members live in different cities?',
+    answer:
+      'This is one of our key specialities. With more than 10 years of destination wedding choreography experience, we conduct interactive virtual rehearsals for cousins, friends, and out-of-town relatives before the wedding week. When we arrive on-site at your destination venue (in Rajasthan, Goa, Kerala, or anywhere across India), we run comprehensive on-stage blocking rehearsals and coordinate audio-light cues directly with your venue and event production teams.',
+    category: 'logistics',
+  },
+  {
     id: 'entry-concept-requirements',
     question: 'How are technical and stage requirements handled for couple entries?',
     answer:

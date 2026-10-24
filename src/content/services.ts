@@ -20,6 +20,24 @@ export interface RehearsalOption {
 
 export const weddingCelebrations: ServiceItem[] = [
   {
+    id: 'destination-weddings',
+    name: 'Destination Wedding Choreography',
+    subtitle: 'Comprehensive choreography & on-ground stage coordination across India and worldwide',
+    description:
+      'A seamless, all-inclusive choreography experience tailored for destination weddings in royal Rajasthan palaces, sun-kissed Goa beaches, serene hill retreats, and luxury resort banquets. Combining pre-wedding virtual rehearsals across timezones with on-ground technical dry runs, AV crew alignment, and multi-ceremony dance direction.',
+    highlights: [
+      'Multi-day celebration curation (Sundowner, Mehendi, Sangeet & After-party)',
+      'Pre-wedding online rehearsals for outstation, international, and NRI relatives',
+      'On-ground stage blocking, lighting synchronization, and sound-check rehearsals',
+      'Dedicated floor direction by Sajid & Joya throughout your wedding days',
+      'Seamless coordination with wedding planners, DJs, emcees, and production teams',
+    ],
+    recommendedDuration: 'Multi-day on-site presence',
+    mediaId: 'choreography-hero',
+    serviceCategory: 'celebration',
+    queryParam: 'destination-weddings',
+  },
+  {
     id: 'sangeet',
     name: 'Sangeet Night Spectacular',
     subtitle: 'The grand musical centerpiece of your wedding celebrations',

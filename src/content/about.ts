@@ -12,9 +12,18 @@ export interface BrandApproachPillar {
   description: string;
 }
 
+export interface ExperienceStat {
+  value: string;
+  label: string;
+  description: string;
+}
+
 export const ownersData: {
   jointIntro: string;
   jointMediaId: string;
+  experienceYears: string;
+  celebrationsCount: string;
+  stats: ExperienceStat[];
   owners: OwnerBio[];
   philosophyTitle: string;
   philosophyParagraphs: string[];
@@ -22,27 +31,51 @@ export const ownersData: {
   coverageStatement: string;
 } = {
   jointIntro:
-    "We are Sajid and Joya — the choreographers and creative partners behind SJ Entertainment Choreography. We believe wedding dance should be an authentic reflection of love, family warmth, and effortless celebration, rather than rigid steps or stressful drills.",
+    "We are Sajid and Joya — creative partners, founders, and the artistic heartbeat behind SJ Entertainment Choreography. With more than 10 years of dedicated experience and hundreds of couple and family celebrations choreographed across India, we transform your favourite music into wedding moments that look breathtaking on stage and feel joyful in your heart.",
   jointMediaId: 'portrait-sajid-joya',
+  experienceYears: '10+',
+  celebrationsCount: '500+',
+  stats: [
+    {
+      value: '10+ Years',
+      label: 'Experience',
+      description: 'Over a decade of choreographing dream wedding moments and stage productions.',
+    },
+    {
+      value: '500+',
+      label: 'Celebrations',
+      description: 'Couples, families, and high-energy squads choreographed across India.',
+    },
+    {
+      value: 'Pan-India',
+      label: 'Destination Service',
+      description: 'On-site rehearsals in Rajasthan, Goa, Kerala, and luxury resorts nationwide.',
+    },
+    {
+      value: '100%',
+      label: 'Beginner Friendly',
+      description: 'Routines adapted with patience so every non-dancer shines with confidence.',
+    },
+  ],
   owners: [
     {
       name: 'Sajid',
-      role: 'Co-Founder & Choreographer',
+      role: 'Co-Founder & Lead Choreographer',
       portraitMediaId: 'portrait-sajid',
       bioParagraphs: [
-        'Sajid leads musical arrangement, dynamic staging, and high-energy choreography. His focus is on ensuring every groom, couple, and family squad feels completely natural, relaxed, and confident as they step into the spotlight.',
+        'With more than a decade of stage mastery, Sajid leads musical arrangements, dynamic staging, and high-energy squad choreography. His infectious enthusiasm and calm, patient instruction put every groom and family member at absolute ease.',
       ],
-      focusAreas: ['Musicality & Flow', 'High-Energy Squad Formations', 'Stage Confidence'],
+      focusAreas: ['Musicality & Medley Mixing', 'High-Energy Squad Formations', 'Stage Confidence'],
       isPublished: true,
     },
     {
       name: 'Joya',
-      role: 'Co-Founder & Choreographer',
+      role: 'Co-Founder & Performance Stylist',
       portraitMediaId: 'portrait-joya',
       bioParagraphs: [
-        'Joya specializes in graceful movement styling, emotive couple storytelling, and aesthetic posture suited for bridal lehengas and wedding attire. Her warm, patient rehearsal atmosphere puts beginners instantly at ease.',
+        'Bringing 10+ years of artistic sensibility, Joya specializes in graceful movement styling, emotive couple chemistry, and stage posture suited for bridal lehengas and wedding couture. Her sessions are warm, patient, and empowering.',
       ],
-      focusAreas: ['Bridal Elegance', 'Expressive Chemistry', 'Patient Step Breakdown'],
+      focusAreas: ['Bridal Grace & Mudras', 'Couple Storytelling & Chemistry', 'Patient Step Breakdown'],
       isPublished: true,
     },
   ],

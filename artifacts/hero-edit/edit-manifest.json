@@ -1,0 +1,61 @@
+{
+  "duration_seconds": 20.6,
+  "audio": false,
+  "transition_seconds": 0.35,
+  "shots": {
+    "desktop": [
+      [
+        "Sangeet Highlit/Rs Sangeet Highlights.mp4",
+        59.7,
+        "Couple dance"
+      ],
+      [
+        "Sangeet Highlit/jaipur highlight.mp4",
+        43.5,
+        "Family duet"
+      ],
+      [
+        "Sangeet Highlit/Rs Sangeet Highlights.mp4",
+        48.6,
+        "Family and friends"
+      ],
+      [
+        "Sangeet Highlit/Rs Sangeet Highlights.mp4",
+        68.7,
+        "Bridal performance"
+      ],
+      [
+        "Sangeet Highlit/jaipur highlight.mp4",
+        88.4,
+        "Stage finale"
+      ]
+    ],
+    "mobile": [
+      [
+        "Sangeet Highlit/Anuj x Ramya.MP4",
+        104.8,
+        "Couple dance, portrait original"
+      ],
+      [
+        "Sangeet Highlit/jaipur highlight.mp4",
+        43.5,
+        "Family duet, centre framing"
+      ],
+      [
+        "Sangeet Highlit/Rs Sangeet Highlights.mp4",
+        48.6,
+        "Family and friends, centre framing"
+      ],
+      [
+        "Sangeet Highlit/Anuj x Ramya.MP4",
+        64.2,
+        "Bridal performance, portrait original"
+      ],
+      [
+        "Sangeet Highlit/Rs Sangeet Highlights.mp4",
+        68.7,
+        "Stage finale, centre framing"
+      ]
+    ]
+  }
+}

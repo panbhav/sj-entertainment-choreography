@@ -1,0 +1,15 @@
+/* The homepage navigation sits over the opening film. */
+.site-header--film { position: fixed; top: 0; left: 0; right: 0; background: transparent; backdrop-filter: none; border-bottom: 1px solid #ffffff25; transition: background .25s, border-color .25s; }
+.site-header--film.is-scrolled { background: #11161bf2; backdrop-filter: blur(16px); border-color: #ffffff20; }
+.site-header--film .header-inner { min-height: 102px; }
+.site-header--film .site-brand { gap: 0; }
+.site-header--film .site-brand > span { display: none; }
+.site-header--film .desktop-nav { color: #f7f7f4; font-size: 12px; }
+.site-header--film .desktop-nav > a[aria-current]::after { background: #fff; }
+.site-header--film .desktop-nav > a:hover, .site-header--film .nav-dropdown > button:hover { color: #ded2be; }
+.site-header--film .header-cta { background: #ffffff10; border: 1px solid #ffffff70; color: #fff; border-radius: 2px; backdrop-filter: blur(8px); }
+.site-header--film .header-cta:hover { background: #ffffff25; }
+.site-header--film .mobile-toggle { color: #fff; }
+.site-header--film .mobile-navigation { background: #faf7f2; color: #3c1523; }
+.site-header--film .site-brand:focus-visible, .site-header--film .header-cta:focus-visible, .site-header--film .mobile-toggle:focus-visible, .site-header--film .desktop-nav > a:focus-visible, .site-header--film .nav-dropdown > button:focus-visible { outline-color: #fff; }
+@media (max-width: 800px) { .site-header--film .header-inner { min-height: 90px; } }

@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight, ChevronDown, Menu, X, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import Monogram from './Monogram';
+import './FilmHeader.css';
 
 const experiences = [
   {
@@ -29,6 +30,8 @@ const experiences = [
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdown = useRef<HTMLDivElement>(null);
@@ -53,6 +56,13 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const update = () => setIsScrolled(window.scrollY > 35);
+    const frame = window.requestAnimationFrame(update);
+    window.addEventListener('scroll', update, { passive: true });
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener('scroll', update); };
+  }, []);
+
   function close() {
     setMobileOpen(false);
     setDropdownOpen(false);
@@ -66,7 +76,7 @@ export default function Header() {
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      <header className="site-header">
+      <header className={`site-header ${isHome ? "site-header--film" : ""} ${isScrolled ? "is-scrolled" : ""}`}>
         <div className="site-container header-inner">
           <Link
             href="/"
@@ -74,7 +84,7 @@ export default function Header() {
             onClick={close}
             aria-label="SJ Entertainment Choreography home"
           >
-            <Monogram size={46} />
+            <Monogram size={isHome ? 82 : 46} variant={isHome ? "white" : "gold"} />
             <span>
               <strong>SJ Entertainment</strong>
               <small>CHOREOGRAPHY BY SAJID & JOYA</small>
@@ -225,3 +235,4 @@ export default function Header() {
     </>
   );
 }
+

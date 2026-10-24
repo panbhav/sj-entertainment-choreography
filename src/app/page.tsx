@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight, Check, Heart, Music2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Check, Music2, Sparkles } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { getPublishedTestimonials } from '@/content/testimonials';
 import VideoPreview from '@/components/media/VideoPreview';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
-import HeroMedia from '@/components/home/HeroMedia';
-import CelebrationSculpture from '@/components/common/CelebrationSculpture';
+import CinematicHero from '@/components/home/CinematicHero';
+
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
 const experiences = [
@@ -46,28 +46,12 @@ const steps = [
 ];
 
 export default function HomePage() {
-  const hero = getMedia('hero-main');
+
   const testimonials = getPublishedTestimonials();
 
   return (
     <div className="home-page">
-      <section className="editorial-hero site-container">
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="tiny-star">✦</span> SAJID & JOYA · WEDDING CHOREOGRAPHY</p>
-          <h1>Some moments<br />deserve a little<br /><em>choreography.</em></h1>
-          <p className="hero-description">Your love, your people, your kind of magic. We turn the music you love into wedding moments you’ll feel forever.</p>
-          <div className="hero-actions">
-            <Link href="/contact" className="button-wine">Let’s create your moment <ArrowUpRight size={17} /></Link>
-            <Link href="#experiences" className="text-link">Explore the experiences <ArrowDown size={16} /></Link>
-          </div>
-          <div className="hero-footnote"><span className="small-rule" /> MADE WITH HEART. CELEBRATED ACROSS INDIA.</div>
-        </div>
-        <div className="hero-art">
-          <HeroMedia media={hero} />
-          <div className="art-caption"><span>THE ART OF CELEBRATING YOU</span><span>EST. IN LOVE <Heart size={12} /></span></div>
-        </div>
-        <div className="hero-bottom"><span>GOOD MUSIC. GREAT MEMORIES. ALL YOUR PEOPLE.</span><a href="#experiences" aria-label="Scroll to our experiences"><ArrowDown size={17} /></a><span>YOUR STORY, BEAUTIFULLY IN MOTION.</span></div>
-      </section>
+      <CinematicHero />
 
       <div className="celebration-strip" aria-label="Our specialities"><span>First dances</span><i>✦</i><span>Sangeet nights</span><i>✦</i><span>Grand entrances</span><i>✦</i><span>Family moments</span><i>✦</i><span>Unforgettable celebrations</span></div>
 
@@ -101,21 +85,26 @@ export default function HomePage() {
 
       <section className="founder-section">
         <div className="site-container founder-grid">
-          <div className="founder-art">
+          <div className="founder-art relative">
             <ResponsiveImage media={getMedia('portrait-sajid-joya')} variant="wine" />
+            <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2C0713]/85 backdrop-blur-md text-[#D4B272] border border-[#BD954E]/40 text-xs font-semibold tracking-wider uppercase shadow-lg">
+              <Sparkles size={12} className="text-[#D4B272]" />
+              <span>10+ Years of Experience</span>
+            </div>
             <span className="founder-signature">Sajid & Joya</span>
           </div>
           <div className="founder-copy">
             <p className="eyebrow">02 / THE PEOPLE BEHIND THE MOMENTS</p>
-            <h2>Two creative hearts.<br /><em>One shared rhythm.</em></h2>
-            <p>We’re Sajid & Joya. Choreographers, celebration enthusiasts, and your biggest cheerleaders on the dance floor.</p>
-            <p>We believe the best performances don’t come from perfect dancers. They come from people who feel comfortable, connected, and happy. That’s where we begin.</p>
+            <h2>Over a decade of craft.<br /><em>Two creative hearts.</em></h2>
+            <p>We’re Sajid & Joya. With more than 10 years of wedding choreography experience and hundreds of celebrations across India, we turn the songs you love into dance moments that feel effortless, celebratory, and completely yours.</p>
+            <p>From palace destination weddings in Rajasthan to coastal sunset sangeets in Goa, our passion is making every non-dancer feel poised, confident, and joyful in the spotlight.</p>
             <div className="founder-values">
-              <span><Check size={15} /> Beginner friendly</span>
-              <span><Check size={15} /> Completely personal</span>
-              <span><Check size={15} /> In person & online</span>
+              <span><Check size={15} /> 10+ Years Experience</span>
+              <span><Check size={15} /> 500+ Celebrations</span>
+              <span><Check size={15} /> Destination Wedding Specialists</span>
+              <span><Check size={15} /> 100% Non-Dancer Friendly</span>
             </div>
-            <Link href="/about" className="text-link">A little more about us <ArrowUpRight size={17} /></Link>
+            <Link href="/about" className="text-link">Explore our story & philosophy <ArrowUpRight size={17} /></Link>
           </div>
         </div>
       </section>
@@ -190,3 +179,4 @@ export default function HomePage() {
     </div>
   );
 }
+
