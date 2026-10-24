@@ -8,10 +8,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Music,
-  Compass,
   Crown,
-  Flame,
-  ChevronRight,
 } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { coupleEntryConcepts, artistCategories } from '@/content/entriesAndArtists';
@@ -93,7 +90,7 @@ export default function CoupleEntriesEntertainmentPage() {
           ========================================================================= */}
       <section id="entry-concepts" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full scroll-mt-24">
         <div className="bg-gradient-to-b from-[#FAF7F2] to-white rounded-3xl border border-[#E8DFD5] p-6 sm:p-10 md:p-12 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] text-[11px] font-semibold tracking-wider uppercase mb-3">
                 <Crown className="w-3.5 h-3.5 text-[#BD954E]" />
@@ -112,7 +109,7 @@ export default function CoupleEntriesEntertainmentPage() {
               href="/couple-entries-entertainment/couple-bridal-entries"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] transition-colors shadow-md shrink-0 group"
             >
-              <span>View All 7 Entry Concepts (With Photos)</span>
+              <span>Explore all entry concepts</span>
               <ArrowRight className="w-4 h-4 text-[#D4B272] group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -206,7 +203,7 @@ export default function CoupleEntriesEntertainmentPage() {
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="bg-gradient-to-b from-[#F5EFEB] to-white rounded-3xl border border-[#E8DFD5] p-6 sm:p-10 md:p-12 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] text-[11px] font-semibold tracking-wider uppercase mb-3">
                 <Music className="w-3.5 h-3.5 text-[#BD954E]" />
@@ -225,7 +222,7 @@ export default function CoupleEntriesEntertainmentPage() {
               href="/couple-entries-entertainment/stage-procession-acts-live-entertainment"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] transition-colors shadow-md shrink-0 group"
             >
-              <span>View All 7 Live Acts & Artists (With Photos)</span>
+              <span>Explore live acts & artists</span>
               <ArrowRight className="w-4 h-4 text-[#D4B272] group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

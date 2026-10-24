@@ -29,12 +29,14 @@ export default function VideoModal({ isOpen, onClose, videoUrl, posterUrl, title
   useEffect(() => {
     if (!isOpen) return;
     const dialog = dialogRef.current;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
     dialog?.showModal();
     document.body.style.overflow = 'hidden';
     return () => {
       dialog?.close();
       document.body.style.overflow = previousOverflow;
+      if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
     };
   }, [isOpen]);
 
@@ -70,7 +72,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, posterUrl, title
             <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="relative aspect-video w-full bg-black">
+        <div className="video-player relative aspect-video w-full bg-black" style={{ maxHeight: 'calc(100dvh - 128px)' }}>
           {embed ? (
             <iframe
               src={embed}

@@ -2,40 +2,17 @@
 
 import React, { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { weddingCelebrations, signaturePerformances } from '@/content/services';
-import { coupleEntryConcepts, artistCategories } from '@/content/entriesAndArtists';
-import { experienceCombinations } from '@/content/packages';
+import { serviceOptions, resolveEnquiryService } from '@/content/enquiryOptions';
+import { withBasePath } from '@/lib/basePath';
 import { siteConfig } from '@/content/siteConfig';
 import { getSelectedCelebrationConcept } from '@/content/celebrations';
 import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
-const baseServiceOptions = [
-  { value: '', label: 'Select celebration service...' },
-  { value: 'destination-weddings', label: 'Destination Wedding Choreography (Pan-India & Global)' },
-  { value: 'sangeet-spectacular', label: 'Sangeet Night Spectacular (Family & Couple)' },
-  { value: 'couple-dance', label: 'Bespoke Couple Dance Choreography' },
-  { value: 'dance-along-with-sj', label: 'Dance Along with SJ (Interactive Floor Session)' },
-  { value: 'haldi-celebration', label: 'Haldi & Daytime Revelry Choreography' },
-  { value: 'mehendi-soiree', label: 'Mehendi Soiree & Bridal Squad' },
-  { value: 'bhaat-mayra', label: 'Bhaat / Mayra Heritage Sequences' },
-  { value: 'wedding-day-ceremonies', label: 'Wedding Day & Varmala Direction' },
-  { value: 'reception-showcase', label: 'Wedding Reception Showcase' },
-  { value: 'bride-solo', label: 'Bride Solo Spotlight Routine' },
-  { value: 'groom-solo', label: 'Groom Solo / Squad Routine' },
-  { value: 'grand-entry-experience', label: 'Grand Couple or Bridal Entry Concept' },
-  { value: 'complete-celebration', label: 'Complete Multi-Day Celebration Curation' },
-  { value: 'artists-entertainment', label: 'Live Artists, Dhol & Entertainment' },
-  { value: 'custom-combination', label: 'Custom Combination / Inquire Generally' },
-];
-
-const additionalServices = [...weddingCelebrations, ...signaturePerformances, ...coupleEntryConcepts.filter(item => item.isPublished), ...artistCategories.filter(item => item.isPublished), ...experienceCombinations];
-const serviceOptions = [...baseServiceOptions, ...additionalServices.filter(item => !baseServiceOptions.some(option => option.value === item.queryParam)).map(item => ({ value: item.queryParam, label: item.name }))];
-const categoryServices: Record<string, string> = { choreography: 'sangeet-spectacular', 'couple-entry': 'grand-entry-experience', artists: 'artists-entertainment' };
 
 export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
-  const selectedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
+  const requestedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -53,15 +30,16 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<
-    'idle' | 'success' | 'backend_unconfigured' | 'error'
+    'idle' | 'preview' | 'success' | 'backend_unconfigured' | 'error'
   >('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
   const [serviceSelection, setServiceSelection] = useState<{ query: string; value: string } | null>(null);
-  const resolvedService = categoryServices[preselectedService] || preselectedService;
+  const resolvedService = resolveEnquiryService(preselectedService);
   const serviceInterest = serviceSelection?.query === preselectedService
     ? serviceSelection.value
     : serviceOptions.find(option => option.value === resolvedService)?.value || '';
+  const selectedConcept = serviceInterest === resolvedService ? requestedConcept : undefined;
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
@@ -81,7 +59,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       }
     }
 
-    if (!formData.eventCity.trim()) {
+    if (formData.eventCity.trim().length < 2) {
       newErrors.eventCity = 'Please enter your wedding city or celebration destination.';
     }
 
@@ -90,22 +68,30 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
     }
 
     setErrors(newErrors);
+    const fields: Record<string, string> = { name: 'name', phone: 'phone', email: 'email', eventCity: 'city', serviceInterest: 'service' };
+    const firstError = Object.keys(newErrors)[0];
+    if (firstError) document.getElementById(`enquiry-${fields[firstError]}`)?.focus();
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmissionStatus('idle');
-    if (!deliveryAvailable) { setSubmissionStatus('backend_unconfigured'); return; }
 
     if (!validate()) {
+      return;
+    }
+
+    if (!deliveryAvailable) {
+      setSubmissionStatus('preview');
+      setStatusMessage('Your details passed the form checks. This is a demo: no enquiry has been sent and no booking has been made.');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/enquire', {
+      const res = await fetch(withBasePath('/api/enquire'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +159,8 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
         </div>
       )}
 
-      {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <div role="status" className="mb-8 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438] leading-relaxed">Online enquiries are opening soon. You can explore the options below while we prepare to welcome your celebration.</div>}
+      {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <div role="status" className="mb-8 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438] leading-relaxed">Demo mode: you can test the enquiry form. Your details stay on this page and no message is sent.</div>}
+      {submissionStatus === 'preview' && <div role="status" className="mb-6 p-4 rounded-xl bg-[#FAF6EF] border border-[#BD954E] text-sm text-[#4A1525] leading-relaxed"><p className="font-semibold">Demo enquiry checked</p><p className="mt-1">{statusMessage}</p></div>}
       {/* Submission Feedback Notices */}
       {submissionStatus === 'success' && (
         <div className="mb-8 p-5 rounded-2xl bg-[#FAF6EF] border border-[#BD954E] flex items-start gap-3">
@@ -234,7 +221,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="text"
-                id="enquiry-name" autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "error-name" : undefined}
+                maxLength={150} id="enquiry-name" autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "error-name" : undefined}
                 required
                 placeholder="e.g. Ananya Sharma"
                 value={formData.name}
@@ -258,7 +245,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 Phone / WhatsApp <span className="text-[#A6803B]">*</span>
               </label>
               <input
-                type="tel"
+                type="tel" inputMode="tel" maxLength={24}
                 id="enquiry-phone" autoComplete="tel" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "error-phone" : undefined}
                 required
                 placeholder="e.g. +91 98765 43210"
@@ -286,7 +273,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="email"
-                id="enquiry-email" autoComplete="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "error-email" : undefined}
+                maxLength={254} id="enquiry-email" autoComplete="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "error-email" : undefined}
                 placeholder="e.g. ananya@example.com"
                 value={formData.email}
                 onChange={(e) => {
@@ -310,7 +297,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="text"
-                id="enquiry-city" autoComplete="address-level2" aria-invalid={Boolean(errors.eventCity)} aria-describedby={errors.eventCity ? "error-city" : undefined}
+                maxLength={150} id="enquiry-city" autoComplete="address-level2" aria-invalid={Boolean(errors.eventCity)} aria-describedby={errors.eventCity ? "error-city" : undefined}
                 required
                 placeholder="e.g. Udaipur, Mumbai, Delhi, Jaipur"
                 value={formData.eventCity}
@@ -382,6 +369,8 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <select
                 id="enquiry-service"
+                aria-invalid={Boolean(errors.serviceInterest)}
+                aria-describedby={errors.serviceInterest ? 'error-service' : undefined}
                 required
                 value={serviceInterest}
                 onChange={(e) => {
@@ -399,7 +388,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 ))}
               </select>
               {errors.serviceInterest && (
-                <p className="text-xs text-red-600 mt-1">{errors.serviceInterest}</p>
+                <p id="error-service" className="text-xs text-red-600 mt-1">{errors.serviceInterest}</p>
               )}
             </div>
           </div>
@@ -439,7 +428,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               <span className="text-[#888182] font-normal normal-case">(Optional)</span>
             </label>
             <textarea
-              id="enquiry-message"
+              maxLength={4500} id="enquiry-message"
               rows={4}
               placeholder="Tell us about your wedding ceremonies, envisioned songs, family branches, or preferred rehearsal format..."
               value={formData.message}
@@ -452,7 +441,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
           <div className="pt-2">
             <button
               type="submit"
-              disabled={isSubmitting || !deliveryAvailable}
+              disabled={isSubmitting}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold tracking-wide bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
@@ -463,7 +452,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               ) : (
                 <>
                   <Send className="w-4 h-4 text-[#D4B272]" />
-                  <span>{deliveryAvailable ? 'Send Celebration Enquiry' : 'Online enquiries opening soon'}</span>
+                  <span>{deliveryAvailable ? 'Send Celebration Enquiry' : 'Preview Enquiry'}</span>
                 </>
               )}
             </button>
@@ -471,9 +460,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
 
           {/* Non-binding disclaimer */}
           <p className="text-xs text-[#888182] leading-relaxed pt-2 border-t border-[#F4ECE1]">
-            <span className="font-semibold text-[#575253]">Notice:</span> Submitting this enquiry
-            initiates planning and checks date availability. It does not imply a confirmed booking
-            or calendar reservation until contracts and schedules are formally aligned.
+            {deliveryAvailable ? <>Submitting an enquiry starts a planning conversation. A booking is confirmed only after the schedule and arrangements are agreed.</> : <>Demo only: previewing this form validates your details on this page. It does not send an enquiry or reserve a date.</>}
           </p>
         </form>
       )}

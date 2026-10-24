@@ -8,15 +8,10 @@ import {
   ArrowRight,
   ChevronRight,
   Music,
-  Compass,
-  Mic2,
-  Users,
   Settings,
-  ShieldCheck,
 } from 'lucide-react';
 import { artistCategories } from '@/content/entriesAndArtists';
 import { withBasePath } from '@/lib/basePath';
-import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
 export const metadata: Metadata = {
@@ -29,7 +24,7 @@ export default function StageProcessionActsPage() {
   const publishedArtists = artistCategories.filter((a) => a.isPublished);
 
   return (
-    <div className="interior-page flex flex-col space-y-20 md:space-y-28">
+    <div id="top" className="interior-page flex flex-col space-y-20 md:space-y-28">
       {/* =========================================================================
           BREADCRUMB & HERO
           ========================================================================= */}

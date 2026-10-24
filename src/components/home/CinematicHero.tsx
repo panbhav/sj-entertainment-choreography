@@ -8,7 +8,7 @@ import { withBasePath } from '@/lib/basePath';
 import './CinematicHero.css';
 
 const desktopFilm = '/media/hero-film-montage-desktop.mp4';
-const mobileFilm = '/media/hero-film-montage-mobile.mp4';
+const mobileFilm = '/media/hero-film-mobile-responsive.mp4';
 
 function chooseFilm(mobile: boolean) {
   return mobile ? mobileFilm : desktopFilm;
@@ -19,6 +19,7 @@ export default function CinematicHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const pausedByVisitor = useRef(false);
   const manualPlayback = useRef(false);
+  const failedSource = useRef<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -27,7 +28,7 @@ export default function CinematicHero() {
     const video = videoRef.current;
     const section = sectionRef.current;
     if (!video || !section) return;
-    const mobile = window.matchMedia('(max-width: 700px)');
+    const mobile = window.matchMedia('(max-width: 800px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     let inView = true;
@@ -41,6 +42,7 @@ export default function CinematicHero() {
         return;
       }
       const source = withBasePath(chooseFilm(mobile.matches));
+      if (failedSource.current === source) return;
       if (video.getAttribute('src') !== source) { video.src = source; video.load(); }
       if (inView && !document.hidden && !pausedByVisitor.current) {
         void video.play().catch(() => { /* Autoplay restriction handled by visible play button */ });
@@ -65,6 +67,7 @@ export default function CinematicHero() {
   }, []);
 
   function handleVideoError() {
+    failedSource.current = videoRef.current?.getAttribute('src') || null;
     setHasError(true);
     setIsReady(false);
     setIsPlaying(false);
@@ -72,12 +75,14 @@ export default function CinematicHero() {
 
   async function togglePlayback() {
     const video = videoRef.current;
-    if (!video || hasError) return;
+    if (!video) return;
     if (!video.paused) { pausedByVisitor.current = true; video.pause(); return; }
     pausedByVisitor.current = false;
     manualPlayback.current = true;
-    if (!video.getAttribute('src')) {
-      video.src = withBasePath(chooseFilm(window.matchMedia('(max-width: 700px)').matches));
+    if (hasError || !video.getAttribute('src')) {
+      failedSource.current = null;
+      setHasError(false);
+      video.src = withBasePath(chooseFilm(window.matchMedia('(max-width: 800px)').matches));
       video.load();
     }
     try { await video.play(); } catch { setIsPlaying(false); }
@@ -87,10 +92,10 @@ export default function CinematicHero() {
     <section ref={sectionRef} className={'cinema-hero'} aria-labelledby="opening-title">
       <div className={'cinema-background'} aria-hidden="true">
         <picture>
-          <source media="(max-width: 700px)" srcSet={withBasePath('/media/hero-film-montage-mobile-poster.jpg')} />
-          <Image src={withBasePath('/media/hero-film-montage-desktop-poster.jpg')} alt="" fill unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
+          <source media="(max-width: 800px)" srcSet={withBasePath('/media/hero-film-mobile-responsive-poster.jpg')} />
+          <Image src={withBasePath('/media/hero-film-montage-desktop-poster.jpg')} alt="" width={1920} height={1080} unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
         </picture>
-        <video ref={videoRef} className={`${'cinema-video'} ${isReady ? 'cinema-ready' : ''}`} muted loop playsInline preload="none" tabIndex={-1}
+        <video ref={videoRef} className={`${'cinema-video'} ${isReady ? 'cinema-ready' : ''}`} autoPlay muted loop playsInline preload="none" tabIndex={-1}
           onPlaying={() => { setHasError(false); setIsPlaying(true); setIsReady(true); }}
           onPause={() => setIsPlaying(false)}
           onEmptied={() => { setIsReady(false); setIsPlaying(false); }}
@@ -110,8 +115,8 @@ export default function CinematicHero() {
       <div className={`site-container ${'cinema-bottom'}`}>
         <p className={'cinema-footnote'}>REAL STORIES. REAL CELEBRATIONS.<span>CHOREOGRAPHED ACROSS INDIA.</span></p>
         <Link href="#experiences" className={'cinema-scroll'}>Discover the experience <ArrowDown size={15} /></Link>
-        <button type="button" className={'cinema-playback'} onClick={togglePlayback} disabled={hasError} aria-label={hasError ? 'Background film unavailable' : isPlaying ? 'Pause background video' : 'Play background video'}>
-          {isPlaying ? <Pause size={15} /> : <Play size={15} />}<span>{hasError ? 'Film unavailable' : isPlaying ? 'Pause film' : 'Play film'}</span>
+        <button type="button" className={'cinema-playback'} onClick={togglePlayback} aria-label={hasError ? 'Retry background video' : isPlaying ? 'Pause background video' : 'Play background video'}>
+          {isPlaying ? <Pause size={15} /> : <Play size={15} />}<span>{hasError ? 'Retry film' : isPlaying ? 'Pause film' : 'Play film'}</span>
         </button>
       </div>
     </section>

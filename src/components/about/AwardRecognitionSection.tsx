@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Award, CheckCircle2, Play, Pause, Sparkles, Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { ownersData } from '@/content/about';
+import ImageLightbox from '@/components/media/ImageLightbox';
 import { withBasePath } from '@/lib/basePath';
 
 export default function AwardRecognitionSection() {
@@ -110,6 +111,7 @@ export default function AwardRecognitionSection() {
                 <button
                   type="button"
                   onClick={() => { setActiveTab('video'); setIsPlaying(false); }}
+                  aria-pressed={activeTab === 'video'}
                   className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                     activeTab === 'video'
                       ? 'bg-[#BD954E] text-[#2C0713] shadow-md'
@@ -121,6 +123,7 @@ export default function AwardRecognitionSection() {
                 <button
                   type="button"
                   onClick={() => { setActiveTab('stage'); setIsPlaying(false); }}
+                  aria-pressed={activeTab === 'stage'}
                   className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                     activeTab === 'stage'
                       ? 'bg-[#BD954E] text-[#2C0713] shadow-md'
@@ -132,6 +135,7 @@ export default function AwardRecognitionSection() {
                 <button
                   type="button"
                   onClick={() => { setActiveTab('certificate'); setIsPlaying(false); }}
+                  aria-pressed={activeTab === 'certificate'}
                   className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                     activeTab === 'certificate'
                       ? 'bg-[#BD954E] text-[#2C0713] shadow-md'
@@ -154,6 +158,7 @@ export default function AwardRecognitionSection() {
                     ref={videoRef}
                     src={withBasePath(videoMedia.sourceUrl || '')}
                     poster={withBasePath(videoMedia.posterUrl || '')}
+                    preload="none"
                     playsInline
                     loop
                     muted={isMuted}
@@ -212,7 +217,7 @@ export default function AwardRecognitionSection() {
               {/* CERTIFICATE TAB */}
               {activeTab === 'certificate' && (
                 <div className="relative w-full h-full flex flex-col items-center justify-center bg-[#1F040C] p-3">
-                  <div className="relative w-full h-full rounded-xl overflow-hidden border border-[#BD954E]/50 shadow-lg cursor-pointer group" onClick={() => setShowFullCert(true)}>
+                  <button type="button" aria-label="View award certificate fullscreen" className="relative block w-full h-full rounded-xl overflow-hidden border border-[#BD954E]/50 shadow-lg cursor-pointer group" onClick={() => setShowFullCert(true)}>
                     <Image
                       src={withBasePath(certMedia.sourceUrl || '')}
                       alt={certMedia.alt}
@@ -223,7 +228,7 @@ export default function AwardRecognitionSection() {
                     <div className="absolute bottom-3 right-3 z-10 p-2 rounded-full bg-black/70 text-[#D4B272] border border-[#BD954E]/40 group-hover:bg-[#BD954E] group-hover:text-[#2C0713] transition-colors">
                       <Maximize2 className="w-4 h-4" />
                     </div>
-                  </div>
+                  </button>
                   <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#D4B272] border border-[#BD954E]/40 text-[11px] font-semibold uppercase">
                     <span>Certificate of Excellence</span>
                   </div>
@@ -234,40 +239,7 @@ export default function AwardRecognitionSection() {
         </div>
       </div>
 
-      {/* Certificate Lightbox Modal */}
-      {showFullCert && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in"
-          onClick={() => setShowFullCert(false)}
-        >
-          <div className="relative max-w-4xl w-full bg-[#1F040C] rounded-2xl p-4 border border-[#BD954E]/60 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between items-center mb-3 px-2">
-              <h3 className="font-serif text-lg font-bold text-[#D4B272]">
-                National Star Achievers Award 2026 — Certificate of Excellence
-              </h3>
-              <button
-                type="button"
-                onClick={() => setShowFullCert(false)}
-                className="text-[#FAF7F2] hover:text-[#D4B272] text-sm px-3 py-1 rounded-lg bg-white/10"
-              >
-                Close ✕
-              </button>
-            </div>
-            <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden">
-              <Image
-                src={withBasePath(certMedia.sourceUrl || '')}
-                alt={certMedia.alt}
-                fill
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-contain"
-              />
-            </div>
-            <p className="text-center text-xs text-[#C5BDB2] mt-3">
-              National Star Achievers Award 2026 presented to Mr. Sajid Ali, Founder of SJ Entertainment Choreography, at Hotel Prime Safari, Jaipur.
-            </p>
-          </div>
-        </div>
-      )}
+      {showFullCert && <ImageLightbox src={certMedia.sourceUrl!} alt={certMedia.alt} title="National Star Achievers Award 2026 — Certificate of Excellence" onClose={() => setShowFullCert(false)} />}
     </section>
   );
 }

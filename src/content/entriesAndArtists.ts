@@ -38,7 +38,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'An intimate, poignant entrance marked by soft lighting, melodic instrumentals, and graceful synchronised walking or slow dance movements leading into the center floor.',
     mood: 'Emotional, poetic, understated luxury',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/romantic-couple-entry.jpg',
+    imageUrl: '/images/entries/romantic-couple-entry.webp',
     inclusions: [
       'Personalised love story audio prelude or voiceover option',
       'Timed lighting and musical crescendo coordination',
@@ -59,7 +59,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'An entrance steeped in grandeur with traditional heralds, royal chhatri or ceremonial escorts, dignified pacing, and anthemic orchestral or shehnai-infused soundscapes.',
     mood: 'Imperial, dignified, timeless grandeur',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/royal-entry.jpg',
+    imageUrl: '/images/entries/royal-entry.webp',
     inclusions: [
       'Ceremonial escort coordination with bridal party or performers',
       'Stately procession pacing and posture guidance',
@@ -80,7 +80,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'The couple makes an electric entrance accompanied by a coordinated flash mob of siblings, friends, or a professional dance troupe that erupts straight onto the dance floor.',
     mood: 'Celebratory, electrifying, upbeat',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/dance-led-entry.jpg',
+    imageUrl: '/images/entries/dance-led-entry.webp',
     inclusions: [
       'Rehearsed entry flash mob with friends and bridal party',
       'Dynamic song switch from ambient entry to dance floor anthem',
@@ -101,7 +101,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'Drawing inspiration from classic and modern Hindi cinema with dramatic lighting, evocative music arrangements, and choreographed dramatic cues.',
     mood: 'Theatrical, cinematic, glamorous',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/bollywood-entry.jpg',
+    imageUrl: '/images/entries/bollywood-entry.webp',
     inclusions: [
       'Custom theatrical audio track cut with dialogues or signature cues',
       'Choreographed stage walk and signature pose freeze',
@@ -122,7 +122,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'A serene, visually stunning walk beneath a bespoke Phoolon Ki Chaadar or blooming floral archways, framed by gentle petals and acoustic melodies.',
     mood: 'Fresh, ethereal, botanical grace',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/floral-entry.jpg',
+    imageUrl: '/images/entries/floral-entry.webp',
     inclusions: [
       'Pacing coordination for brothers/friends carrying the canopy',
       'Acoustic or instrumental entry timing',
@@ -143,7 +143,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'Distinct concepts tailored specifically for the solo bride walk or a grand groom entry featuring vintage cars, buggies, or an exuberant baraat reveal.',
     mood: 'Personalized, charismatic, spotlight-focused',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/bridal-groom-entry.jpg',
+    imageUrl: '/images/entries/bridal-groom-entry.webp',
     inclusions: [
       'Detailed gait, expression, and pacing walk-through',
       'Coordinated music cue and spotlight focus',
@@ -163,7 +163,7 @@ export const coupleEntryConcepts: EntryConcept[] = [
       'A unique entrance built around your personal story, travels, shared passions, or specific cultural heritage, conceptualised from scratch with our creative team.',
     mood: 'Bespoke, artistic, one-of-a-kind',
     mediaId: 'entries-hero',
-    imageUrl: '/images/entries/custom-themed-entry.jpg',
+    imageUrl: '/images/entries/custom-themed-entry.webp',
     inclusions: [
       'Collaborative concept ideation session',
       'Custom visual and musical storyboard',
@@ -191,7 +191,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Backing dancers and opening acts that elevate stage energy',
     description:
       'Curated professional dancers to accompany couple entries, frame sangeet performances, or present dazzling themed opening acts across Bollywood, contemporary, and classical styles.',
-    imageUrl: '/images/artists/dance-troupes.jpg',
+    imageUrl: '/images/artists/dance-troupes.webp',
     suggestedMoments: ['Sangeet Grand Opening', 'Couple Entry Backing', 'Grand Finale Sequence'],
     productionNotes: 'Stage dimensions, green room facilities, and costume changing areas coordinated with your venue.',
     queryParam: 'dance-troupes',
@@ -203,7 +203,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Unstoppable Punjabi and fusion beats to ignite the celebration',
     description:
       'Energetic traditional and fusion dhol players to lead the Baraat, amplify the Groom entry, or kick off the after-party dance floor with thunderous live rhythm.',
-    imageUrl: '/images/artists/dhol-artists.jpg',
+    imageUrl: '/images/artists/dhol-artists.webp',
     suggestedMoments: ['Baraat Procession', 'Milni Ceremony', 'Sangeet After-Party Kickoff'],
     productionNotes: 'Acoustic and wireless mic options coordinated based on indoor or outdoor venue restrictions.',
     queryParam: 'dhol-artists',
@@ -215,7 +215,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Rich cultural vibrancy rooted in heritage traditions',
     description:
       'Traditional Rajasthani Ghoomar, Kalbelia, Gujarati Garba/Raas, Bhangra, or Sufi folk troupes that bring cultural authenticity and interactive joy to Haldi, Mehendi, or Welcome nights.',
-    imageUrl: '/images/artists/folk-performers.jpg',
+    imageUrl: '/images/artists/folk-performers.webp',
     suggestedMoments: ['Haldi Ceremonies', 'Mehendi Carnival', 'Cultural Welcome Dinner'],
     productionNotes: 'Tailored to regional heritage and event theme requirements.',
     queryParam: 'folk-performers',
@@ -227,7 +227,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Soul-stirring live soundscapes for dinners and cocktail soirees',
     description:
       'Versatile singers and multi-genre live bands spanning Sufi rock, Bollywood retro, romantic acoustics, and contemporary pop to set an unforgettable musical atmosphere.',
-    imageUrl: '/images/artists/singers-bands.jpg',
+    imageUrl: '/images/artists/singers-bands.webp',
     suggestedMoments: ['Cocktail Evening', 'Welcome Dinner', 'Post-Sangeet Jam'],
     productionNotes: 'Sound riders, PA systems, and acoustic checks scheduled in advance with sound engineers.',
     queryParam: 'singers-bands',
@@ -239,7 +239,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Melodious violin, saxophone, flute, and sitar solos',
     description:
       'Virtuoso soloists or chamber duos providing ambient melodies during bridal walks, varmala exchanges, or elegant cocktail hour receptions.',
-    imageUrl: '/images/artists/instrumentalists.jpg',
+    imageUrl: '/images/artists/instrumentalists.webp',
     suggestedMoments: ['Varmala Exchange', 'Bridal Walkdown', 'High-Tea & Cocktail Hour'],
     productionNotes: 'Requires dedicated audio inputs and stage monitor positioning.',
     queryParam: 'instrumentalists',
@@ -251,7 +251,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Charismatic, articulate hosting that keeps the celebration flowing',
     description:
       'Warm, engaging hosts who understand wedding etiquette, maintain high room energy, introduce family chapters smoothly, and keep guests entertained throughout the sangeet.',
-    imageUrl: '/images/artists/emcees.jpg',
+    imageUrl: '/images/artists/emcees.webp',
     suggestedMoments: ['Sangeet Night Compering', 'Interactive Family Games', 'Reception Welcomes'],
     productionNotes: 'Script walkthrough and family pronunciation guide conducted prior to event day.',
     queryParam: 'emcees',
@@ -263,7 +263,7 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Acrobatic, laser, LED, and atmospheric performance artists',
     description:
       'Mesmerising visual spectacles such as mirror performers, LED wings, aerial silk acts, or sand artists that add wonder and photo-worthy moments to your celebration.',
-    imageUrl: '/images/artists/specialist-acts.jpg',
+    imageUrl: '/images/artists/specialist-acts.webp',
     suggestedMoments: ['Sangeet Mid-Show Transition', 'Reception Reveal', 'After-Party'],
     productionNotes: 'Rigging points, ceiling heights, and fire/safety clearances reviewed directly with venue management.',
     queryParam: 'specialist-acts',

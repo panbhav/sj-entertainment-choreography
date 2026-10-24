@@ -73,10 +73,13 @@ for (const route of ['/our-work/nonexistent-audit-project', '/wedding-choreograp
   const response = await request(route);
   if (response.status !== 404) failures.push(`Missing-page handling: ${route} returned ${response.status}`);
 }
-for (const body of ['{', 'null', '[]', '{"name":4,"phone":{},"eventCity":[]}', '{"name":"Audit","phone":"1234567890","eventCity":"Jaipur","serviceInterest":"invented-service"}']) {
+const validFields = { name: 'Demo Visitor', phone: '0000000000', eventCity: 'Jaipur', serviceInterest: 'haldi-celebration' };
+for (const body of ['{', 'null', '[]', '{"name":4,"phone":{},"eventCity":[]}', JSON.stringify({ ...validFields, serviceInterest: 'invented-service' }), JSON.stringify({ ...validFields, eventDate: '2026-02-31' }), JSON.stringify({ ...validFields, message: 'x'.repeat(5001) })]) {
   const response = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body });
   if (response.status !== 400) failures.push(`API accepted invalid payload (${response.status}): ${body}`);
 }
+const oversized = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'x'.repeat(66000) }) });
+if (oversized.status !== 413) failures.push(`Oversized API payload returned ${oversized.status}, expected 413`);
 const result = { pages: documents.size, linksAndAnchors: links.size, assets: assets.size, failures };
 await mkdir('artifacts/site-audit', { recursive: true });
 await writeFile('artifacts/site-audit/http-audit.json', JSON.stringify(result, null, 2));

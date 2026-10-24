@@ -77,8 +77,8 @@ export default function Accordion({
               </button>
             </h3>
 
-            {isOpen && (
               <div
+                hidden={!isOpen}
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
@@ -86,7 +86,6 @@ export default function Accordion({
               >
                 <p>{item.answer}</p>
               </div>
-            )}
           </div>
         );
       })}

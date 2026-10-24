@@ -27,7 +27,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'destination-weddings',
     shortName: 'Destination weddings',
-    imageUrl: '/images/celebrations/destination-weddings.jpg',
+    imageUrl: '/images/celebrations/destination-weddings.webp',
     introduction: 'Bring your people together through dance, wherever you celebrate. Explore entry and performance formats designed around the venue, travel schedule and time you have to rehearse.',
     guidance: 'We adapt formations to the actual dance area and plan rehearsals around travelling guests. Venue access, floor conditions and production arrangements are discussed before choreography is finalised.',
     concepts: [
@@ -40,7 +40,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'sangeet',
     shortName: 'Sangeet',
-    imageUrl: '/images/celebrations/sangeet.jpg',
+    imageUrl: '/images/celebrations/sangeet.webp',
     introduction: 'Choose how your sangeet story unfolds: an expressive couple duet, a squad spotlight or a finale with everyone you love. These concepts can be combined into one flowing show.',
     guidance: 'The running order, track edits and rehearsal pace are shaped around your performers. We match movement to confidence, outfits and available stage space.',
     concepts: [
@@ -53,7 +53,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'haldi',
     shortName: 'Haldi',
-    imageUrl: '/images/celebrations/haldi.jpg',
+    imageUrl: '/images/celebrations/haldi.webp',
     introduction: 'Haldi choreography can be much more than one group dance. Discover entrances, family routines and guest participation formats that bring movement to your daytime celebration.',
     guidance: 'We keep steps comfortable for daytime outfits and adapt formations to a dry, clear dance area. Your family customs and ceremony timings come first.',
     concepts: [
@@ -66,7 +66,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'mehendi',
     shortName: 'Mehendi',
-    imageUrl: '/images/celebrations/mehendi.jpg',
+    imageUrl: '/images/celebrations/mehendi.webp',
     introduction: 'Choose a bridal squad moment, a folk circle, a graceful fusion performance or a playful couple routine. Every format is designed around comfortable movement and the flow of your gathering.',
     guidance: 'Routines can use gentle footwork and expressive upper-body movement. We discuss henna appointments, clothing and available rehearsal time before planning the performance.',
     concepts: [
@@ -79,7 +79,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'bhaat-mayra',
     shortName: 'Bhaat / Mayra',
-    imageUrl: '/images/celebrations/bhaat-mayra.jpg',
+    imageUrl: '/images/celebrations/bhaat-mayra.webp',
     introduction: 'Explore choreography that gives maternal relatives and family generations a meaningful place in the celebration, from a warm dance welcome to an emotional tribute performance.',
     guidance: 'Bhaat and Mayra customs vary between families and regions. These are optional dance concepts, planned around your family’s traditions rather than a replacement for any ritual.',
     concepts: [
@@ -92,7 +92,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'wedding-day',
     shortName: 'Wedding day',
-    imageUrl: '/images/celebrations/wedding-day.jpg',
+    imageUrl: '/images/celebrations/wedding-day.webp',
     introduction: 'From a dancing baraat welcome to a poised bridal walk, plan the choreography around your arrival. Focused movement and musical cues help each entrance feel natural and confident.',
     guidance: 'Entry timing is coordinated around the ceremony schedule, outfits and venue layout. Sacred proceedings follow your family’s and officiant’s preferences; choreography supports the surrounding arrivals.',
     concepts: [
@@ -105,7 +105,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'reception',
     shortName: 'Reception',
-    imageUrl: '/images/celebrations/reception.jpg',
+    imageUrl: '/images/celebrations/reception.webp',
     introduction: 'Celebrate as newlyweds with a first dance, a coordinated arrival, a parent duet or an upbeat party opener. Choose an intimate moment or bring your guests onto the floor.',
     guidance: 'We adapt partner steps to your comfort, attire and floor surface. Lifts and advanced turns are optional, discussed individually and included only when appropriate for the performers.',
     concepts: [

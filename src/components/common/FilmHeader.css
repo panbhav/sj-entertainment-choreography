@@ -13,3 +13,11 @@
 .site-header--film .mobile-navigation { background: #faf7f2; color: #3c1523; }
 .site-header--film .site-brand:focus-visible, .site-header--film .header-cta:focus-visible, .site-header--film .mobile-toggle:focus-visible, .site-header--film .desktop-nav > a:focus-visible, .site-header--film .nav-dropdown > button:focus-visible { outline-color: #fff; }
 @media (max-width: 800px) { .site-header--film .header-inner { min-height: 90px; } }
+/* Navigation remains usable when rotating a phone or resizing an open menu. */
+.mobile-navigation { display: none; }
+@media (max-width: 800px) {
+  .mobile-navigation { display: block; overscroll-behavior: contain; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+  .site-header--film .mobile-navigation { max-height: calc(100dvh - 90px); }
+  input:not([type=checkbox]):not([type=radio]), textarea, select { font-size: 16px; }
+}
+.video-dialog button[aria-label="Close video player"] { min-width: 44px; min-height: 44px; }

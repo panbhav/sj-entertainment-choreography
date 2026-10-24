@@ -35,6 +35,22 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdown = useRef<HTMLDivElement>(null);
+  const mobileToggle = useRef<HTMLButtonElement>(null);
+  const experienceToggle = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const compact = window.matchMedia('(max-width: 800px)');
+    const resize = () => { if (!compact.matches) setMobileOpen(false); };
+    compact.addEventListener('change', resize);
+    return () => compact.removeEventListener('change', resize);
+  }, []);
 
   useEffect(() => {
     function dismiss(event: MouseEvent) {
@@ -44,15 +60,20 @@ export default function Header() {
     }
     function escape(event: KeyboardEvent) {
       if (event.key === 'Escape') {
+        if (mobileToggle.current?.getAttribute('aria-expanded') === 'true') mobileToggle.current.focus();
+        else if (experienceToggle.current?.getAttribute('aria-expanded') === 'true') experienceToggle.current.focus();
         setMobileOpen(false);
         setDropdownOpen(false);
       }
     }
+    function historyNavigation() { setMobileOpen(false); setDropdownOpen(false); }
     document.addEventListener('mousedown', dismiss);
     document.addEventListener('keydown', escape);
+    window.addEventListener('popstate', historyNavigation);
     return () => {
       document.removeEventListener('mousedown', dismiss);
       document.removeEventListener('keydown', escape);
+      window.removeEventListener('popstate', historyNavigation);
     };
   }, []);
 
@@ -108,8 +129,6 @@ export default function Header() {
             <div
               className="nav-dropdown"
               ref={dropdown}
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
               onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget as Node)) {
                   setDropdownOpen(false);
@@ -117,6 +136,7 @@ export default function Header() {
               }}
             >
               <button
+                ref={experienceToggle}
                 type="button"
                 aria-expanded={dropdownOpen}
                 aria-controls="experience-menu"
@@ -276,6 +296,8 @@ export default function Header() {
           </Link>
 
           <button
+            ref={mobileToggle}
+            type="button"
             className="mobile-toggle"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -291,6 +313,9 @@ export default function Header() {
             className="mobile-navigation"
             id="mobile-navigation"
             aria-label="Mobile navigation"
+            onBlur={(event) => {
+              if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node) && event.relatedTarget !== mobileToggle.current) close();
+            }}
           >
             <Link href="/" onClick={close} aria-current={pathname === '/' ? 'page' : undefined}>
               Home <ArrowUpRight size={16} />

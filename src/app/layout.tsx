@@ -3,6 +3,7 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import { withBasePath } from '@/lib/basePath';
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  icons: { icon: '/icon.svg', shortcut: '/icon.svg', apple: '/icon.svg' },
+  icons: { icon: withBasePath('/icon.svg'), shortcut: withBasePath('/icon.svg'), apple: withBasePath('/icon.svg') },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sjentertainmentchoreography.com"),
   title: {
     template: "%s | SJ Entertainment Choreography",

@@ -68,7 +68,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:40',
     enquiryService: 'couple-dance',
     sourceUrl: '/media/portfolio/couple-dance.mp4',
-    posterUrl: '/media/portfolio/couple-dance.jpg',
+    posterUrl: '/media/portfolio/couple-dance.webp',
     isAvailable: true,
   },
   {
@@ -84,7 +84,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:18',
     enquiryService: 'sangeet-spectacular',
     sourceUrl: '/media/portfolio/sangeet-highlights.mp4',
-    posterUrl: '/media/portfolio/sangeet-highlights.jpg',
+    posterUrl: '/media/portfolio/sangeet-highlights.webp',
     isAvailable: true,
   },
   {
@@ -100,7 +100,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:31',
     enquiryService: 'family-friends-group',
     sourceUrl: '/media/portfolio/family-celebration.mp4',
-    posterUrl: '/media/portfolio/family-celebration.jpg',
+    posterUrl: '/media/portfolio/family-celebration.webp',
     isAvailable: true,
   },
   {
@@ -116,7 +116,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:14',
     enquiryService: 'grand-entry-experience',
     sourceUrl: '/media/portfolio/couple-reveal.mp4',
-    posterUrl: '/media/portfolio/couple-reveal.jpg',
+    posterUrl: '/media/portfolio/couple-reveal.webp',
     isAvailable: true,
   },
   {
@@ -132,7 +132,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:38',
     enquiryService: 'family-friends-group',
     sourceUrl: '/media/portfolio/friends-performance.mp4',
-    posterUrl: '/media/portfolio/friends-performance.jpg',
+    posterUrl: '/media/portfolio/friends-performance.webp',
     isAvailable: true,
   },
   {
@@ -148,7 +148,7 @@ export const portfolioPreviewSlots: PreviewSlot[] = [
     duration: '0:32',
     enquiryService: 'sangeet-spectacular',
     sourceUrl: '/media/portfolio/rehearsal.mp4',
-    posterUrl: '/media/portfolio/rehearsal.jpg',
+    posterUrl: '/media/portfolio/rehearsal.webp',
     isAvailable: true,
   },
 ];

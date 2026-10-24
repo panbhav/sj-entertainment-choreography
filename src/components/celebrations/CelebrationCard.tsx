@@ -18,17 +18,20 @@ export default function CelebrationCard({
 
   return (
     <article className="celebration-card group">
-      {/* Visual Image Banner */}
-      <Link href={href} className="celebration-card-image-wrap block relative aspect-[16/10] overflow-hidden rounded-xl mb-5 bg-[#2C0713]">
+      {/* Edge-to-Edge Image Header */}
+      <Link
+        href={href}
+        className="celebration-card-image-wrap block relative aspect-[16/10] overflow-hidden bg-[#2C0713]"
+      >
         <Image
           src={withBasePath(chapter.imageUrl)}
           alt={service.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           unoptimized
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
         <div className="absolute top-3 left-3">
           <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase border border-white/20">
             Chapter 0{index + 1}
@@ -39,43 +42,49 @@ export default function CelebrationCard({
             {chapter.concepts.length} Performance Formats
           </span>
           <span className="text-[10px] uppercase font-semibold text-[#D4B272] tracking-wider">
-            View Details →
+            Explore →
           </span>
         </div>
       </Link>
 
-      <div className="celebration-card-top">
-        <span>CELEBRATION 0{index + 1}</span>
-        <span>{chapter.concepts.length} TYPES</span>
-      </div>
+      <div className="celebration-card-body p-6 flex flex-col flex-grow justify-between">
+        <div>
+          <div className="celebration-card-top mb-2">
+            <span>CELEBRATION 0{index + 1}</span>
+            <span>{chapter.concepts.length} TYPES</span>
+          </div>
 
-      <h3>
-        <Link href={href}>
-          {service.name}
-          <ArrowUpRight size={19} aria-hidden="true" />
-        </Link>
-      </h3>
-
-      <p>{chapter.introduction}</p>
-
-      <ul
-        className="celebration-type-links"
-        aria-label={`${chapter.shortName} choreography and entry types`}
-      >
-        {chapter.concepts.map((item) => (
-          <li key={item.id}>
-            <Link href={`${href}#${item.id}`}>
-              <span>{item.title}</span>
-              <ArrowRight size={15} aria-hidden="true" />
+          <h3>
+            <Link href={href}>
+              <span>{service.name}</span>
+              <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
-          </li>
-        ))}
-      </ul>
+          </h3>
 
-      <Link className="celebration-all-link" href={href}>
-        <span>Explore all {chapter.shortName} types</span>
-        <ArrowUpRight size={16} aria-hidden="true" />
-      </Link>
+          <p className="line-clamp-2">{chapter.introduction}</p>
+        </div>
+
+        <div>
+          <ul
+            className="celebration-type-links"
+            aria-label={`${chapter.shortName} choreography and entry types`}
+          >
+            {chapter.concepts.map((item) => (
+              <li key={item.id}>
+                <Link href={`${href}#${item.id}`}>
+                  <span>{item.title}</span>
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Link className="celebration-all-link" href={href}>
+            <span>Explore all {chapter.shortName} types</span>
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
     </article>
   );
 }
