@@ -149,11 +149,30 @@ export default async function CelebrationPage({ params }: PageProps) {
               <article
                 id={item.id}
                 key={item.id}
-                className="celebration-definition"
+                className="celebration-definition group"
                 aria-labelledby={`${item.id}-title`}
               >
+                {/* Visual Concept Media */}
+                <div className="celebration-concept-media relative aspect-[16/10] rounded-xl overflow-hidden mb-5 bg-[#2C0713]">
+                  <Image
+                    src={withBasePath(`/images/celebrations/subtypes/${item.id}.jpg`)}
+                    alt={`${item.title} — ${chapter.shortName}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] font-semibold text-white tracking-wider uppercase border border-white/20">
+                    Format 0{i + 1}
+                  </span>
+                  <span className="absolute bottom-3 left-3 right-3 text-[11px] text-[#E5D7B7] font-serif italic line-clamp-1">
+                    {item.mood}
+                  </span>
+                </div>
+
                 <div className="celebration-definition-top">
-                  <span className="celebration-number">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="celebration-number">0{i + 1}</span>
                   <span className="celebration-mood font-medium text-[#BD954E]">
                     {item.mood}
                   </span>
