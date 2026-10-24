@@ -1,26 +1,37 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Sparkles, Calendar, ArrowRight, CheckCircle2, Info } from 'lucide-react';
+import Image from 'next/image';
+import {
+  Sparkles,
+  Calendar,
+  ArrowRight,
+  CheckCircle2,
+  Music,
+  Compass,
+  Crown,
+  Flame,
+  ChevronRight,
+} from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { coupleEntryConcepts, artistCategories } from '@/content/entriesAndArtists';
-import ResponsiveImage from '@/components/media/ResponsiveImage';
+import { withBasePath } from '@/lib/basePath';
 import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
 export const metadata: Metadata = {
-  title: 'Couple Entries & Live Entertainment',
+  title: 'Grand Couple Entries & Live Entertainment | Sajid & Joya',
   description:
-    'Theatrical couple entries, bridal walks, and live artist curation by Sajid & Joya for weddings across India.',
+    'Theatrical couple arrivals, bridal walks, symphonic dhol ensembles, and live artist curation by Sajid & Joya for luxury weddings across India.',
 };
 
 export default function CoupleEntriesEntertainmentPage() {
   const heroMedia = getMedia('entries-hero');
 
-  // Filter only published concepts
-  const publishedEntries = coupleEntryConcepts.filter((c) => c.isPublished);
-  const publishedArtists = artistCategories.filter((a) => a.isPublished);
+  // Preview entries for the showcase cards
+  const previewEntries = coupleEntryConcepts.filter((c) => c.isPublished).slice(0, 4);
+  const previewArtists = artistCategories.filter((a) => a.isPublished).slice(0, 4);
 
   return (
     <div className="interior-page flex flex-col space-y-24 md:space-y-32">
@@ -43,7 +54,7 @@ export default function CoupleEntriesEntertainmentPage() {
               <p className="text-base sm:text-lg text-[#575253] leading-relaxed">
                 Make your wedding entrance an unforgettable visual and musical crescendo.
                 Sajid & Joya curate theatrical entry concepts, synchronized procession music,
-                and live entertainment ensembles tailored to your venue architecture across India.
+                and world-class live entertainment ensembles tailored to your venue architecture across India.
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -59,7 +70,7 @@ export default function CoupleEntriesEntertainmentPage() {
                   href="#entry-concepts"
                   className="text-sm font-semibold text-[#4A1525] hover:text-[#641C32] transition-colors underline-offset-4 hover:underline"
                 >
-                  Browse Entry Concepts ↓
+                  Explore The Two Categories ↓
                 </a>
               </div>
             </div>
@@ -78,155 +89,227 @@ export default function CoupleEntriesEntertainmentPage() {
       </section>
 
       {/* =========================================================================
-          SECTION A: COUPLE & BRIDAL ENTRIES
+          SUBHEADING 01: COUPLE & BRIDAL ENTRY CONCEPTS
           ========================================================================= */}
       <section id="entry-concepts" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full scroll-mt-24">
-        <SectionHeading
-          eyebrow="Creative Directions"
-          title="Couple & Bridal Entry Concepts"
-          description="The following ideas illustrate creative themes available to explore. During our planning discussions, each concept is customized to your venue layout, aesthetic mood, and safety parameters."
-          className="mb-6"
-        />
+        <div className="bg-gradient-to-b from-[#FAF7F2] to-white rounded-3xl border border-[#E8DFD5] p-6 sm:p-10 md:p-12 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] text-[11px] font-semibold tracking-wider uppercase mb-3">
+                <Crown className="w-3.5 h-3.5 text-[#BD954E]" />
+                <span>Primary Pillar 01</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C0713] leading-tight">
+                Couple & Bridal Entry Concepts
+              </h2>
+              <p className="text-sm sm:text-base text-[#575253] leading-relaxed mt-3">
+                A grand arrival sets the emotional tone of the entire night. We craft custom entrance
+                choreography, audio preludes, pacing, and visual staging tailored to your attire and venue layout.
+              </p>
+            </div>
 
-        {/* Clear transparent disclosure notice */}
-        <div className="mb-12 p-4 rounded-2xl bg-[#FAF6EF] border border-[#DFCBB0] max-w-3xl mx-auto flex items-start gap-3">
-          <Info className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
-          <p className="text-xs text-[#575253] leading-relaxed">
-            <span className="font-semibold text-[#4A1525]">Concept Planning Note:</span> Entry
-            presentations are illustrative concepts. Final staging, lighting effects, and
-            props are designed in coordination with your venue regulations and decorator.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {publishedEntries.map((concept) => (
-            <div
-              key={concept.id}
-              className="flex flex-col justify-between bg-white rounded-3xl border border-[#E8DFD5] p-7 hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl group"
+            <Link
+              href="/couple-entries-entertainment/couple-bridal-entries"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] transition-colors shadow-md shrink-0 group"
             >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] border border-[#BD954E]/20">
-                    Concept Idea
-                  </span>
-                  <span className="text-xs text-[#BD954E] italic font-serif">
+              <span>View All 7 Entry Concepts (With Photos)</span>
+              <ArrowRight className="w-4 h-4 text-[#D4B272] group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          {/* 4 Visual Concept Highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {previewEntries.map((concept, idx) => (
+              <Link
+                key={concept.id}
+                href={`/couple-entries-entertainment/couple-bridal-entries#${concept.id}`}
+                className="group flex flex-col bg-white rounded-2xl border border-[#E8DFD5] overflow-hidden hover:border-[#BD954E] hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative aspect-[4/3] bg-[#2C0713] overflow-hidden">
+                  <Image
+                    src={withBasePath(concept.imageUrl)}
+                    alt={concept.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] text-white/90 font-medium px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">
                     {concept.mood}
                   </span>
                 </div>
+                <div className="p-4 flex flex-col justify-between flex-grow">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#BD954E]">
+                      Concept 0{idx + 1}
+                    </span>
+                    <h3 className="font-serif text-base font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mt-0.5 line-clamp-1">
+                      {concept.name}
+                    </h3>
+                    <p className="text-xs text-[#575253] mt-1.5 line-clamp-2 leading-relaxed">
+                      {concept.description}
+                    </p>
+                  </div>
+                  <div className="pt-3 mt-3 border-t border-[#F4ECE1] flex items-center justify-between text-xs font-semibold text-[#4A1525]">
+                    <span>View details & photos</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
 
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#2C0713] mb-3 group-hover:text-[#4A1525] transition-colors leading-snug">
-                  {concept.name}
-                </h3>
-
-                <p className="text-sm text-[#575253] leading-relaxed mb-5">
-                  {concept.description}
+          {/* Key Framework Highlights */}
+          <div className="p-6 rounded-2xl bg-white border border-[#E8DFD5] grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Posture, Gait & Pacing
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  Rehearsed walk-throughs accounting for heavy bridal lehengas, long trains, and ceremonial lighting.
                 </p>
-
-                {concept.inclusions && concept.inclusions.length > 0 && (
-                  <div className="mb-4 pt-3 border-t border-[#F4ECE1]">
-                    <div className="text-xs font-semibold text-[#4A1525] mb-2 uppercase tracking-wider">
-                      Concept Inclusions
-                    </div>
-                    <ul className="space-y-1.5">
-                      {concept.inclusions.map((inc, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-[#575253]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#BD954E] shrink-0 mt-0.5" />
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {concept.venueRequirements && concept.venueRequirements.length > 0 && (
-                  <div className="mb-6 pt-2">
-                    <div className="text-[11px] font-semibold text-[#888182] uppercase tracking-wider mb-1">
-                      Venue Considerations
-                    </div>
-                    <ul className="space-y-1 text-xs text-[#888182]">
-                      {concept.venueRequirements.map((req, i) => (
-                        <li key={i}>• {req}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              <div className="pt-4 border-t border-[#F4ECE1]">
-                <Link
-                  href={`/contact?service=${encodeURIComponent(concept.queryParam)}`}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#4A1525] group-hover:text-[#641C32] transition-colors focus-visible:ring-2 focus-visible:ring-[#BD954E]"
-                >
-                  <span>Discuss this entry concept</span>
-                  <ArrowRight className="w-4 h-4 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
-                </Link>
               </div>
             </div>
-          ))}
+
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Audio & Voiceover Prelude
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  Bespoke audio editing with personal voiceover preludes, dialogue cues, and theatrical musical drops.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Technical Venue Direction
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  Coordination with venue decorators, stage engineers, spotlights, and cold pyrotechnics where permitted.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* =========================================================================
-          SECTION B: ARTISTS & LIVE ENTERTAINMENT
+          SUBHEADING 02: STAGE & PROCESSION ACTS ARTISTS & LIVE ENTERTAINMENT
           ========================================================================= */}
-      <section className="bg-[#F5EFEB] py-20 border-y border-[#E8DFD5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Stage & Procession Acts"
-            title="Artists & Live Entertainment"
-            description="Complement your choreography with curated live performers, percussion ensembles, and ambient artists. Selection and production riders are reviewed collaboratively during planning."
-            className="mb-14"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {publishedArtists.map((artist) => (
-              <div
-                key={artist.id}
-                className="flex flex-col justify-between bg-white rounded-2xl border border-[#E8DFD5] p-6 sm:p-7 hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-lg group"
-              >
-                <div>
-                  <h3 className="font-serif text-xl font-bold text-[#2C0713] mb-1 group-hover:text-[#4A1525] transition-colors">
-                    {artist.name}
-                  </h3>
-                  <p className="text-xs font-medium text-[#BD954E] mb-3">
-                    {artist.subtitle}
-                  </p>
-                  <p className="text-sm text-[#575253] leading-relaxed mb-4">
-                    {artist.description}
-                  </p>
-
-                  <div className="pt-3 border-t border-[#F4ECE1] space-y-2">
-                    <div className="text-xs font-semibold text-[#4A1525] uppercase tracking-wider">
-                      Suggested Celebration Moments
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {artist.suggestedMoments.map((moment, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-0.5 rounded-md bg-[#FAF7F2] border border-[#E8DFD5] text-[11px] text-[#575253]"
-                        >
-                          {moment}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="text-[11px] text-[#888182] mt-3 italic">
-                    Production note: {artist.productionNotes}
-                  </p>
-                </div>
-
-                <div className="pt-5 mt-5 border-t border-[#F4ECE1]">
-                  <Link
-                    href={`/contact?service=${encodeURIComponent(artist.queryParam)}`}
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#4A1525] group-hover:text-[#641C32] transition-colors"
-                  >
-                    <span>Enquire about artist curation</span>
-                    <ArrowRight className="w-4 h-4 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="bg-gradient-to-b from-[#F5EFEB] to-white rounded-3xl border border-[#E8DFD5] p-6 sm:p-10 md:p-12 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-[#E8DFD5]">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] text-[11px] font-semibold tracking-wider uppercase mb-3">
+                <Music className="w-3.5 h-3.5 text-[#BD954E]" />
+                <span>Primary Pillar 02</span>
               </div>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C0713] leading-tight">
+                Stage & Procession Acts Artists & Live Entertainment
+              </h2>
+              <p className="text-sm sm:text-base text-[#575253] leading-relaxed mt-3">
+                Complement your wedding choreography with live performers, symphonic dhol ensembles,
+                authentic regional folk artists, soulful vocalists, and breathtaking visual spectacles.
+              </p>
+            </div>
+
+            <Link
+              href="/couple-entries-entertainment/stage-procession-acts-live-entertainment"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] transition-colors shadow-md shrink-0 group"
+            >
+              <span>View All 7 Live Acts & Artists (With Photos)</span>
+              <ArrowRight className="w-4 h-4 text-[#D4B272] group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          {/* 4 Visual Artist Highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {previewArtists.map((artist, idx) => (
+              <Link
+                key={artist.id}
+                href={`/couple-entries-entertainment/stage-procession-acts-live-entertainment#${artist.id}`}
+                className="group flex flex-col bg-white rounded-2xl border border-[#E8DFD5] overflow-hidden hover:border-[#BD954E] hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative aspect-[4/3] bg-[#2C0713] overflow-hidden">
+                  <Image
+                    src={withBasePath(artist.imageUrl)}
+                    alt={artist.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute bottom-2.5 left-2.5 text-[10px] text-white/90 font-medium px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm line-clamp-1">
+                    {artist.subtitle}
+                  </span>
+                </div>
+                <div className="p-4 flex flex-col justify-between flex-grow">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#BD954E]">
+                      Act 0{idx + 1}
+                    </span>
+                    <h3 className="font-serif text-base font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mt-0.5 line-clamp-1">
+                      {artist.name}
+                    </h3>
+                    <p className="text-xs text-[#575253] mt-1.5 line-clamp-2 leading-relaxed">
+                      {artist.description}
+                    </p>
+                  </div>
+                  <div className="pt-3 mt-3 border-t border-[#F4ECE1] flex items-center justify-between text-xs font-semibold text-[#4A1525]">
+                    <span>View act & rider details</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#BD954E] group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
             ))}
+          </div>
+
+          {/* Key Artist Framework Highlights */}
+          <div className="p-6 rounded-2xl bg-white border border-[#E8DFD5] grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Choreography Synchronized
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  Performers rehearse and integrate directly with family dances, couple reveals, and finale sequences.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Rider & Technical Management
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  We handle sound checks, monitor mixes, stage plots, and green room coordination with the production crew.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-[#BD954E] shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-xs font-bold text-[#2C0713] uppercase tracking-wider">
+                  Verified Pan-India Artists
+                </h4>
+                <p className="text-xs text-[#575253] mt-1">
+                  Experienced, reputable performers with proven live discipline for both city hotels and destination venues.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -299,5 +382,3 @@ export default function CoupleEntriesEntertainmentPage() {
     </div>
   );
 }
-
-

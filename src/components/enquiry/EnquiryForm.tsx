@@ -6,6 +6,7 @@ import { weddingCelebrations, signaturePerformances } from '@/content/services';
 import { coupleEntryConcepts, artistCategories } from '@/content/entriesAndArtists';
 import { experienceCombinations } from '@/content/packages';
 import { siteConfig } from '@/content/siteConfig';
+import { getSelectedCelebrationConcept } from '@/content/celebrations';
 import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const baseServiceOptions = [
@@ -34,6 +35,7 @@ const categoryServices: Record<string, string> = { choreography: 'sangeet-specta
 export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
+  const selectedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -108,7 +110,14 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, serviceInterest }),
+        body: JSON.stringify({
+          ...formData,
+          serviceInterest,
+          message: [
+            selectedConcept ? `Choreography type: ${selectedConcept.chapter.shortName} — ${selectedConcept.concept.title}.` : '',
+            formData.message,
+          ].filter(Boolean).join('\n\n'),
+        }),
       });
 
       const data = await res.json();
@@ -155,6 +164,14 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
           Share your dates and vision. We will discuss song sequences, rehearsal formats, and tailored combinations.
         </p>
       </div>
+
+      {selectedConcept && (
+        <div className="mb-6 p-4 rounded-xl bg-[#F7EDF1] border border-[#DFCBB0] text-sm text-[#4A1525] leading-relaxed">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-[#967443]">Your chosen choreography type</p>
+          <p className="font-semibold mt-1">{selectedConcept.chapter.shortName} — {selectedConcept.concept.title}</p>
+          <p className="text-xs mt-1">This type will be included with your enquiry. You can add songs and other preferences below.</p>
+        </div>
+      )}
 
       {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <div role="status" className="mb-8 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438] leading-relaxed">Online enquiries are opening soon. You can explore the options below while we prepare to welcome your celebration.</div>}
       {/* Submission Feedback Notices */}

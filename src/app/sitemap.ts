@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getPublishedProjects } from '@/content/portfolio';
+import { celebrationChapters } from '@/content/celebrations';
 
 export const dynamic = 'force-static';
 
@@ -10,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/wedding-choreography',
     '/couple-entries-entertainment',
+    '/couple-entries-entertainment/couple-bridal-entries',
+    '/couple-entries-entertainment/stage-procession-acts-live-entertainment',
     '/our-work',
     '/packages',
     '/about',
@@ -31,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...projectRoutes];
+  const celebrationRoutes = celebrationChapters.map((chapter) => ({
+    url: `${baseUrl}/wedding-choreography/${chapter.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...projectRoutes, ...celebrationRoutes];
 }

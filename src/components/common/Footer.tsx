@@ -60,6 +60,22 @@ export default function Footer() {
                   02. Entries & Entertainment
                 </Link>
               </li>
+              <li className="pl-3">
+                <Link
+                  href="/couple-entries-entertainment/couple-bridal-entries"
+                  className="text-xs text-[#EAD9B7]/65 hover:text-[#D4B272] transition-colors"
+                >
+                  ↳ Couple & Bridal Entries
+                </Link>
+              </li>
+              <li className="pl-3">
+                <Link
+                  href="/couple-entries-entertainment/stage-procession-acts-live-entertainment"
+                  className="text-xs text-[#EAD9B7]/65 hover:text-[#D4B272] transition-colors"
+                >
+                  ↳ Stage & Live Artists
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/packages"

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Sparkles, Calendar, ArrowRight, CheckCircle2, Plane, MapPin } from 'lucide-react';
+import { Sparkles, Calendar, ArrowRight, CheckCircle2, Plane } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import {
-  weddingCelebrations,
   signaturePerformances,
   rehearsalOptions,
   choreographyPlanningSteps,
@@ -16,6 +15,8 @@ import SectionHeading from '@/components/common/SectionHeading';
 import ServiceCard from '@/components/ui/ServiceCard';
 import Accordion from '@/components/ui/Accordion';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+import CelebrationCard from '@/components/celebrations/CelebrationCard';
+import { celebrationChapters } from '@/content/celebrations';
 
 export const metadata: Metadata = {
   title: 'Wedding Choreography & Celebrations',
@@ -141,25 +142,18 @@ export default function WeddingChoreographyPage() {
           ========================================================================= */}
       <section id="celebrations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full scroll-mt-24">
         <SectionHeading
-          eyebrow="Ceremonies & Traditions"
+          eyebrow="Dance & Entry Formats"
           title="Wedding Celebrations"
-          description="Every ritual carries its own emotion and energy. We tailor dance concepts to harmonize with each occasion's unique spirit."
+          description="Choose your function, then explore its dance routines and entry types. Click any subtype to see what the choreography includes and who it suits."
           className="mb-14"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {weddingCelebrations.map((service) => (
-            <ServiceCard
-              key={service.id}
-              title={service.name}
-              subtitle={service.subtitle}
-              description={service.description}
-              highlights={service.highlights}
-              queryParam={service.queryParam}
-              badge="Celebration"
-            />
+          {celebrationChapters.map((chapter, index) => (
+            <CelebrationCard key={chapter.slug} chapter={chapter} index={index} />
           ))}
         </div>
+        <p className="celebration-index-note">These are choreography and entry formats for each function. You can combine them and personalise the music, performers and rehearsal plan.</p>
       </section>
 
       {/* =========================================================================

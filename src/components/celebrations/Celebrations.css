@@ -1,0 +1,73 @@
+.celebration-card { display:flex; flex-direction:column; min-width:0; padding:28px; border:1px solid #e6dcd0; border-radius:12px; background:#fffdf9; }
+.celebration-card-top { display:flex; justify-content:space-between; gap:12px; color:#967443; font-size:10px; font-weight:600; letter-spacing:.12em; }
+.celebration-card h3 { margin:18px 0 12px; font-family:var(--font-display),serif; font-size:27px; line-height:1.25; font-weight:400; color:#371121; }
+.celebration-card h3 a { display:flex; align-items:flex-start; justify-content:space-between; gap:15px; }
+.celebration-card h3 svg { flex-shrink:0; margin-top:7px; color:#a07845; }
+.celebration-card > p { color:#675b5e; font-size:13px; line-height:1.85; margin:0 0 22px; }
+.celebration-type-links { list-style:none; padding:0; margin:auto 0 0; border-top:1px solid #ece3d8; }
+.celebration-type-links li { border-bottom:1px solid #ece3d8; }
+.celebration-type-links a { display:flex; justify-content:space-between; align-items:center; gap:14px; padding:14px 0; font-size:13px; line-height:1.5; color:#4a1525; }
+.celebration-type-links svg { flex-shrink:0; color:#a07845; transition:transform .2s; }
+.celebration-type-links a:hover svg { transform:translateX(3px); }
+.celebration-all-link { display:flex; gap:10px; align-items:center; justify-content:space-between; margin-top:22px; font-size:11px; line-height:1.6; font-weight:600; color:#5a263a; }
+.celebration-card a:focus-visible,.celebration-detail a:focus-visible { outline:2px solid #a07845; outline-offset:5px; border-radius:2px; }
+.celebration-index-note { margin-top:24px; color:#74666b; font-size:13px; line-height:1.8; }
+.celebration-container { width:min(1160px,calc(100% - 64px)); margin:0 auto; }
+.celebration-breadcrumb { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding-top:35px; font-size:12px; color:#796b70; }
+.celebration-breadcrumb a { display:inline-flex; align-items:center; gap:8px; color:#4a1525; }
+.celebration-intro { max-width:840px; padding:74px 0 76px; }
+.celebration-eyebrow { color:#977448; font-size:10px; font-weight:600; line-height:1.6; letter-spacing:.16em; text-transform:uppercase; }
+.celebration-intro h1 { font-family:var(--font-display),serif; font-size:clamp(40px,5vw,68px); font-weight:400; line-height:1.12; letter-spacing:-.035em; color:#371121; margin:20px 0 24px; }
+.celebration-intro h1 em { color:#855b69; font-weight:400; }
+.celebration-intro-copy { max-width:680px; font-size:16px; line-height:1.9; color:#675b5e; }
+.celebration-primary-link { display:inline-flex; justify-content:center; align-items:center; gap:18px; padding:15px 23px; background:#4a1525; color:#fffaf1; border:1px solid #4a1525; border-radius:5px; font-size:12px; font-weight:500; margin-top:28px; transition:background .2s; }
+.celebration-primary-link:hover { background:#68263d; }
+.celebration-types-section { scroll-margin-top:120px; }
+.celebration-section-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:38px; margin-bottom:28px; }
+.celebration-section-heading h2,.celebration-related h2,.celebration-planning-note h2 { font-family:var(--font-display),serif; font-size:clamp(27px,3vw,39px); font-weight:400; line-height:1.25; color:#371121; margin-top:12px; }
+.celebration-section-heading > p { max-width:300px; color:#78676e; font-size:12px; line-height:1.9; }
+.celebration-type-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:32px; }
+.celebration-type-nav a { display:flex; align-items:center; gap:14px; padding:18px 20px; border:1px solid #e4d7c7; background:#f4eee5; border-radius:5px; font-size:13px; color:#4a1525; }
+.celebration-type-nav a > span { color:#a47e4e; font-size:11px; }
+.celebration-type-nav svg { flex-shrink:0; margin-left:auto; }
+.celebration-type-nav a:hover { border-color:#b99768; background:#eee3d4; }
+.celebration-definition-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.celebration-definition { display:flex; flex-direction:column; min-width:0; background:#fffdf9; border:1px solid #e5dacb; border-radius:10px; padding:30px; scroll-margin-top:120px; }
+.celebration-definition:target { border-color:#b38a56; box-shadow:0 0 0 2px #bd954e22; }
+.celebration-definition-top { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:24px; }
+.celebration-number { font-family:var(--font-display),serif; font-size:35px; color:#b89360; line-height:1; }
+.celebration-mood { font-size:10px; line-height:1.8; color:#8c727a; text-align:right; }
+.celebration-definition h3 { font-family:var(--font-display),serif; font-size:29px; font-weight:400; line-height:1.25; color:#371121; margin-bottom:16px; }
+.celebration-definition-copy { font-size:14px; line-height:1.9; color:#66585e; margin-bottom:22px; }
+.celebration-definition dl { margin-top:auto; }
+.celebration-definition dl > div { border-top:1px solid #ece1d4; padding:18px 0; }
+.celebration-definition dt { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#9a7544; font-weight:600; margin-bottom:8px; }
+.celebration-definition dd { font-size:13px; line-height:1.85; color:#6b5a62; }
+.celebration-concept-cta { display:flex; justify-content:space-between; align-items:center; gap:15px; border-top:1px solid #e6d9c8; padding-top:20px; font-size:12px; color:#4a1525; font-weight:600; }
+.celebration-planning-note { padding:36px 40px; margin:62px 0 74px; background:#f1e9de; border-left:2px solid #b89360; }
+.celebration-planning-note > p:not(.celebration-eyebrow) { color:#6a5961; font-size:13px; line-height:1.9; max-width:860px; margin-top:16px; }
+.celebration-related > div { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.celebration-related a { display:flex; align-items:center; gap:16px; border:1px solid #ded1c0; padding:13px 17px; border-radius:5px; font-size:12px; color:#4a1525; }
+.celebration-related a:hover { background:#f0e6d9; }
+.celebration-final-cta { text-align:center; padding:80px 20px; margin:74px 0 60px; border-radius:12px; background:#35101f; color:#fff8ed; }
+.celebration-final-cta .celebration-eyebrow { color:#c1a073; }
+.celebration-final-cta h2 { font-family:var(--font-display),serif; font-size:clamp(34px,4vw,52px); line-height:1.2; font-weight:400; margin-top:18px; }
+.celebration-final-cta h2 em { color:#dcc5ad; }
+.celebration-final-cta .celebration-primary-link { background:#dfc6a0; color:#35101f; border-color:#dfc6a0; }
+.celebration-back-link { display:block; width:fit-content; margin:24px auto 0; font-size:11px; color:#e6d8ce; text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:767px) {
+ .celebration-container { width:calc(100% - 36px); }
+ .celebration-breadcrumb { font-size:11px; padding-top:24px; }
+ .celebration-intro { padding:45px 0 48px; }
+ .celebration-intro h1 { font-size:clamp(35px,9vw,52px); }
+ .celebration-intro-copy { font-size:14px; }
+ .celebration-section-heading { display:block; }
+ .celebration-section-heading > p { max-width:100%; margin-top:16px; }
+ .celebration-type-nav,.celebration-definition-grid { grid-template-columns:1fr; }
+ .celebration-type-nav a { padding:16px; }
+ .celebration-definition { padding:25px 23px; }
+ .celebration-definition h3 { font-size:27px; }
+ .celebration-planning-note { padding:28px 23px; margin:42px 0 48px; }
+ .celebration-final-cta { padding:54px 18px; margin:48px 0; }
+ .celebration-card { padding:24px; }
+}
