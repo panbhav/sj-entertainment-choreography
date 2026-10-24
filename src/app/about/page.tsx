@@ -8,6 +8,7 @@ import ResponsiveImage from '@/components/media/ResponsiveImage';
 import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+import AwardRecognitionSection from '@/components/about/AwardRecognitionSection';
 
 export const metadata: Metadata = {
   title: 'About Sajid & Joya',
@@ -105,6 +106,11 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      {/* =========================================================================
+          NATIONAL AWARD RECOGNITION FEATURE
+          ========================================================================= */}
+      <AwardRecognitionSection />
 
       {/* =========================================================================
           INDIVIDUAL OWNER PROFILES

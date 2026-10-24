@@ -18,12 +18,26 @@ export interface ExperienceStat {
   description: string;
 }
 
+export interface AwardRecognition {
+  awardTitle: string;
+  category: string;
+  honouree: string;
+  conferredBy: string;
+  conferredByTitle: string;
+  event: string;
+  location: string;
+  date: string;
+  summary: string;
+  highlights: string[];
+}
+
 export const ownersData: {
   jointIntro: string;
   jointMediaId: string;
   experienceYears: string;
   celebrationsCount: string;
   stats: ExperienceStat[];
+  award: AwardRecognition;
   owners: OwnerBio[];
   philosophyTitle: string;
   philosophyParagraphs: string[];
@@ -47,25 +61,43 @@ export const ownersData: {
       description: 'Couples, families, and high-energy squads choreographed across India.',
     },
     {
+      value: 'National Award',
+      label: 'Recognition',
+      description: 'Honoured with the National Star Achievers Award 2026 for wedding choreography excellence.',
+    },
+    {
       value: 'Pan-India',
       label: 'Destination Service',
       description: 'On-site rehearsals in Rajasthan, Goa, Kerala, and luxury resorts nationwide.',
     },
-    {
-      value: '100%',
-      label: 'Beginner Friendly',
-      description: 'Routines adapted with patience so every non-dancer shines with confidence.',
-    },
   ],
+  award: {
+    awardTitle: 'National Star Achievers Award 2026',
+    category: 'Best Wedding Choreographer of the Year',
+    honouree: 'Mr. Sajid Ali',
+    conferredBy: 'Vaishnavi Macdonald',
+    conferredByTitle: 'Veteran Bollywood & Television Actress',
+    event: 'National Star Achievers Award Gala',
+    location: 'Hotel Prime Safari, Jaipur, Rajasthan',
+    date: '04 October 2026',
+    summary:
+      'Honoured with the prestigious Certificate of Excellence and Star Achievers Trophy in recognition of outstanding artistic contribution, innovative wedding choreography, and memorable stage productions across India.',
+    highlights: [
+      'Conferred on stage by celebrated Bollywood actress Vaishnavi Macdonald',
+      'Certificate of Excellence presented to Founder Sajid Ali',
+      'Recognized for exceptional musicality, stage direction & non-dancer empowerment',
+    ],
+  },
   owners: [
     {
       name: 'Sajid',
       role: 'Co-Founder & Lead Choreographer',
       portraitMediaId: 'portrait-sajid',
       bioParagraphs: [
-        'With more than a decade of stage mastery, Sajid leads musical arrangements, dynamic staging, and high-energy squad choreography. His infectious enthusiasm and calm, patient instruction put every groom and family member at absolute ease.',
+        'With more than a decade of stage mastery and recognized with the National Star Achievers Award 2026 by Bollywood actress Vaishnavi Macdonald, Sajid leads musical arrangements, dynamic staging, and high-energy squad choreography.',
+        'His infectious enthusiasm, sharp musicality, and calm, patient instruction put every groom, nervous beginner, and multi-generational family member at absolute ease.',
       ],
-      focusAreas: ['Musicality & Medley Mixing', 'High-Energy Squad Formations', 'Stage Confidence'],
+      focusAreas: ['Musicality & Medley Mixing', 'High-Energy Squad Formations', 'Stage Confidence', 'Award-Winning Choreography'],
       isPublished: true,
     },
     {

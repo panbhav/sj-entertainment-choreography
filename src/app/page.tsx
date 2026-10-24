@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight, Check, Music2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Award, Check, Music2, Sparkles } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { getPublishedTestimonials } from '@/content/testimonials';
 import VideoPreview from '@/components/media/VideoPreview';
@@ -91,6 +91,21 @@ export default function HomePage() {
               <Sparkles size={12} className="text-[#D4B272]" />
               <span>10+ Years of Experience</span>
             </div>
+            <Link
+              href="/about#award-recognition"
+              className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-2xl bg-[#2C0713]/90 backdrop-blur-md text-[#FAF7F2] border border-[#BD954E]/40 shadow-xl hover:bg-[#3D101E] transition-all group"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#BD954E]/20 text-[#D4B272] flex items-center justify-center shrink-0 border border-[#BD954E]/40">
+                  <Award size={16} />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-wider text-[#D4B272] font-semibold">National Award Winner 2026</p>
+                  <p className="text-xs font-serif font-bold text-white">Presented by Vaishnavi Macdonald</p>
+                </div>
+              </div>
+              <ArrowUpRight size={16} className="text-[#D4B272] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
             <span className="founder-signature">Sajid & Joya</span>
           </div>
           <div className="founder-copy">
@@ -98,13 +113,30 @@ export default function HomePage() {
             <h2>Over a decade of craft.<br /><em>Two creative hearts.</em></h2>
             <p>We’re Sajid & Joya. With more than 10 years of wedding choreography experience and hundreds of celebrations across India, we turn the songs you love into dance moments that feel effortless, celebratory, and completely yours.</p>
             <p>From palace destination weddings in Rajasthan to coastal sunset sangeets in Goa, our passion is making every non-dancer feel poised, confident, and joyful in the spotlight.</p>
+
+            <Link
+              href="/about#award-recognition"
+              className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#DFCBB0] flex items-center gap-4 my-2 hover:border-[#BD954E] hover:shadow-md transition-all group block"
+            >
+              <div className="w-11 h-11 rounded-xl bg-[#4A1525] text-[#D4B272] flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                <Award size={22} />
+              </div>
+              <div className="text-xs space-y-0.5 flex-1">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-[#4A1525] uppercase tracking-wider text-[11px]">National Star Achievers Award 2026</span>
+                  <span className="text-[10px] text-[#BD954E] font-medium flex items-center gap-0.5">View Ceremony <ArrowUpRight size={11} /></span>
+                </div>
+                <p className="text-[#575253] leading-relaxed">Conferred to Sajid by veteran Bollywood actress Vaishnavi Macdonald for wedding choreography excellence in Jaipur.</p>
+              </div>
+            </Link>
+
             <div className="founder-values">
+              <span><Check size={15} /> National Award Winner 2026</span>
               <span><Check size={15} /> 10+ Years Experience</span>
               <span><Check size={15} /> 500+ Celebrations</span>
               <span><Check size={15} /> Destination Wedding Specialists</span>
-              <span><Check size={15} /> 100% Non-Dancer Friendly</span>
             </div>
-            <Link href="/about" className="text-link">Explore our story & philosophy <ArrowUpRight size={17} /></Link>
+            <Link href="/about" className="text-link">Explore our story, awards & philosophy <ArrowUpRight size={17} /></Link>
           </div>
         </div>
       </section>
