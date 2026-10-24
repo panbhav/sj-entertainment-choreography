@@ -120,9 +120,10 @@ Run `npm run lint`, `npm run build`, and (with the site running) `node scripts/a
 
 The homepage opening now uses `src/components/home/CinematicHero.tsx`, with namespaced styling in `CinematicHero.css`. The navigation uses the real white SJ logo and overlays the film; it becomes opaque after scrolling. Other homepage sections and the existing service pages are preserved.
 
-The silent 20.6-second background edits are stored in `public/media/hero-film-desktop.mp4` (1600×900) and `hero-film-mobile.mp4` (720×1280). Each has a matching `-poster.jpg`. The mobile film uses portrait source footage and individually framed landscape shots. Both have dissolves between five moments and a closing dissolve into the opening. No audio stream is included.
+The opening now uses the professionally filmed Aayush & Monika 4K Sangeet source. `public/media/hero-film-4k-desktop.webm` preserves the original 3840×2160 VP9 frames without re-encoding (approximately 23 seconds, aligned to a source keyframe). Browsers without VP9 support use `hero-film-hq-desktop.mp4` at 2560×1440. Mobile uses `hero-film-hq-mobile.mp4` at 1080×1920, cropped directly from the 4K original. MP4 exports use CRF18 in a single pass; there are no added dissolves. New filenames prevent stale cached versions from being shown. Both layouts have matching high-resolution poster images. No audio stream is included.
 
 Autoplay is muted and inline. Visitors can pause/resume the film. Playback pauses off-screen and in hidden tabs. Reduced-motion and data-saving preferences show the responsive poster without downloading the video unless the visitor presses play. Source paths use the existing base-path helper for subdirectory hosting.
 
-To rebuild the films, run `python scripts/build-hero-film.py --media-root "path/to/SJ Choreography"` with `imageio_ffmpeg` installed. Original media is read only. Intermediate shots and the edit manifest are written under `artifacts/hero-edit/`. `--reuse-clips` reuses intermediate shots for the unchanged edit.
+To rebuild the films, run `python scripts/build-hero-film.py --media-root "path/to/SJ Choreography"` with `imageio_ffmpeg` installed. Original media is read only. The source selection and export settings are recorded under `artifacts/hero-edit-hq/`. Source footage is preserved. Desktop playback automatically falls back to the compatible MP4 if native VP9 playback fails.
+
 

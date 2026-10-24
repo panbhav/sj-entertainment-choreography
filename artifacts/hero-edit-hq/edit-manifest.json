@@ -1,0 +1,10 @@
+{
+  "source": "Sangeet Highlit\\Aayush Monika Sangeet.webm",
+  "start_seconds": 51,
+  "requested_duration_seconds": 23,
+  "desktop_native": "3840x2160 VP9, stream copy",
+  "desktop_fallback": "2560x1440 H264 CRF18",
+  "mobile": "1080x1920 H264 CRF18 from the 4K original",
+  "audio": false,
+  "added_dissolves": false
+}

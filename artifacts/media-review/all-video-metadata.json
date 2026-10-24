@@ -1,0 +1,1758 @@
+[
+  {
+    "file": "Anant\\IMG_9893.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 15.79,
+    "size_mb": 44.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23351 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Anant\\IMG_9894.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 19.83,
+    "size_mb": 56.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23329 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Anant\\IMG_9895.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 13.14,
+    "size_mb": 37.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23270 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Anant\\IMG_9896.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 45.85,
+    "size_mb": 129.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23263 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Anant\\VID-20250116-WA0002.mp4",
+    "width": 1280,
+    "height": 720,
+    "seconds": 74.03,
+    "size_mb": 25.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, 2871 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\04 BTS VIDEO.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 211.88,
+    "size_mb": 307.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 11986 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Agarwal Family 24 June.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 66.41,
+    "size_mb": 163.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20503 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Bts  Video Sakshi.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 162.59,
+    "size_mb": 253.4,
+    "stream": "Stream #0:0[0x1](und): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 12878 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Hemant n Surbhi.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 231.34,
+    "size_mb": 447.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 16041 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Madhur n Sakshi.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 300.0,
+    "size_mb": 543.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 14987 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Parakh n Tanya.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 161.84,
+    "size_mb": 292.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 14977 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Raja BTS Video.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 191.94,
+    "size_mb": 462.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20017 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Shiwank.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 144.03,
+    "size_mb": 347.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20058 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Tanya BTS 4 Dec,.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 269.28,
+    "size_mb": 520.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 16005 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "BTS Video\\Tapan n Pragya.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 215.97,
+    "size_mb": 391.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 14982 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Dandiya\\Dandiya Reels.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 108.81,
+    "size_mb": 197.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 14998 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Dandiya\\MRG 11.mp4",
+    "width": 1440,
+    "height": 2560,
+    "seconds": 31.74,
+    "size_mb": 95.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1440x2560 [SAR 1:1 DAR 9:16], 25122 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\Entry Final.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 479.17,
+    "size_mb": 1153.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20006 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_032717_490.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 37.56,
+    "size_mb": 25.3,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5453 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_032818_092.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 24.9,
+    "size_mb": 16.8,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5453 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_032904_927.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 30.29,
+    "size_mb": 20.4,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5441 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033027_908.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 33.19,
+    "size_mb": 22.3,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5446 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033116_875.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 20.05,
+    "size_mb": 13.6,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5450 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033220_949.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 9.78,
+    "size_mb": 6.8,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5420 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033243_727.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 46.81,
+    "size_mb": 31.0,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5387 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033339_009.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 25.04,
+    "size_mb": 17.0,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5469 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033511_232.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 15.0,
+    "size_mb": 10.1,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5436 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033542_073.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 29.15,
+    "size_mb": 19.8,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5498 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033627_799.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 16.05,
+    "size_mb": 10.9,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5458 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033703_995.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 48.29,
+    "size_mb": 32.4,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5454 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260628_033815_835.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 13.24,
+    "size_mb": 8.9,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5333 kb/s, SAR 1:1 DAR 9:16, 25 fps, 25 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_105914_519.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 31.78,
+    "size_mb": 21.4,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5451 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110057_695.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 25.2,
+    "size_mb": 17.1,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5463 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110204_315.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 23.79,
+    "size_mb": 16.0,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5432 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110312_925.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 51.89,
+    "size_mb": 34.8,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5453 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110441_357.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 23.97,
+    "size_mb": 16.2,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5443 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110627_016.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 46.3,
+    "size_mb": 31.0,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5450 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110718_275.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.07,
+    "size_mb": 39.4,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5327 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110857_343.mp4",
+    "width": 1280,
+    "height": 2276,
+    "seconds": 26.88,
+    "size_mb": 21.2,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1280x2276, 6383 kb/s, SAR 1:1 DAR 320:569, 25 fps, 25 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_110947_022.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.07,
+    "size_mb": 40.3,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5447 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_111056_477.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 13.45,
+    "size_mb": 9.2,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5454 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_111139_351.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 53.96,
+    "size_mb": 36.1,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5443 kb/s, SAR 1:1 DAR 9:16, 24 fps, 24 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_111434_690.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.07,
+    "size_mb": 40.2,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5441 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_111713_644.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.07,
+    "size_mb": 40.4,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5457 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_111923_995.mp4",
+    "width": 480,
+    "height": 854,
+    "seconds": 60.07,
+    "size_mb": 14.8,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 480x854, 1892 kb/s, SAR 1:1 DAR 240:427, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_115418_744.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 20.74,
+    "size_mb": 14.2,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5484 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_115717_111.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 26.83,
+    "size_mb": 18.1,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5439 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_115945_477.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.07,
+    "size_mb": 39.9,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5391 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Entry\\VID_20260920_121344_785.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 25.62,
+    "size_mb": 17.3,
+    "stream": "Stream #0:0[0x1](eng): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1080x1920, 5456 kb/s, SAR 1:1 DAR 9:16, 30 fps, 30 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "lipdub\\20  Lipdub Video.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 198.37,
+    "size_mb": 478.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20016 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "lipdub\\Bansal Lipdub.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 296.01,
+    "size_mb": 440.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 12287 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "lipdub\\LipDub Video.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 198.63,
+    "size_mb": 2363.0,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 99449 kb/s, 60 fps, 60 tbr, 6k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "lipdub\\Lipdub.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 260.0,
+    "size_mb": 847.4,
+    "stream": "Stream #0:1[0x2](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 27206 kb/s, 60 fps, 60 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "lipdub\\Tanya .mp4",
+    "width": 640,
+    "height": 352,
+    "seconds": 170.69,
+    "size_mb": 23.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, progressive), 640x352, 829 kb/s, 25 fps, 25 tbr, 90k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Aditya _ Sakshi Sangeet(1080P_HD).mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6933.73,
+    "size_mb": 3578.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 4195 kb/s, 25 fps, 25 tbr, 12800 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\arpit_x_diksha_performances (1080p).mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 2175.21,
+    "size_mb": 1491.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 5556 kb/s, 50 fps, 50 tbr, 50 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\C0272.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 45.12,
+    "size_mb": 300.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 53186 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\C0274.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 195.84,
+    "size_mb": 1212.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 49947 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\C0293.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 188.64,
+    "size_mb": 1176.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 50289 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Cousings.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 237.6,
+    "size_mb": 3264.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97044 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Dadi ji.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 37.92,
+    "size_mb": 576.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97109 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Frineds.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 185.76,
+    "size_mb": 2560.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97013 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\IMG_8758.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 208.3,
+    "size_mb": 585.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23328 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "performance\\PH Haldi.MP4",
+    "width": 1080,
+    "height": 1528,
+    "seconds": 71.47,
+    "size_mb": 1424.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1528, 157461 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\PH Sangeet.MP4",
+    "width": 1080,
+    "height": 1528,
+    "seconds": 199.73,
+    "size_mb": 1814.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1528, 75928 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Pragya Solo.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 147.84,
+    "size_mb": 2048.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97084 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\PRAGYA.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 298.56,
+    "size_mb": 3616.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97003 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Sanchit x Pragya.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 193.92,
+    "size_mb": 2196.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 92619 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Sanchit.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 94.32,
+    "size_mb": 226.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 19947 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Sivank x Ayushi.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6434.1,
+    "size_mb": 11976.4,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15401 kb/s, 50 fps, 50 tbr, 5k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Tapan Pragya.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 237.6,
+    "size_mb": 3264.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 96996 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "performance\\Tapan Solo.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 208.8,
+    "size_mb": 2880.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 97054 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sajid Practice video\\After Befor.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 51.69,
+    "size_mb": 113.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 18177 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sajid Practice video\\IMG_9744.MOV",
+    "width": 3840,
+    "height": 2160,
+    "seconds": 76.86,
+    "size_mb": 971.1,
+    "stream": "Stream #0:0[0x1](und): Video: hevc (Main 10) (hvc1 / 0x31637668), yuv420p10le(tv, bt2020nc/bt2020/arib-std-b67), 3840x2160, 105586 kb/s, 59.99 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sajid Practice video\\IMG_9809.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 409.27,
+    "size_mb": 715.6,
+    "stream": "Stream #0:0[0x1](und): Video: hevc (Main 10) (hvc1 / 0x31637668), yuv420p10le(tv, bt2020nc/bt2020/arib-std-b67), 1920x1080, 14391 kb/s, 59.91 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0264.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 256.32,
+    "size_mb": 1604.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 50497 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0266.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 201.6,
+    "size_mb": 1252.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 50038 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0271.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 132.48,
+    "size_mb": 852.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 51775 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0272.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 45.12,
+    "size_mb": 300.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 53186 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0274.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 195.84,
+    "size_mb": 1212.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 49947 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0293.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 188.64,
+    "size_mb": 1176.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 50289 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0298.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 347.52,
+    "size_mb": 2148.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 49851 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi Sangeet\\C0310.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 136.32,
+    "size_mb": 856.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 50647 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8693.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 14.02,
+    "size_mb": 39.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 21128 kb/s, 54.47 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8694.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 1.02,
+    "size_mb": 3.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 10412 kb/s, 25.03 fps, 60 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8696.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 32.9,
+    "size_mb": 92.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23323 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8697.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6.17,
+    "size_mb": 17.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23529 kb/s, 59.97 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8700.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 7.4,
+    "size_mb": 20.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23361 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8701.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 4.42,
+    "size_mb": 12.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23805 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8702.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 5.6,
+    "size_mb": 15.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23563 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8703.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 134.6,
+    "size_mb": 379.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23293 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8704.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 5.82,
+    "size_mb": 16.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23482 kb/s, 59.97 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8730.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 32.56,
+    "size_mb": 91.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23324 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8731.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 10.44,
+    "size_mb": 29.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23473 kb/s, 59.95 fps, 60 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8732.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 18.26,
+    "size_mb": 51.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23480 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8736.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 9.42,
+    "size_mb": 26.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23673 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8737.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 5.6,
+    "size_mb": 16.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23747 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8738.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 8.52,
+    "size_mb": 23.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23250 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8740.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 14.84,
+    "size_mb": 41.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23435 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8741.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 9.34,
+    "size_mb": 26.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23338 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8742.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 11.32,
+    "size_mb": 31.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23358 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8743.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 17.83,
+    "size_mb": 50.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23356 kb/s, 59.97 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8745.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 11.09,
+    "size_mb": 31.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23397 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8746.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 10.72,
+    "size_mb": 30.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23240 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8747.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 4.47,
+    "size_mb": 12.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23622 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8748.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 4.54,
+    "size_mb": 12.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23533 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8749.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6.19,
+    "size_mb": 17.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23717 kb/s, 59.94 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8750.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 2.65,
+    "size_mb": 7.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 24078 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8751.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 3.39,
+    "size_mb": 9.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 24221 kb/s, 59.94 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8753.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 64.46,
+    "size_mb": 181.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23306 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8754.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 10.12,
+    "size_mb": 29.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23626 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8755.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 5.55,
+    "size_mb": 15.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23525 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8756.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6.02,
+    "size_mb": 17.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23638 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8757.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 106.62,
+    "size_mb": 299.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23329 kb/s, 59.96 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sakshi x Aditya\\IMG_8769.MOV",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 13.24,
+    "size_mb": 37.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080, 23426 kb/s, 59.95 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": [
+      "-90.00"
+    ]
+  },
+  {
+    "file": "Sangeet Highlit\\01.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 69.52,
+    "size_mb": 168.1,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 19883 kb/s, 25 fps, 25 tbr, 25 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\02 REEL.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 33.17,
+    "size_mb": 42.4,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(progressive), 1080x1920 [SAR 1:1 DAR 9:16], 10357 kb/s, 60 fps, 60 tbr, 60k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Aayush Monika Sangeet.webm",
+    "width": 3840,
+    "height": 2160,
+    "seconds": 112.46,
+    "size_mb": 200.5,
+    "stream": "Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, bt709), 3840x2160, SAR 1:1 DAR 16:9, 25 fps, 25 tbr, 1k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Akshye x Vidhi.MP4",
+    "width": 1512,
+    "height": 2688,
+    "seconds": 44.93,
+    "size_mb": 163.3,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1512x2688, 30238 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Anuj x Ramya.MP4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 147.67,
+    "size_mb": 1211.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 68545 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Beenu x Chakshima.MP4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 60.0,
+    "size_mb": 162.1,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 22405 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Bridegroom.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 100.15,
+    "size_mb": 193.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 16016 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Drov X Meenu.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 55.1,
+    "size_mb": 135.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20493 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Geetika X Sahil.MP4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 39.3,
+    "size_mb": 100.7,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 21282 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\jaipur highlight.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 157.48,
+    "size_mb": 304.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 16011 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Nikhil X Komal.MP4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 36.1,
+    "size_mb": 90.7,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 20857 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Perfect For The BRIDE.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 89.65,
+    "size_mb": 172.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15979 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Piyush x Chetna.MOV",
+    "width": 614,
+    "height": 1090,
+    "seconds": 13.62,
+    "size_mb": 60.8,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc, bt709, progressive), 614x1090, 10385 kb/s, 60.07 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Rishabh x Sapna.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 43.63,
+    "size_mb": 96.0,
+    "stream": "Stream #0:1[0x1](eng): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 18120 kb/s, 30 fps, 30 tbr, 30k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Rs Sangeet Highlights.mp4",
+    "width": 2560,
+    "height": 1440,
+    "seconds": 99.85,
+    "size_mb": 240.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2560x1440 [SAR 1:1 DAR 16:9], 20012 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Sakshi x Aditya Goa .mp4",
+    "width": 848,
+    "height": 478,
+    "seconds": 95.27,
+    "size_mb": 17.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt470bg/bt470bg/smpte170m, progressive), 848x478, 1182 kb/s, 25 fps, 25 tbr, 30k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Taniqs.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 62.3,
+    "size_mb": 115.6,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15354 kb/s, 50 fps, 50 tbr, 5k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Tanya x Rajit.MP4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 61.45,
+    "size_mb": 163.8,
+    "stream": "Stream #0:1[0x2](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 22106 kb/s, 60 fps, 60 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Highlit\\Tanya.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 28.76,
+    "size_mb": 52.2,
+    "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15006 kb/s, 50 fps, 50 tbr, 5k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Anant Akshita.mp4",
+    "width": 720,
+    "height": 1280,
+    "seconds": 216.25,
+    "size_mb": 73.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 720x1280, 2768 kb/s, 59.94 fps, 59.94 tbr, 600 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Anant Solo Ro..mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 168.9,
+    "size_mb": 306.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15045 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Anant Solo.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 166.91,
+    "size_mb": 303.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15048 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Bridegroom.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 105.0,
+    "size_mb": 190.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15034 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Bridesmaid.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 171.69,
+    "size_mb": 311.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 14997 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Deepali Solo Bride.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 36.99,
+    "size_mb": 67.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15023 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Gulabi.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 29.51,
+    "size_mb": 53.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15023 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Haldi Dance.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 89.23,
+    "size_mb": 162.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15027 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Haldi Ro..mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 91.07,
+    "size_mb": 165.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15034 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Hitakshi.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 24.64,
+    "size_mb": 44.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 14927 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Ishita Solo.mp4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 174.68,
+    "size_mb": 316.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 15014 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Karishma.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 83.41,
+    "size_mb": 220.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 21934 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Ladies.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 73.07,
+    "size_mb": 132.8,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15048 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\lakhan.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 69.29,
+    "size_mb": 125.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15053 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Mummys.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 61.9,
+    "size_mb": 112.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15015 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\NN.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 28.91,
+    "size_mb": 52.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15040 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\PB.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 21.32,
+    "size_mb": 56.5,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 22039 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Rahul.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 35.92,
+    "size_mb": 65.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15015 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Raja.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 66.78,
+    "size_mb": 121.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15015 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Sakshi 1.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 71.75,
+    "size_mb": 189.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 21923 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Sakshi 2.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 89.95,
+    "size_mb": 237.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 21939 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\SB.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 41.63,
+    "size_mb": 110.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 22038 kb/s, 60 fps, 60 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\shalu priyanka.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 25.75,
+    "size_mb": 46.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 14980 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\shalu.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 26.68,
+    "size_mb": 48.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 14946 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Sister.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 43.12,
+    "size_mb": 78.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15041 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Tapan Pragya Reels.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 52.11,
+    "size_mb": 94.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 14999 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Tapan x Pragya.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 85.64,
+    "size_mb": 154.7,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 14956 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Tenu Leke.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 29.05,
+    "size_mb": 52.9,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15094 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Tushar Deepali.mp4",
+    "width": 1080,
+    "height": 1440,
+    "seconds": 97.99,
+    "size_mb": 177.6,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1440 [SAR 1:1 DAR 3:4], 15010 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Tushar grom Solo.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 54.22,
+    "size_mb": 98.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15036 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Sangeet Reels\\Yashvi Solo.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 74.58,
+    "size_mb": 135.4,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 15032 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SJ Logos\\SJ Rels.mp4",
+    "width": 1080,
+    "height": 1920,
+    "seconds": 51.04,
+    "size_mb": 74.2,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 11998 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0092.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 62.88,
+    "size_mb": 740.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 96294 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0093.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 12.0,
+    "size_mb": 148.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 98741 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0094.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 6.72,
+    "size_mb": 88.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 103408 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0095.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 30.24,
+    "size_mb": 356.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 95692 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0096.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 8.16,
+    "size_mb": 100.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 100134 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0126.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 45.6,
+    "size_mb": 552.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 98548 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0134.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 30.24,
+    "size_mb": 372.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 100125 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0139.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 71.04,
+    "size_mb": 852.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 98164 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0157.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 28.32,
+    "size_mb": 348.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 99577 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "Raja Sangeet\\Raja\\25 video\\P\\C0162.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 45.6,
+    "size_mb": 532.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 94866 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\TANYA\\C0334.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 90.24,
+    "size_mb": 604.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 54089 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\TANYA\\C0335.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 12.48,
+    "size_mb": 96.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 60982 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\TANYA\\C0336.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 83.52,
+    "size_mb": 540.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 52074 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\TANYA\\C0339.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 101.76,
+    "size_mb": 672.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 53259 kb/s, 50 fps, 50 tbr, 50k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0327.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 35.52,
+    "size_mb": 260.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 58581 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0328.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 4.32,
+    "size_mb": 36.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 66959 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0334.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 36.48,
+    "size_mb": 264.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 57475 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0347.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 40.32,
+    "size_mb": 288.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 56930 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0348.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 46.56,
+    "size_mb": 340.1,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 58704 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0354.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 5.28,
+    "size_mb": 44.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 64361 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0355.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 22.56,
+    "size_mb": 160.0,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 56707 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  },
+  {
+    "file": "SAJID\\AKSHAY VIDHI\\GIMBLE\\C0361.MP4",
+    "width": 1920,
+    "height": 1080,
+    "seconds": 223.2,
+    "size_mb": 1544.3,
+    "stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/bt709/iec61966-2-4, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 55672 kb/s, 100 fps, 100 tbr, 100k tbn (default)",
+    "rotation": []
+  }
+]

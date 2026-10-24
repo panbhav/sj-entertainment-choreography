@@ -1,0 +1,8 @@
+{
+  "source": "C:\\Users\\Lenovo\\OneDrive\\Pictures\\SJ Choreography\\Sangeet Highlit\\Aayush Monika Sangeet.webm",
+  "start": 70.0,
+  "duration": 4,
+  "filter": "setsar=1,format=yuv420p",
+  "crf": 17,
+  "fps": 25
+}

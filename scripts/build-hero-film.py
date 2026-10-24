@@ -1,69 +1,42 @@
-"""Build the website's silent hero loops from original client footage.
-Originals are read only. Pass --media-root to use a different source folder.
+"""Publish a sharper hero excerpt from the professionally filmed 4K original.
+The primary desktop WebM preserves the original VP9 frames without re-encoding.
 """
 import argparse, json, subprocess
 from pathlib import Path
 import imageio_ffmpeg
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--media-root', type=Path, default=Path(r'C:\Users\Lenovo\OneDrive\Pictures\SJ Choreography'))
-parser.add_argument('--reuse-clips', action='store_true', help='Reuse already prepared shots for this edit')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
-work = root / 'artifacts' / 'hero-edit'
 out = root / 'public' / 'media'
+work = root / 'artifacts' / 'hero-edit-hq'
 work.mkdir(parents=True, exist_ok=True)
-out.mkdir(parents=True, exist_ok=True)
 ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
-# Each shot is 4.4s. Four 0.35s dissolves create a 20.6s edit.
-shots = {
-    'desktop': [
-        ('Sangeet Highlit/Rs Sangeet Highlights.mp4', 59.7, 'Couple dance'),
-        ('Sangeet Highlit/jaipur highlight.mp4', 43.5, 'Family duet'),
-        ('Sangeet Highlit/Rs Sangeet Highlights.mp4', 48.6, 'Family and friends'),
-        ('Sangeet Highlit/Rs Sangeet Highlights.mp4', 68.7, 'Bridal performance'),
-        ('Sangeet Highlit/jaipur highlight.mp4', 88.4, 'Stage finale'),
-    ],
-    'mobile': [
-        ('Sangeet Highlit/Anuj x Ramya.MP4', 104.8, 'Couple dance, portrait original'),
-        ('Sangeet Highlit/jaipur highlight.mp4', 43.5, 'Family duet, centre framing'),
-        ('Sangeet Highlit/Rs Sangeet Highlights.mp4', 48.6, 'Family and friends, centre framing'),
-        ('Sangeet Highlit/Anuj x Ramya.MP4', 64.2, 'Bridal performance, portrait original'),
-        ('Sangeet Highlit/Rs Sangeet Highlights.mp4', 68.7, 'Stage finale, centre framing'),
-    ],
-}
+source = args.media_root / 'Sangeet Highlit' / 'Aayush Monika Sangeet.webm'
+if not source.is_file(): raise FileNotFoundError(source)
+start, duration = 51, 23
 
 def run(arguments):
-    result = subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', *arguments], capture_output=True, text=True, errors='replace')
-    if result.returncode:
-        raise RuntimeError(result.stderr[-3000:])
+ result = subprocess.run([ffmpeg, '-hide_banner', '-loglevel', 'error', '-y', *arguments], capture_output=True, text=True, errors='replace')
+ if result.returncode: raise RuntimeError(result.stderr[-4000:])
 
-for variant, sequence in shots.items():
-    width, height = (1600, 900) if variant == 'desktop' else (720, 1280)
-    clips = []
-    for index, (relative, start, label) in enumerate(sequence):
-        source = args.media_root / relative
-        if not source.is_file():
-            raise FileNotFoundError(source)
-        clip = work / f'{variant}-{index}.mp4'
-        if not (args.reuse_clips and clip.exists() and clip.stat().st_size > 1000):
-            run(['-ss', str(start), '-i', str(source), '-t', '4.4', '-an', '-vf', f'fps=30,scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},setsar=1,format=yuv420p', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-threads', '2', str(clip)])
-        clips.append(clip)
-        print(f'{variant}: prepared {label}', flush=True)
-    inputs = [item for clip in clips for item in ['-i', str(clip)]]
-    graph = [f'[{i}:v]settb=AVTB,setpts=PTS-STARTPTS,fps=30[v{i}]' for i in range(len(clips))]
-    last = 'v0'
-    for index in range(1, len(clips)):
-        tag = f'mix{index}'
-        graph.append(f'[{last}][v{index}]xfade=transition=fade:duration=0.35:offset={4.05*index:.2f},fps=30[{tag}]')
-        last = tag
-    # Close the loop by dissolving into the opening frame near the end.
-    graph.append(f'[0:v]trim=duration=0.35,setpts=PTS-STARTPTS,settb=AVTB,fps=30[opening]')
-    graph.append(f'[{last}][opening]xfade=transition=fade:duration=0.35:offset=20.25,format=yuv420p[final]')
-    target = out / f'hero-film-{variant}.mp4'
-    run([*inputs, '-filter_complex_threads', '2', '-filter_complex', ';'.join(graph), '-map', '[final]', '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '25', '-maxrate', '2400k' if variant == 'desktop' else '1500k', '-bufsize', '4800k' if variant == 'desktop' else '3000k', '-threads', '2', '-g', '60', '-movflags', '+faststart', '-t', '20.6', str(target)])
-    run(['-ss', '1', '-i', str(target), '-frames:v', '1', '-q:v', '3', str(out / f'hero-film-{variant}-poster.jpg')])
-    print(f'{target.name}: {target.stat().st_size / 1048576:.2f} MiB', flush=True)
-(work / 'edit-manifest.json').write_text(json.dumps({'duration_seconds': 20.6, 'audio': False, 'transition_seconds': .35, 'shots': shots}, indent=2))
-print('Both hero films and posters are ready.', flush=True)
+def publish(filename, arguments):
+ destination = out / filename
+ temporary = out / (destination.stem + '.tmp' + destination.suffix)
+ run([*arguments, str(temporary)])
+ temporary.replace(destination)
+ print(f'{filename}: {destination.stat().st_size / 1048576:.2f} MiB', flush=True)
+ return destination
+
+# Original 4K VP9 bitstream: no scaling, second compression, or added soft fades.
+webm = publish('hero-film-4k-desktop.webm', ['-i', str(source), '-ss', str(start), '-t', str(duration), '-map', '0:v:0', '-c:v', 'copy', '-an', '-avoid_negative_ts', 'make_zero'])
+# A high-quality, broadly compatible fallback for browsers without VP9 support.
+common = ['-threads', '2', '-ss', str(start), '-i', str(source), '-t', str(duration), '-an']
+encoding = ['-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-g', '50', '-threads', '4', '-movflags', '+faststart']
+publish('hero-film-hq-desktop.mp4', [*common, '-vf', 'scale=2560:1440:flags=lanczos,setsar=1', *encoding])
+publish('hero-film-hq-mobile.mp4', [*common, '-vf', 'crop=1214:2160:1312:0,scale=1080:1920:flags=lanczos,setsar=1', *encoding])
+run(['-ss', '20.5', '-i', str(webm), '-frames:v', '1', '-q:v', '2', str(out / 'hero-film-4k-desktop-poster.jpg')])
+run(['-ss', '20.5', '-i', str(out / 'hero-film-hq-mobile.mp4'), '-frames:v', '1', '-q:v', '2', str(out / 'hero-film-hq-mobile-poster.jpg')])
+(work / 'edit-manifest.json').write_text(json.dumps({'source': str(source.relative_to(args.media_root)), 'start_seconds': start, 'requested_duration_seconds': duration, 'desktop_native': '3840x2160 VP9, stream copy', 'desktop_fallback': '2560x1440 H264 CRF18', 'mobile': '1080x1920 H264 CRF18 from the 4K original', 'audio': False, 'added_dissolves': False}, indent=2))
+print('Native 4K film, MP4 fallback, mobile film, and posters are ready.', flush=True)
 

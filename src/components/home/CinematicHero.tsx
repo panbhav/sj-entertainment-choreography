@@ -7,14 +7,21 @@ import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
 import { withBasePath } from '@/lib/basePath';
 import './CinematicHero.css';
 
-const desktopFilm = '/media/hero-film-desktop.mp4';
-const mobileFilm = '/media/hero-film-mobile.mp4';
+const desktopFilm = '/media/hero-film-4k-desktop.webm';
+const desktopFallback = '/media/hero-film-hq-desktop.mp4';
+const mobileFilm = '/media/hero-film-hq-mobile.mp4';
+
+function chooseFilm(video: HTMLVideoElement, mobile: boolean, forceCompatible = false) {
+  if (mobile) return mobileFilm;
+  return !forceCompatible && video.canPlayType('video/webm; codecs="vp9"') ? desktopFilm : desktopFallback;
+}
 
 export default function CinematicHero() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const pausedByVisitor = useRef(false);
   const manualPlayback = useRef(false);
+  const useCompatibleDesktop = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -37,7 +44,7 @@ export default function CinematicHero() {
         if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
         return;
       }
-      const source = withBasePath(mobile.matches ? mobileFilm : desktopFilm);
+      const source = withBasePath(chooseFilm(video, mobile.matches, useCompatibleDesktop.current));
       if (video.getAttribute('src') !== source) { video.src = source; video.load(); }
       if (inView && !document.hidden && !pausedByVisitor.current) {
         void video.play().catch(() => { /* The visible play control handles autoplay restrictions. */ });
@@ -61,6 +68,21 @@ export default function CinematicHero() {
     };
   }, []);
 
+  function handleVideoError() {
+    const video = videoRef.current;
+    if (video?.getAttribute('src') === withBasePath(desktopFilm)) {
+      useCompatibleDesktop.current = true;
+      // Some browsers report VP9 support but cannot decode this 4K stream.
+      video.src = withBasePath(desktopFallback);
+      video.load();
+      if (!pausedByVisitor.current && !document.hidden) void video.play().catch(() => setIsPlaying(false));
+      return;
+    }
+    setHasError(true);
+    setIsReady(false);
+    setIsPlaying(false);
+  }
+
   async function togglePlayback() {
     const video = videoRef.current;
     if (!video || hasError) return;
@@ -68,7 +90,7 @@ export default function CinematicHero() {
     pausedByVisitor.current = false;
     manualPlayback.current = true;
     if (!video.getAttribute('src')) {
-      video.src = withBasePath(window.matchMedia('(max-width: 700px)').matches ? mobileFilm : desktopFilm);
+      video.src = withBasePath(chooseFilm(video, window.matchMedia('(max-width: 700px)').matches, useCompatibleDesktop.current));
       video.load();
     }
     try { await video.play(); } catch { setIsPlaying(false); }
@@ -78,14 +100,14 @@ export default function CinematicHero() {
     <section ref={sectionRef} className={'cinema-hero'} aria-labelledby="opening-title">
       <div className={'cinema-background'} aria-hidden="true">
         <picture>
-          <source media="(max-width: 700px)" srcSet={withBasePath('/media/hero-film-mobile-poster.jpg')} />
-          <Image src={withBasePath('/media/hero-film-desktop-poster.jpg')} alt="" fill unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
+          <source media="(max-width: 700px)" srcSet={withBasePath('/media/hero-film-hq-mobile-poster.jpg')} />
+          <Image src={withBasePath('/media/hero-film-4k-desktop-poster.jpg')} alt="" fill unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
         </picture>
         <video ref={videoRef} className={`${'cinema-video'} ${isReady ? 'cinema-ready' : ''}`} muted loop playsInline preload="none" tabIndex={-1}
           onPlaying={() => { setHasError(false); setIsPlaying(true); setIsReady(true); }}
           onPause={() => setIsPlaying(false)}
           onEmptied={() => { setIsReady(false); setIsPlaying(false); }}
-          onError={() => { setHasError(true); setIsReady(false); setIsPlaying(false); }}
+          onError={handleVideoError}
         />
         <div className={'cinema-shade'} />
       </div>
