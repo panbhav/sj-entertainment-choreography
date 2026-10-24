@@ -1,0 +1,19 @@
+.portfolio-page { gap: 0; }
+.portfolio-page > section:first-child { padding-top: 64px; padding-bottom: 42px; }
+.portfolio-page h1 { max-width: 800px; margin: 12px auto 0; font-size: clamp(40px, 5.5vw, 72px); font-weight: 400; line-height: 1.08; letter-spacing: -.045em; }
+.portfolio-page > section:first-child p { max-width: 590px; font-size: 16px; }
+.portfolio-page .portfolio-grid { gap: 52px 32px; }
+.portfolio-film { min-width: 0; }
+.portfolio-cover { border-radius: 5px; background: #24141d; }
+.portfolio-film h3 { font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; margin-top: 10px; margin-bottom: 10px; }
+.portfolio-film p { max-width: 470px; font-size: 14px; }
+.portfolio-film .portfolio-cover button:focus-visible { outline: 3px solid #bd954e; outline-offset: -3px; }
+.portfolio-page > section:last-child { margin-top: 100px; }
+@media (max-width: 767px) {
+ .portfolio-page > section:first-child { padding-top: 38px; padding-bottom: 30px; }
+ .portfolio-page .portfolio-grid { gap: 38px; }
+ .portfolio-page > section:last-child { margin-top: 64px; }
+}
+
+.portfolio-page > section + section { margin-top: 0; }
+.portfolio-page > section:last-child { margin-top: 90px; }

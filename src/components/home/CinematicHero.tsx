@@ -7,13 +7,11 @@ import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
 import { withBasePath } from '@/lib/basePath';
 import './CinematicHero.css';
 
-const desktopFilm = '/media/hero-film-4k-desktop.webm';
-const desktopFallback = '/media/hero-film-hq-desktop.mp4';
-const mobileFilm = '/media/hero-film-hq-mobile.mp4';
+const desktopFilm = '/media/hero-film-montage-desktop.mp4';
+const mobileFilm = '/media/hero-film-montage-mobile.mp4';
 
-function chooseFilm(video: HTMLVideoElement, mobile: boolean, forceCompatible = false) {
-  if (mobile) return mobileFilm;
-  return !forceCompatible && video.canPlayType('video/webm; codecs="vp9"') ? desktopFilm : desktopFallback;
+function chooseFilm(mobile: boolean) {
+  return mobile ? mobileFilm : desktopFilm;
 }
 
 export default function CinematicHero() {
@@ -21,7 +19,6 @@ export default function CinematicHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const pausedByVisitor = useRef(false);
   const manualPlayback = useRef(false);
-  const useCompatibleDesktop = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -40,14 +37,13 @@ export default function CinematicHero() {
       const automaticPlayback = !reducedMotion.matches && !connection?.saveData;
       if (!automaticPlayback && !manualPlayback.current) {
         video.pause();
-        // Keep the responsive poster and avoid downloading the film in this mode.
         if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
         return;
       }
-      const source = withBasePath(chooseFilm(video, mobile.matches, useCompatibleDesktop.current));
+      const source = withBasePath(chooseFilm(mobile.matches));
       if (video.getAttribute('src') !== source) { video.src = source; video.load(); }
       if (inView && !document.hidden && !pausedByVisitor.current) {
-        void video.play().catch(() => { /* The visible play control handles autoplay restrictions. */ });
+        void video.play().catch(() => { /* Autoplay restriction handled by visible play button */ });
       } else { video.pause(); }
     }
     const observer = new IntersectionObserver(([entry]) => {
@@ -69,15 +65,6 @@ export default function CinematicHero() {
   }, []);
 
   function handleVideoError() {
-    const video = videoRef.current;
-    if (video?.getAttribute('src') === withBasePath(desktopFilm)) {
-      useCompatibleDesktop.current = true;
-      // Some browsers report VP9 support but cannot decode this 4K stream.
-      video.src = withBasePath(desktopFallback);
-      video.load();
-      if (!pausedByVisitor.current && !document.hidden) void video.play().catch(() => setIsPlaying(false));
-      return;
-    }
     setHasError(true);
     setIsReady(false);
     setIsPlaying(false);
@@ -90,7 +77,7 @@ export default function CinematicHero() {
     pausedByVisitor.current = false;
     manualPlayback.current = true;
     if (!video.getAttribute('src')) {
-      video.src = withBasePath(chooseFilm(video, window.matchMedia('(max-width: 700px)').matches, useCompatibleDesktop.current));
+      video.src = withBasePath(chooseFilm(window.matchMedia('(max-width: 700px)').matches));
       video.load();
     }
     try { await video.play(); } catch { setIsPlaying(false); }
@@ -100,8 +87,8 @@ export default function CinematicHero() {
     <section ref={sectionRef} className={'cinema-hero'} aria-labelledby="opening-title">
       <div className={'cinema-background'} aria-hidden="true">
         <picture>
-          <source media="(max-width: 700px)" srcSet={withBasePath('/media/hero-film-hq-mobile-poster.jpg')} />
-          <Image src={withBasePath('/media/hero-film-4k-desktop-poster.jpg')} alt="" fill unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
+          <source media="(max-width: 700px)" srcSet={withBasePath('/media/hero-film-montage-mobile-poster.jpg')} />
+          <Image src={withBasePath('/media/hero-film-montage-desktop-poster.jpg')} alt="" fill unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
         </picture>
         <video ref={videoRef} className={`${'cinema-video'} ${isReady ? 'cinema-ready' : ''}`} muted loop playsInline preload="none" tabIndex={-1}
           onPlaying={() => { setHasError(false); setIsPlaying(true); setIsReady(true); }}
@@ -130,4 +117,3 @@ export default function CinematicHero() {
     </section>
   );
 }
-

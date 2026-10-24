@@ -7,6 +7,7 @@ interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl?: string;
+  posterUrl?: string;
   title: string;
 }
 
@@ -21,7 +22,7 @@ function youtubeEmbed(source: string): string | null {
   } catch { return null; }
 }
 
-export default function VideoModal({ isOpen, onClose, videoUrl, title }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose, videoUrl, posterUrl, title }: VideoModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [failed, setFailed] = useState(false);
 
@@ -85,6 +86,8 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }: VideoMo
           ) : (
             <video
               src={resolvedVideoSrc || undefined}
+              poster={posterUrl ? withBasePath(posterUrl) : undefined}
+              preload="metadata"
               controls
               autoPlay
               playsInline

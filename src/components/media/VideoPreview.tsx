@@ -17,6 +17,6 @@ export default function VideoPreview({ media, className = '', variant = 'wine' }
         {media.caption && <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-4 text-white text-xs">{media.caption}</span>}
       </button>}
     </div>
-    {hasVideo && modalOpen && <VideoModal isOpen onClose={() => setModalOpen(false)} videoUrl={media.sourceUrl} title={media.title} />}
+    {hasVideo && modalOpen && <VideoModal isOpen onClose={() => setModalOpen(false)} videoUrl={media.sourceUrl} posterUrl={media.posterUrl} title={media.title} />}
   </>;
 }

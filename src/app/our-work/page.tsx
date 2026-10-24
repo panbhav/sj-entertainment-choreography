@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles, Info, ArrowRight, Play } from 'lucide-react';
+import { Sparkles, ArrowRight, Play } from 'lucide-react';
 import { portfolioPreviewSlots, getPublishedProjects, PortfolioCategory } from '@/content/portfolio';
 import { withBasePath } from '@/lib/basePath';
 import MediaPlaceholder from '@/components/media/MediaPlaceholder';
@@ -11,18 +11,19 @@ import ResponsiveImage from '@/components/media/ResponsiveImage';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 import VideoModal from '@/components/media/VideoModal';
+import './OurWork.css';
 
 export default function OurWorkPage() {
   const [activeFilter, setActiveFilter] = useState<PortfolioCategory>('all');
-  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string; posterUrl?: string } | null>(null);
 
   const publishedProjects = getPublishedProjects();
 
   const filterOptions: { id: PortfolioCategory; label: string }[] = [
-    { id: 'all', label: 'All Showcases' },
+    { id: 'all', label: 'All films' },
     { id: 'choreography', label: 'Choreography' },
     { id: 'couple-entry', label: 'Couple Entries' },
-    { id: 'artists', label: 'Artists & Entertainment' },
+    { id: 'rehearsals', label: 'Rehearsals & BTS' },
   ];
 
   // Filter preview slots based on active tab
@@ -32,7 +33,7 @@ export default function OurWorkPage() {
   });
 
   return (
-    <div className="interior-page flex flex-col space-y-20 md:space-y-28">
+    <div className="interior-page portfolio-page flex flex-col">
       {/* =========================================================================
           HERO & GALLERY INTRODUCTION
           ========================================================================= */}
@@ -40,26 +41,18 @@ export default function OurWorkPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7EDF1] text-[#641C32] border border-[#BD954E]/30 text-xs font-semibold tracking-wider uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#BD954E]" />
-            <span>Showcase & Portfolio</span>
+            <span>THE SJ FILM COLLECTION</span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2C0713] leading-tight">
-            Our Work
+            Real moments. Unforgettable moves.
           </h1>
 
           <p className="text-base sm:text-lg text-[#575253] leading-relaxed mt-4 max-w-2xl mx-auto">
-            Celebration films, stage highlights, and grand entry captures by Sajid & Joya.
+            From the first rehearsal to the final spotlight. Explore real performances, family celebrations and couple reveals by Sajid & Joya.
           </p>
 
-          {/* Portfolio Note */}
-          <div className="mt-8 p-4 rounded-2xl bg-[#FAF6EF] border border-[#DFCBB0] max-w-2xl mx-auto flex items-start gap-3 text-left">
-            <Sparkles className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
-            <div className="text-xs text-[#575253] leading-relaxed">
-              <span className="font-semibold text-[#4A1525]">Celebration Films:</span> Tap any
-              showcase card below to watch actual wedding choreography routines, grand couple
-              entries, and behind-the-scenes rehearsals crafted by Sajid & Joya.
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -90,25 +83,26 @@ export default function OurWorkPage() {
         </div>
 
         {/* Gallery Preview Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="portfolio-grid grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredSlots.map((slot) => (
             <div
               key={slot.id}
-              className="bg-white rounded-3xl border border-[#E8DFD5] p-5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="portfolio-film flex flex-col justify-between group"
             >
               <div>
-                <div className="mb-4 overflow-hidden rounded-2xl">
+                <div className="portfolio-cover mb-5 overflow-hidden">
                   {slot.isAvailable && slot.sourceUrl ? (
                     <button
                       type="button"
-                      onClick={() => setSelectedVideo({ url: slot.sourceUrl!, title: slot.title })}
-                      className="relative block w-full overflow-hidden rounded-2xl group/btn text-left aspect-video bg-[#2C0713]"
+                      onClick={() => setSelectedVideo({ url: slot.sourceUrl!, title: slot.title, posterUrl: slot.posterUrl })}
+                      className="relative block w-full overflow-hidden group/btn text-left aspect-video bg-[#2C0713]"
                       aria-label={`Play film: ${slot.title}`}
                     >
                       <Image
                         src={withBasePath(slot.posterUrl)}
                         alt={slot.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         unoptimized
                         className="object-cover transition-transform duration-500 group-hover/btn:scale-105"
                       />
@@ -134,7 +128,7 @@ export default function OurWorkPage() {
                     {slot.categoryLabel}
                   </span>
                   <span className="text-[10px] text-[#BD954E] uppercase tracking-wider font-semibold">
-                    {slot.isAvailable ? 'Celebration Film' : 'Coming Soon'}
+                    {slot.duration} / WATCH FILM
                   </span>
                 </div>
 
@@ -148,12 +142,12 @@ export default function OurWorkPage() {
               </div>
 
               <div className="pt-4 mt-4 border-t border-[#F4ECE1] flex items-center justify-between text-xs">
-                <span className="text-[#888182]">Showcase Film</span>
+                <span className="text-[#888182]">SJ FILMS</span>
                 <Link
-                  href={`/contact?service=${encodeURIComponent(slot.category)}`}
+                  href={`/contact?service=${encodeURIComponent(slot.enquiryService)}`}
                   className="font-semibold text-[#4A1525] hover:text-[#641C32] inline-flex items-center gap-1"
                 >
-                  <span>Enquire for similar routine</span>
+                  <span>Plan a moment like this</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#BD954E]" />
                 </Link>
               </div>
@@ -217,6 +211,7 @@ export default function OurWorkPage() {
           isOpen={Boolean(selectedVideo)}
           onClose={() => setSelectedVideo(null)}
           videoUrl={selectedVideo.url}
+          posterUrl={selectedVideo.posterUrl}
           title={selectedVideo.title}
         />
       )}
