@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/couple-entries-entertainment/stage-procession-acts-live-entertainment' },
   title: 'Stage & Procession Acts, Artists & Live Entertainment | Sajid & Joya',
   description:
-    'Curated live wedding entertainment by Sajid & Joya across India: symphonic dhol ensembles, professional dance troupes, folk performers, live vocalists, classical instrumentalists, celebrity emcees, and visual spectacles.',
+    'Curated live wedding entertainment by Sajid & Joya across India: professional dance troupes, folk performers, live vocalists, classical instrumentalists, celebrity emcees, and visual spectacles.',
 };
 
 export default function StageProcessionActsPage() {

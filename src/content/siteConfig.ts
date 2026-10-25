@@ -66,9 +66,9 @@ export const siteConfig: SiteConfig = {
     {
       platform: 'youtube',
       label: 'YouTube',
-      url: 'https://www.youtube.com/',
+      url: 'https://www.youtube.com/@SJEntertaninmentChoreography',
       isConfigured: true,
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
     {
       platform: 'facebook',

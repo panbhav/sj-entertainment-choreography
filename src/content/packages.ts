@@ -45,7 +45,7 @@ export const experienceCombinations: ExperienceCombination[] = [
     combinableServices: [
       'Couple, Bridal, or Groom Entry choreography & direction',
       'Curated entry music arrangement and vocal preludes',
-      'Live Dhol, acoustic instrumentalists, or folk escorts',
+      'Acoustic instrumentalists or folk escorts',
       'Coordinated flash mob or bridal squad entry walk',
       'On-ground timing alignment with lighting & special effects teams',
     ],
@@ -61,22 +61,24 @@ export const experienceCombinations: ExperienceCombination[] = [
   {
     id: 'complete-celebration',
     name: 'Complete Celebration',
-    tagline: 'Comprehensive choreography, grand entries, and live entertainment direction',
-    idealFor: 'Couples and multi-day celebrations seeking holistic entertainment curation from Haldi to Reception.',
+    tagline: 'Your story, grand entries and a Sangeet with star-night energy',
+    idealFor: 'Couples and families who want a connected entertainment experience, from Haldi to Reception.',
     summary:
-      'A seamless entertainment journey spanning multiple ceremonies. Sajid & Joya oversee all choreography sequences, design grand entries, and integrate live performers and our crowd-favourite “Dance Along with SJ” session.',
+      'Turn your celebrations into a show that feels like you. Sajid & Joya bring together story-based dances, grand entry props and a Sangeet with music, dialogues and family moments, so each performance flows naturally into the next.',
     combinableServices: [
-      'Multi-event choreography (Haldi, Mehendi, Sangeet & Reception)',
-      'Couple, Bridal, and Groom custom entry concepts',
-      'Dance Along with SJ interactive wedding session',
-      'Coordination of live artist acts, dhol ensembles, or dance troupes',
-      'Dedicated on-site rehearsal and event-day stage management',
+      'Choreography for Haldi, Mehendi, Sangeet and Reception',
+      'Large props for couple entries and performances, chosen to suit your theme',
+      'Concept and story-based choreography — from a “Love Birds” theme to your own love story',
+      'A star-night-style Sangeet with scripted dialogues, musical transitions and spotlight moments',
+      'Background artists and dance troupes to support entries and performances',
+      'Dance Along with SJ, fun family introductions and an everyone-together finale',
+      'Rehearsals and event-day coordination of music, lighting and stage cues',
     ],
     planningFocus: [
-      'Multi-day timeline and sequence scheduling across venues',
-      'Holistic musical flow and diverse genre curation',
-      'Artist selection and technical rider coordination',
-      'Comprehensive travel logistics and on-ground presence',
+      'Your story, theme, favourite songs and dialogue language',
+      'Prop size, entry route and stage space at your venue',
+      'Performers, rehearsal time and the running order for each function',
+      'Selected props, artists, production arrangements and travel agreed in your personalised quote',
     ],
     queryParam: 'complete-celebration',
     featured: true,
@@ -107,7 +109,7 @@ export const quotationFactors = [
   {
     title: 'Artists & Live Production',
     description:
-      'Involvement of live dhol ensembles, dance troupes, emcees, instrumentalists, and special stage cues.',
+      'Involvement of dance troupes, emcees, instrumentalists, and special stage cues.',
   },
   {
     title: 'Travel & Accommodation Logistics',

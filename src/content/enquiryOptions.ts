@@ -19,7 +19,7 @@ const baseServiceOptions = [
   { value: 'groom-solo', label: 'Groom Solo / Squad Routine' },
   { value: 'grand-entry-experience', label: 'Grand Couple or Bridal Entry Concept' },
   { value: 'complete-celebration', label: 'Complete Multi-Day Celebration Curation' },
-  { value: 'artists-entertainment', label: 'Live Artists, Dhol & Entertainment' },
+  { value: 'artists-entertainment', label: 'Live Artists & Entertainment' },
   { value: 'custom-combination', label: 'Custom Combination / Inquire Generally' },
 ];
 

@@ -211,10 +211,10 @@ export default function PackagesPage() {
                 Dedicated Page 02
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
-                Couple Entries & Live Entertainment
+                Couple Entries & Artist Entertainment
               </h3>
               <p className="text-sm text-[#575253] leading-relaxed">
-                Theatrical arrival concepts, live dhol ensembles, folk troupes, and spectacular ceremony reveals across India.
+                Theatrical arrival concepts, folk troupes, and spectacular ceremony reveals across India.
               </p>
             </div>
             <div className="pt-6 mt-4 border-t border-[#F4ECE1] flex items-center justify-between text-xs font-semibold text-[#4A1525]">

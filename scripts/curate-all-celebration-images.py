@@ -94,7 +94,7 @@ subtypes = {
     'bhaat-generations': (os.path.join(MEDIA, 'step_1567_media_0.jpg'), None),
     
     # Wedding Day
-    'wedding-baraat': (os.path.join(BRAIN, 'baraat_dhol_ensemble_1792866271950.jpg'), None),
+    'wedding-baraat': (os.path.join(MEDIA, 'step_1512_media_0.jpg'), None),
     'wedding-bridal-entry': (os.path.join(BRAIN, 'indian_bridal_entry_phoolon_ki_chaadar_1792866260673.jpg'), None),
     'wedding-couple-reveal': (os.path.join(BRAIN, 'indian_wedding_magical_entry_1792866264516.jpg'), None),
     'wedding-welcome': (os.path.join(BRAIN, 'dramatic_bridal_entry_1792866262668.jpg'), None),

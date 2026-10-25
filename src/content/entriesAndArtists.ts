@@ -198,18 +198,6 @@ export const artistCategories: ArtistCategory[] = [
     isPublished: true,
   },
   {
-    id: 'dhol-artists',
-    name: 'Symphonic Dhol Ensembles & Percussionists',
-    subtitle: 'Unstoppable Punjabi and fusion beats to ignite the celebration',
-    description:
-      'Energetic traditional and fusion dhol players to lead the Baraat, amplify the Groom entry, or kick off the after-party dance floor with thunderous live rhythm.',
-    imageUrl: '/images/artists/dhol-artists.webp',
-    suggestedMoments: ['Baraat Procession', 'Milni Ceremony', 'Sangeet After-Party Kickoff'],
-    productionNotes: 'Acoustic and wireless mic options coordinated based on indoor or outdoor venue restrictions.',
-    queryParam: 'dhol-artists',
-    isPublished: true,
-  },
-  {
     id: 'folk-performers',
     name: 'Authentic Regional & Folk Artists',
     subtitle: 'Rich cultural vibrancy rooted in heritage traditions',

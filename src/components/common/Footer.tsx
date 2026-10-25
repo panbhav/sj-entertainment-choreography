@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Monogram from './Monogram';
 import SocialIcon from './SocialIcons';
-import { siteConfig, getConfiguredSocials, hasDirectContactInfo } from '@/content/siteConfig';
+import { siteConfig, getConfiguredSocials, hasDirectContactInfo, getSocialPreviewNote } from '@/content/siteConfig';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { businessLocations } from '@/content/locations';
 
@@ -187,7 +187,7 @@ export default function Footer() {
                 <div className="text-[11px] uppercase tracking-wider text-[#D4B272] mb-2 font-medium">
                   Find our rhythm
                 </div>
-                {configuredSocials.some(social => social.isPlaceholder) && <p className="text-xs text-[#EAD9B7]/75 mb-3">Profile links coming soon · platform previews</p>}
+                {getSocialPreviewNote() && <p className="text-xs text-[#EAD9B7]/75 mb-3">{getSocialPreviewNote()}</p>}
                 <div className="flex items-center gap-2">
                   {configuredSocials.map((social) => (
                     <a

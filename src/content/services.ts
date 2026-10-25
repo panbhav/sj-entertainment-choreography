@@ -214,6 +214,20 @@ export const signaturePerformances: ServiceItem[] = [
     serviceCategory: 'performance',
     queryParam: 'surprise-performance',
   },
+  {
+    id: 'cousins-dance',
+    name: 'Cousins Dance',
+    subtitle: 'Your favourite cousins, one unforgettable wedding performance',
+    description:
+      'Bring the cousin gang together for a fun Sangeet or wedding dance. We mix your favourite songs, playful family moments and easy group steps into a performance that suits everyone, including first-time dancers.',
+    highlights: [
+      'Bollywood medleys, cousin face-offs and a shared finale',
+      'Simple formations and a spotlight moment for every cousin',
+      'In-person or online rehearsals for cousins in different cities',
+    ],
+    serviceCategory: 'performance',
+    queryParam: 'cousins-dance',
+  },
 ];
 
 /**
@@ -259,6 +273,14 @@ export const rehearsalOptions: RehearsalOption[] = [
     description:
       'On-site technical walk-through, sound checks, light cue coordination, and backstage line-up direction on the event day.',
     availabilityNote: 'Subject to schedule and event team coordination.',
+    isStandardOption: true,
+  },
+  {
+    id: 'online-dance-sessions',
+    title: 'Online Dance Sessions',
+    description:
+      'Learn your wedding dance from home through live, step-by-step online sessions with SJ. Practise your couple dance, solo or cousins routine with clear demonstrations and real-time feedback on steps, timing and expressions, at a pace that feels comfortable.',
+    availabilityNote: 'Session timings and frequency are planned around your availability and wedding date.',
     isStandardOption: true,
   },
 ];

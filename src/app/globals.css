@@ -164,7 +164,7 @@ button { cursor: pointer; }
 .founder-art > div { border-radius: 170px 170px 2px 2px; max-height: 470px; }
 .founder-art .media-art-label { display: none; }
 .founder-art .media-art-initials { font-size: 115px; }
-.founder-signature { display: block; position: absolute; bottom: 32px; left: 0; width: 100%; text-align: center; color: #e9d7b9; font: italic 34px var(--font-display), Georgia, serif; }
+.founder-signature { display: block; position: absolute; bottom: 32px; left: 0; width: 100%; text-align: center; color: #e9d7b9; font: 500 34px/1.2 var(--font-display), Georgia, serif; letter-spacing: .01em; }
 .founder-copy > p:not(.eyebrow) { color: #6b6059; font-size: 12px; line-height: 2; margin-top: 22px; }
 .founder-values { display: flex; flex-wrap: wrap; gap: 12px 22px; margin: 24px 0 16px; font-size: 9px; color: #74583a; }
 .founder-values span { display: flex; align-items: center; gap: 7px; }

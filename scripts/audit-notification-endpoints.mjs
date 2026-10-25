@@ -13,7 +13,7 @@ async function check(route, body, expected, headers = {}) {
   assert.equal(response.status, expected, `${route}: expected ${expected}, got ${response.status}`);
   return response;
 }
-const team = { name: 'Audit Visitor', phone: '0000000000', city: 'Jaipur', area: 'Choreography', experience: 'Just starting out', availability: 'Project-based / freelance', skills: 'Website audit only. Do not send.', portfolio: '' };
+const team = { name: 'Audit Visitor', phone: '0000000000', city: 'Jaipur', area: 'Choreographer', experience: 'Just starting out', availability: 'Project-based / freelance', skills: 'Website audit only. Do not send.', portfolio: '' };
 const enquiry = { name: 'Audit Visitor', phone: '0000000000', eventCity: 'Jaipur', serviceInterests: ['wedding-content', 'background-artists'] };
 for (const route of ['enquire', 'team']) {
   for (const invalid of ['{', 'null', '[]', '{}']) await check(route, invalid, 400);

@@ -4,6 +4,14 @@
 
 The tested local website passes the page, link, responsive-layout, media-playback and form-validation checks described below. Several verified issues were corrected. It is **not ready for live automated enquiries yet**: notification provider credentials, an approved WhatsApp template/sender and server hosting remain to be configured. No real enquiry or recruitment notification was sent during this audit.
 
+## Follow-up: artist entertainment and continuous homepage film
+
+Dedicated Page 02 cards, the entries page title and its metadata now use “Couple Entries & Artist Entertainment”. Removed the dhol artist category, enquiry choice wording, package inclusions, descriptive references and dedicated dhol images. The Baraat movement reference now uses an existing group-dance photograph, labelled as a movement reference.
+
+The homepage film now requests muted inline autoplay with continuous looping and has no pause control or application-driven offscreen/reduced-motion/save-data pause. A play/retry control is shown only when playback is blocked or fails; browser/device policies can still prevent autoplay. The earlier video-control checks below describe the previous implementation.
+
+Follow-up checks: lint (zero warnings), TypeScript and production build passed; 20 pages, 176 links/anchors and 113 assets checked with zero failures. Browser checks confirmed active desktop/mobile playback, the correct mobile source, loop enabled, no hero pause button, no mobile horizontal overflow at 390 px, the renamed dedicated-page heading/card, and no dhol enquiry options. Screenshots: `hero-no-pause.png`, `hero-no-pause-mobile.png`, `artist-entertainment-renamed.png`.
+
 ## Follow-up: dedicated Wedding Content & Reels page
 
 The Experiences menu, footer, package and entertainment links now open `/wedding-content-reels`. The homepage keeps a compact preview, and each preview format links to its definition on the dedicated page. The new page includes four detailed formats, suggested capture moments, output guidance, a three-step process, scope/delivery notes, four FAQs and individual enquiry links.
@@ -58,7 +66,7 @@ A limited computed-colour check and visual review informed the contrast refineme
 - **Hosting controls:** the rate limiter is per process and depends on a trusted ingress overwriting forwarded IP headers. Configure host-level abuse protection and delivery-failure monitoring. Static GitHub Pages cannot execute the form API routes.
 - **Security scope:** the current CSP permits inline scripts/styles for compatibility with this Next.js rendering setup. No authenticated administration surface or penetration test was part of this review; dependency and source checks do not certify the site against every attack.
 - **Production identity:** set the final `NEXT_PUBLIC_SITE_URL` and verify production HTTPS, canonical URLs, robots and headers on the actual host. Staging remains noindex without that setting.
-- **Intentional placeholders:** real Instagram/YouTube/Spotify destinations and approved brand/property names are still pending. Current generic social links and fictional brand names are visibly identified as previews.
+- **Intentional placeholders:** YouTube and Spotify destinations remain generic previews. Instagram now uses the supplied SJ profile. The homepage venue/brand section uses the owner-supplied names, with spelling normalised where identifiable; these relationships have not been independently verified.
 - **Owner content:** confirm business claims and finalise the draft privacy/terms content before launch.
 
 ## Evidence files

@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { connection } from 'next/server';
 import { Sparkles, MapPin, Phone, Mail, Music } from 'lucide-react';
-import { siteConfig, getConfiguredSocials, hasDirectContactInfo } from '@/content/siteConfig';
+import { siteConfig, getConfiguredSocials, hasDirectContactInfo, getSocialPreviewNote } from '@/content/siteConfig';
 import SocialIcon from '@/components/common/SocialIcons';
 import { notificationsConfigured } from '@/lib/server-notifications';
 import EnquiryForm from '@/components/enquiry/EnquiryForm';
@@ -96,7 +96,7 @@ export default async function ContactPage() {
                 <h2 className="text-xs font-semibold uppercase tracking-wider text-[#70656A]">
                   Connect on Social
                 </h2>
-                <p className="text-xs text-[#70656A]">Profile links coming soon. These previews open the platforms.</p>
+                {getSocialPreviewNote() && <p className="text-xs text-[#70656A]">{getSocialPreviewNote()}</p>}
                 <div className="flex items-center gap-3">
                   {configuredSocials.map((social) => (
                     <a

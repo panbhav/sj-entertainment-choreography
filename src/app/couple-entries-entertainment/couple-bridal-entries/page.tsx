@@ -229,7 +229,7 @@ export default function CoupleBridalEntriesPage() {
               Stage & Procession Acts, Artists & Live Entertainment
             </h3>
             <p className="text-xs sm:text-sm text-[#DFCBB0] leading-relaxed">
-              Complement your entrance and choreography with symphonic dhol ensembles, live bands, regional folk dancers, and visual spectacle acts.
+              Complement your entrance and choreography with live bands, regional folk dancers, and visual spectacle acts.
             </p>
           </div>
 

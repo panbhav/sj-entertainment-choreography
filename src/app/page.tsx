@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowUpRight, Award, Check, Music2, Sparkles } from 'lucide-react';
 import { getMedia } from '@/content/media';
-import { getPublishedTestimonials } from '@/content/testimonials';
+import ClientReviews from '@/components/home/ClientReviews';
 import VideoPreview from '@/components/media/VideoPreview';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
 import CinematicHero from '@/components/home/CinematicHero';
@@ -53,7 +53,6 @@ const steps = [
 
 export default function HomePage() {
 
-  const testimonials = getPublishedTestimonials();
 
   return (
     <div className="home-page">
@@ -180,21 +179,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {testimonials.length > 0 && (
-        <section className="editorial-section site-container">
-          <p className="eyebrow">LOVE NOTES</p>
-          <h2>Kind words, <em>beautiful memories.</em></h2>
-          <div className="experience-grid">
-            {testimonials.map((t) => (
-              <blockquote className="testimonial" key={t.id}>
-                <p>“{t.quote}”</p>
-                <cite>{t.clientNames}</cite>
-              </blockquote>
-            ))}
-          </div>
-        </section>
-      )}
-
       <PartnerMarquee />
       <SocialLounge />
 
@@ -205,6 +189,7 @@ export default function HomePage() {
         buttonHref="/contact"
         className="home-enquiry"
       />
+      <ClientReviews />
     </div>
   );
 }

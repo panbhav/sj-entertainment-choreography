@@ -31,7 +31,7 @@ const visuals: Record<string, { src: string; caption: string }> = {
   'bhaat-generations': { src: '/images/celebrations/subtypes/bhaat-generations.webp', caption: 'Multi-generation routine — performance reference' },
 
   // Wedding Day
-  'wedding-baraat': { src: '/images/celebrations/subtypes/wedding-baraat.webp', caption: 'Baraat procession — concept inspiration' },
+  'wedding-baraat': { src: '/images/celebrations/subtypes/sangeet-groom-squad.webp', caption: 'Energetic group dance — movement reference' },
   'wedding-bridal-entry': { src: '/images/celebrations/subtypes/wedding-bridal-entry.webp', caption: 'Bridal aisle walk — concept inspiration' },
   'wedding-couple-reveal': { src: '/images/celebrations/subtypes/wedding-couple-reveal.webp', caption: 'Couple reveal — concept inspiration' },
   'wedding-welcome': { src: '/images/celebrations/subtypes/wedding-welcome.webp', caption: 'Wedding welcome arrival — concept inspiration' },

@@ -20,9 +20,9 @@ import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/couple-entries-entertainment' },
-  title: 'Grand Couple Entries & Live Entertainment | Sajid & Joya',
+  title: 'Grand Couple Entries & Artist Entertainment | Sajid & Joya',
   description:
-    'Theatrical couple arrivals, bridal walks, symphonic dhol ensembles, and live artist curation by Sajid & Joya for luxury weddings across India.',
+    'Theatrical couple arrivals, bridal walks, and live artist curation by Sajid & Joya for luxury weddings across India.',
 };
 
 export default function CoupleEntriesEntertainmentPage() {
@@ -47,7 +47,7 @@ export default function CoupleEntriesEntertainmentPage() {
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#2C0713] leading-tight">
-                Grand Couple Entries & Live Entertainment
+                Grand Couple Entries & Artist Entertainment
               </h1>
 
               <p className="text-base sm:text-lg text-[#575253] leading-relaxed">
@@ -218,7 +218,7 @@ export default function CoupleEntriesEntertainmentPage() {
                 Stage & Procession Acts Artists & Live Entertainment
               </h2>
               <p className="text-sm sm:text-base text-[#575253] leading-relaxed mt-3">
-                Complement your wedding choreography with live performers, symphonic dhol ensembles,
+                Complement your wedding choreography with live performers,
                 authentic regional folk artists, soulful vocalists, and breathtaking visual spectacles.
               </p>
             </div>
