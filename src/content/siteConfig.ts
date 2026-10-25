@@ -54,14 +54,14 @@ export const siteConfig: SiteConfig = {
     coverageNote: "Based in Alwar, Rajasthan and Mumbai. Available for destination and local wedding celebrations across India.",
   },
 
-  // Generic platform destinations are intentional previews until real profile URLs arrive.
+  // Real profiles are enabled as supplied; remaining generic destinations are labelled previews.
   socials: [
     {
       platform: 'instagram',
       label: 'Instagram',
-      url: 'https://www.instagram.com/',
+      url: 'https://www.instagram.com/sj_entertainment_choreography/',
       isConfigured: true,
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
     {
       platform: 'youtube',
@@ -110,6 +110,14 @@ export const siteConfig: SiteConfig = {
  */
 export function getConfiguredSocials(): SocialLink[] {
   return siteConfig.socials.filter((s) => s.isConfigured && s.url.trim().length > 0);
+}
+
+export function getSocialPreviewNote(): string {
+  const names = getConfiguredSocials().filter(social => social.isPlaceholder)
+    .map(social => social.platform === 'spotify' ? 'Spotify' : social.label);
+  if (!names.length) return '';
+  if (names.length === 1) return `${names[0]} is a platform preview; the profile link is coming soon.`;
+  return `${names.slice(0, -1).join(', ')} and ${names.at(-1)} links are platform previews.`;
 }
 
 /**

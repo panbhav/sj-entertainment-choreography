@@ -7,8 +7,8 @@ import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
 import { withBasePath } from '@/lib/basePath';
 import './CinematicHero.css';
 
-const desktopFilm = '/media/hero-film-montage-desktop.mp4';
-const mobileFilm = '/media/hero-film-mobile-responsive.mp4';
+const desktopFilm = '/media/hero-display-desktop.mp4';
+const mobileFilm = '/media/hero-display-mobile.mp4';
 
 function chooseFilm(mobile: boolean) {
   return mobile ? mobileFilm : desktopFilm;
@@ -92,8 +92,8 @@ export default function CinematicHero() {
     <section ref={sectionRef} className={'cinema-hero'} aria-labelledby="opening-title">
       <div className={'cinema-background'} aria-hidden="true">
         <picture>
-          <source media="(max-width: 800px)" srcSet={withBasePath('/media/hero-film-mobile-responsive-poster.jpg')} />
-          <Image src={withBasePath('/media/hero-film-montage-desktop-poster.jpg')} alt="" width={1920} height={1080} unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
+          <source media="(max-width: 800px)" srcSet={withBasePath('/media/hero-display-mobile-poster.jpg')} />
+          <Image src={withBasePath('/media/hero-display-desktop-poster.jpg')} alt="" width={1920} height={1080} unoptimized loading="eager" fetchPriority="high" sizes="100vw" className={'cinema-poster'} />
         </picture>
         <video ref={videoRef} className={`${'cinema-video'} ${isReady ? 'cinema-ready' : ''}`} autoPlay muted loop playsInline preload="none" tabIndex={-1}
           onPlaying={() => { setHasError(false); setIsPlaying(true); setIsReady(true); }}
