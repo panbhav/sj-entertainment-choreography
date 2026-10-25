@@ -4,6 +4,12 @@
 
 The tested local website passes the page, link, responsive-layout, media-playback and form-validation checks described below. Several verified issues were corrected. It is **not ready for live automated enquiries yet**: notification provider credentials, an approved WhatsApp template/sender and server hosting remain to be configured. No real enquiry or recruitment notification was sent during this audit.
 
+## Follow-up: dedicated Wedding Content & Reels page
+
+The Experiences menu, footer, package and entertainment links now open `/wedding-content-reels`. The homepage keeps a compact preview, and each preview format links to its definition on the dedicated page. The new page includes four detailed formats, suggested capture moments, output guidance, a three-step process, scope/delivery notes, four FAQs and individual enquiry links.
+
+Follow-up verification: 20 pages, 178 links/anchors and 115 assets with zero failures; desktop and mobile menu navigation; 320/390/768/1280 px layouts with no overflow; correct candid-service preselection; grouped FAQ interactions; lint, TypeScript, server build and static export. The latest static export audit checked 1,063 targets with zero failures. Earlier counts below describe the preceding audit baseline. Screenshots: `artifacts/site-audit/content-page-desktop.png` and `content-page-mobile.png`.
+
 ## Corrections made
 
 1. Contact feedback now receives keyboard focus, scrolls into view and exposes status/alert semantics. Visitors should not miss the unavailable-delivery message above the form.

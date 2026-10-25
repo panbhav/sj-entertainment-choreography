@@ -48,7 +48,7 @@ export default function Footer() {
               Celebration Pages
             </h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/#wedding-content" className="text-[#EAD9B7]/80 hover:text-white transition-colors">Wedding Content &amp; Reels</Link></li>
+              <li><Link href="/wedding-content-reels" className="text-[#EAD9B7]/80 hover:text-white transition-colors">Wedding Content &amp; Reels</Link></li>
               <li>
                 <Link
                   href="/wedding-choreography"

@@ -30,7 +30,7 @@ const experiences = [
     num: '04',
     name: 'Wedding content & reels',
     desc: 'Creators, candid moments & social edits',
-    href: '/#wedding-content',
+    href: '/wedding-content-reels',
   },
 ];
 
@@ -101,7 +101,8 @@ export default function Header() {
   const isExperienceActive =
     pathname.startsWith('/wedding-choreography') ||
     pathname.startsWith('/couple-entries-entertainment') ||
-    pathname.startsWith('/packages');
+    pathname.startsWith('/packages') ||
+    pathname.startsWith('/wedding-content-reels');
 
   return (
     <>
@@ -149,7 +150,7 @@ export default function Header() {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 style={isExperienceActive ? { color: '#8c6232', fontWeight: 600 } : undefined}
               >
-                <span>Experiences</span>
+                <span>Services</span>
                 <ChevronDown
                   size={13}
                   style={{
@@ -181,7 +182,7 @@ export default function Header() {
                         fontWeight: 600,
                       }}
                     >
-                      Celebration Experiences
+                      Our Services
                     </span>
                   </div>
                   {experiences.map((item) => {
@@ -346,7 +347,7 @@ export default function Header() {
                   fontWeight: 600,
                 }}
               >
-                Experiences
+                Services
               </span>
             </div>
 

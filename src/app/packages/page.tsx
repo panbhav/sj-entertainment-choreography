@@ -229,7 +229,7 @@ export default function PackagesPage() {
           FINAL ENQUIRY CTA
           ========================================================================= */}
       <aside className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-sm text-[#575253] leading-relaxed">
-        <p>Want something to share after the celebration? <Link href="/#wedding-content" className="font-semibold text-[#4A1525] underline underline-offset-4">Add wedding content creators &amp; social reels to your plans →</Link></p>
+        <p>Want something to share after the celebration? <Link href="/wedding-content-reels" className="font-semibold text-[#4A1525] underline underline-offset-4">Add wedding content creators &amp; social reels to your plans →</Link></p>
       </aside>
 
       <EnquiryCTA

@@ -13,7 +13,7 @@ export default function WeddingContent() {
           <p className="wedding-content-eyebrow"><Smartphone size={16} aria-hidden="true" /> Wedding content creators</p>
           <h2 id="wedding-content-title">Your celebration.<br /><em>Ready for your feed.</em></h2>
           <p>Reels, candid moments and cinematic stories, created around your wedding. For couples, families and guests who want something beautiful to share on their own social pages.</p>
-          <Link href="/contact?service=wedding-content" className="wedding-content-cta">Plan your wedding content <ArrowUpRight size={17} aria-hidden="true" /></Link>
+          <Link href="/wedding-content-reels" className="wedding-content-cta">Explore wedding content &amp; reels <ArrowUpRight size={17} aria-hidden="true" /></Link>
           <p className="wedding-content-note">Choose one function or a multi-day story. Coverage hours, edit count, music, delivery format and turnaround are agreed during planning.</p>
         </div>
         <div className="wedding-content-formats">
@@ -26,7 +26,7 @@ export default function WeddingContent() {
                 <div className="wedding-content-format-body">
                   <p>{format.description}</p>
                   <p><strong>Made for sharing</strong>{format.output}</p>
-                  <Link href={`/contact?service=${format.service}`} aria-label={`Enquire about ${format.title}`}>Discuss this format <ArrowUpRight size={15} aria-hidden="true" /></Link>
+                  <Link href={`/wedding-content-reels#${format.id}`} aria-label={`Explore ${format.title}`}>Explore this format <ArrowUpRight size={15} aria-hidden="true" /></Link>
                 </div>
               </details>
             );

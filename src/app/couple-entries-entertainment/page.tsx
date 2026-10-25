@@ -378,7 +378,7 @@ export default function CoupleEntriesEntertainmentPage() {
       <BackgroundArtists />
 
       <aside className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-sm text-[#575253] leading-relaxed">
-        <p>Capture the arrival and everything around it. <Link href="/#wedding-content" className="font-semibold text-[#4A1525] underline underline-offset-4">Explore wedding content creators, reels &amp; candid coverage →</Link></p>
+        <p>Capture the arrival and everything around it. <Link href="/wedding-content-reels" className="font-semibold text-[#4A1525] underline underline-offset-4">Explore wedding content creators, reels &amp; candid coverage →</Link></p>
       </aside>
 
       <EnquiryCTA

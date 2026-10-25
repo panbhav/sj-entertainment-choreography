@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/wedding-choreography',
+    '/wedding-content-reels',
     '/couple-entries-entertainment',
     '/couple-entries-entertainment/couple-bridal-entries',
     '/couple-entries-entertainment/stage-procession-acts-live-entertainment',
