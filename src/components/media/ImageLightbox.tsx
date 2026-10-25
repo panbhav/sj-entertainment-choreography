@@ -25,7 +25,7 @@ export default function ImageLightbox({ src, alt, title, onClose }: { src: strin
           <button type="button" onClick={onClose} aria-label="Close image viewer" className="shrink-0 p-3 text-white rounded-lg hover:bg-white/10"><X size={20} /></button>
         </div>
         <div className="relative w-full" style={{ height: 'min(70dvh, 680px)' }}>
-          <Image src={withBasePath(src)} alt={alt} fill sizes="(max-width: 900px) 100vw, 896px" className="object-contain" />
+          <Image src={withBasePath(src)} alt={alt} fill unoptimized sizes="(max-width: 900px) 100vw, 896px" className="object-contain" />
         </div>
       </div>
     </dialog>
