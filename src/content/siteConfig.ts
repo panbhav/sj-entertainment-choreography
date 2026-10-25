@@ -36,6 +36,8 @@ export interface SiteConfig {
  * - Do NOT invent phone numbers, email addresses, or physical office addresses.
  * - If unconfigured, contact actions hide gracefully or display structured enquiry pathways.
  */
+const weddingPlaylistUrl = 'https://open.spotify.com/playlist/4YVh7RN0bjJFtKRRPZBbaP';
+
 export const siteConfig: SiteConfig = {
   name: "SJ Entertainment Choreography",
   compactName: "SJ Entertainment",
@@ -85,14 +87,14 @@ export const siteConfig: SiteConfig = {
     {
       platform: 'spotify',
       label: 'Spotify Wedding Playlist',
-      url: 'https://open.spotify.com/',
+      url: weddingPlaylistUrl,
       isConfigured: true,
-      isPlaceholder: true,
+      isPlaceholder: false,
     },
   ],
 
-  // Spotify playlist embed section is hidden until genuine curated playlist URL is provided
-  spotifyPlaylistUrl: undefined,
+  // Owner-supplied playlist, also shown on the contact page.
+  spotifyPlaylistUrl: weddingPlaylistUrl,
 
   // Budget ranges are hidden until pricing framework is finalized by the owners
   budgetRangesConfigured: false,
