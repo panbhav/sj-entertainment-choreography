@@ -1,0 +1,51 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import ts from 'typescript';
+
+// Exercise real delivery logic with an injected HTTP transport. Never contact providers.
+const source = await readFile('src/lib/notification-delivery.ts', 'utf8');
+const compiled = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText;
+const { deliverNotification } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
+const config = { resendKey: 'test-only', emailFrom: 'test@example.com', emailTo: 'owner@example.com', twilioAccount: 'AC' + '0'.repeat(32), twilioKey: 'test-key', twilioSecret: 'test-secret', messagingService: 'MG' + '0'.repeat(32), contentSid: 'HX' + '0'.repeat(32), whatsappTo: '+910000000000' };
+const item = { id: 'test-reference', kind: 'enquiry', name: 'Demo Visitor', phone: '+910000000000', city: 'Jaipur', email: 'visitor@example.com', details: 'Couple dance & family performance.\n<script>plain text</script>\n' + 'x'.repeat(1200) };
+const calls = [];
+const success = async (url, options) => {
+  calls.push({ url, options });
+  return Response.json(url.includes('resend.com') ? { id: 'email-id' } : { sid: 'message-id', status: 'queued' });
+};
+assert.deepEqual(await deliverNotification(item, config, success), { email: 'accepted', whatsapp: 'accepted' });
+assert.equal(calls.length, 2);
+const email = calls.find(call => call.url.includes('resend.com'));
+const whatsapp = calls.find(call => call.url.includes('twilio.com'));
+const emailBody = JSON.parse(email.options.body);
+assert.deepEqual(emailBody.to, [config.emailTo]);
+assert.equal(emailBody.reply_to, item.email);
+assert.ok(emailBody.text.includes(item.details));
+assert.equal(emailBody.html, undefined);
+assert.equal(email.options.headers['Idempotency-Key'], 'sj-enquiry-test-reference');
+const params = whatsapp.options.body;
+assert.equal(params.get('To'), 'whatsapp:' + config.whatsappTo);
+assert.equal(params.get('MessagingServiceSid'), config.messagingService);
+assert.equal(params.get('ContentSid'), config.contentSid);
+const variables = JSON.parse(params.get('ContentVariables'));
+assert.equal(Object.keys(variables).length, 5);
+assert.ok(variables['5'].length <= 600 && !variables['5'].includes('\n'));
+assert.equal(email.options.redirect, 'error');
+assert.equal(whatsapp.options.redirect, 'error');
+assert.ok(email.options.signal instanceof AbortSignal);
+
+const partial = await deliverNotification(item, config, async url => url.includes('resend.com') ? new Response('rejected', { status: 401 }) : Response.json({ sid: 'message-id', status: 'queued' }));
+assert.deepEqual(partial, { email: 'failed', whatsapp: 'accepted' });
+const whatsappRejected = await deliverNotification(item, config, async url => Response.json(url.includes('resend.com') ? { id: 'email-id' } : { sid: 'message-id', status: 'failed' }));
+assert.deepEqual(whatsappRejected, { email: 'accepted', whatsapp: 'failed' });
+const timeout = await deliverNotification(item, config, async () => { throw new DOMException('Timed out', 'TimeoutError'); });
+assert.deepEqual(timeout, { email: 'failed', whatsapp: 'failed' });
+const malformed = await deliverNotification(item, config, async () => new Response('not json', { status: 200 }));
+assert.deepEqual(malformed, { email: 'failed', whatsapp: 'failed' });
+const noAcknowledgement = await deliverNotification(item, config, async () => Response.json({}));
+assert.deepEqual(noAcknowledgement, { email: 'failed', whatsapp: 'failed' });
+calls.length = 0;
+await deliverNotification({ ...item, kind: 'team', email: undefined }, config, success);
+assert.ok(JSON.parse(calls[0].options.body).subject.includes('Team introduction'));
+assert.equal(JSON.parse(calls[0].options.body).reply_to, undefined);
+console.log('Notification tests passed: both channels, payloads, partial failures, timeouts, malformed acknowledgements, and recruitment. No external requests made.');

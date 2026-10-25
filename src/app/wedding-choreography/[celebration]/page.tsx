@@ -19,6 +19,7 @@ import {
   getCelebrationService,
 } from '@/content/celebrations';
 import { getConceptVisual } from '@/content/conceptVisuals';
+import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 import { withBasePath } from '@/lib/basePath';
 import '@/components/celebrations/Celebrations.css';
 
@@ -251,6 +252,8 @@ export default async function CelebrationPage({ params }: PageProps) {
             ))}
           </div>
         </section>
+
+        <BackgroundArtists chapter={chapter.slug} />
 
         {/* Planning Note */}
         <aside className="celebration-planning-note">

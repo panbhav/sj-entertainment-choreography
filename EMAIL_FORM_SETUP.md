@@ -1,5 +1,7 @@
 # Contact email delivery and multiple services
 
+> Superseded: both forms now use the in-page automatic notification implementation. See [AUTOMATIC_NOTIFICATIONS_SETUP.md](AUTOMATIC_NOTIFICATIONS_SETUP.md). The FormSubmit activation steps below describe the prior implementation and are no longer the current setup.
+
 ## What changed
 
 The Contact form now uses a native HTTPS POST to `https://formsubmit.co/sjentertainmentch@gmail.com`. It is no longer a demo form or an email-app draft. FormSubmit handles its security check and email delivery, so this works on the existing static GitHub Pages host without an SMTP/API secret.

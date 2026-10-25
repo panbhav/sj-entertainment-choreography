@@ -187,12 +187,12 @@ export const coupleEntryConcepts: EntryConcept[] = [
 export const artistCategories: ArtistCategory[] = [
   {
     id: 'dance-troupes',
-    name: 'Professional Dance Troupes & Ensembles',
+    name: 'Background Artists & Professional Dance Troupes',
     subtitle: 'Backing dancers and opening acts that elevate stage energy',
     description:
       'Curated professional dancers to accompany couple entries, frame sangeet performances, or present dazzling themed opening acts across Bollywood, contemporary, and classical styles.',
     imageUrl: '/images/artists/dance-troupes.webp',
-    suggestedMoments: ['Sangeet Grand Opening', 'Couple Entry Backing', 'Grand Finale Sequence'],
+    suggestedMoments: ['Couple Entry Backing', 'Haldi & Mehendi', 'Sangeet Performances', 'Reception Opening', 'Grand Finale Sequence'],
     productionNotes: 'Stage dimensions, green room facilities, and costume changing areas coordinated with your venue.',
     queryParam: 'dance-troupes',
     isPublished: true,

@@ -14,6 +14,7 @@ import {
 import { coupleEntryConcepts } from '@/content/entriesAndArtists';
 import { withBasePath } from '@/lib/basePath';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
   title: 'Couple & Bridal Entry Concepts | Sajid & Joya Choreography',
@@ -244,6 +245,8 @@ export default function CoupleBridalEntriesPage() {
       {/* =========================================================================
           FINAL ENQUIRY CTA
           ========================================================================= */}
+      <BackgroundArtists chapter="wedding-day" />
+
       <EnquiryCTA
         title="Ready to design your signature grand entrance?"
         description="Share your wedding date, venue style, and theme preferences. Sajid & Joya will conceptualize a breathtaking arrival customized to your story."

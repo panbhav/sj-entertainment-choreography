@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       "font-src 'self'",
       `connect-src 'self'${development ? ' ws: wss:' : ''}`,
       "frame-src https://www.youtube-nocookie.com https://open.spotify.com",
-      "object-src 'none'", "base-uri 'self'", "form-action 'self' https://formsubmit.co", "frame-ancestors 'self'",
+      "object-src 'none'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'self'",
     ].join('; ');
     return [
       { source: '/:path*', headers: [

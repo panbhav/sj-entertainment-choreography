@@ -1,19 +1,20 @@
 'use client';
 
 import { useRef, useState, type FormEvent } from 'react';
-import { ArrowRight, ArrowUpRight, Check, MessageCircle, Mail, Pencil } from 'lucide-react';
-import { siteConfig } from '@/content/siteConfig';
+import { ArrowRight, Check, Send, Pencil } from 'lucide-react';
+import { withBasePath } from '@/lib/basePath';
+import { teamAreas as areas, teamExperience as experienceOptions, teamAvailability as availabilityOptions } from '@/content/teamOptions';
 import './Hire.css';
 
-const areas = ['Choreography', 'Dance & performance', 'Production & coordination', 'Content & creative'];
-const experienceOptions = ['Just starting out', 'Less than 1 year', '1–3 years', '3–5 years', '5+ years'];
-const availabilityOptions = ['Project-based / freelance', 'Regular collaboration', 'Flexible — let’s discuss'];
 type Application = {
   area: string; name: string; phone: string; city: string; experience: string;
   availability: string; portfolio: string; skills: string; travel: boolean;
 };
 
-export default function TeamInterestForm() {
+export default function TeamInterestForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState('');
   const [area, setArea] = useState(areas[0]);
   const [application, setApplication] = useState<Application | null>(null);
   const [error, setError] = useState<{ field: string; message: string } | null>(null);
@@ -43,6 +44,8 @@ export default function TeamInterestForm() {
       return;
     }
     setError(null);
+    setSendError('');
+    setSent(false);
     setApplication({ area, name: get('name'), phone: get('phone'), city: get('city'), experience: get('experience'), availability: get('availability'), portfolio: get('portfolio'), skills: get('skills'), travel: form.get('travel') === 'on' });
     requestAnimationFrame(() => {
       reviewRef.current?.focus();
@@ -50,13 +53,23 @@ export default function TeamInterestForm() {
     });
   }
 
-  const message = application ? [
-    'Hi Sajid, I would like to express my interest in working with the SJ team.', '',
-    `Area of interest: ${application.area}`, `Name: ${application.name}`, `Phone: ${application.phone}`,
-    `Current city: ${application.city}`, `Experience: ${application.experience}`, `Availability: ${application.availability}`,
-    `Open to travel: ${application.travel ? 'Yes' : 'To be discussed'}`,
-    ...(application.portfolio ? [`Portfolio / showreel: ${application.portfolio}`] : []), '', `Skills & styles: ${application.skills}`,
-  ].join('\n') : '';
+  async function sendIntroduction() {
+    if (!application || sending || sent) return;
+    if (!deliveryAvailable) {
+      setSendError('Online submissions are not connected yet. Your introduction has not been sent. Please contact Sajid directly.');
+      return;
+    }
+    setSending(true);
+    setSendError('');
+    try {
+      const response = await fetch(withBasePath('/api/team'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(application) });
+      const result = await response.json();
+      if (response.ok && result.success) setSent(true);
+      else setSendError(result.message || 'Your introduction could not be submitted. Please try again.');
+    } catch {
+      setSendError('Unable to submit your introduction. Please try again or contact Sajid directly.');
+    } finally { setSending(false); }
+  }
   const invalidProps = (field: string) => ({ 'aria-invalid': error?.field === field || undefined, 'aria-describedby': error?.field === field ? 'team-error' : undefined });
 
   return <div className="hire-form-shell" id="team-interest">
@@ -65,6 +78,7 @@ export default function TeamInterestForm() {
       <h2>Your talent.<br /><em>Our next chapter.</em></h2>
       <p>Introduce yourself for future project or team opportunities. These areas are expressions of interest, not confirmed vacancies.</p>
     </div>
+    {!deliveryAvailable && <p className="hire-form-note mb-5">Online submissions are not connected yet. You can prepare your introduction here and contact Sajid directly.</p>}
     <form ref={formRef} onSubmit={review} hidden={!!application} className="hire-form">
       <fieldset>
         <legend><span>01</span> Where do you find your rhythm?</legend>
@@ -88,23 +102,23 @@ export default function TeamInterestForm() {
       </fieldset>
       {error && <p id="team-error" role="alert" className="hire-error">{error.message}</p>}
       <button type="submit" className="hire-submit">Review my introduction <ArrowRight size={18} /></button>
-      <p className="hire-form-note">Fields marked * are required. Your details stay on this page until you choose WhatsApp or email. No automatic submission or file upload.</p>
+      <p className="hire-form-note">Fields marked * are required. Review your details before submitting them securely to the SJ team. No messaging app or email app opens.</p>
     </form>
     <div ref={reviewRef} tabIndex={-1} hidden={!application} className="hire-review" aria-labelledby="team-review-title">
       <span className="hire-step">03 / MAKE YOUR INTRODUCTION</span>
       <h3 id="team-review-title">Ready to meet the SJ team?</h3>
-      <p>Review your details, then send your introduction to Sajid using your chosen app. Nothing has been sent yet.</p>
+      <p>{sent ? 'Your introduction has been submitted to the SJ team. We’ll discuss next steps if there is a suitable opportunity.' : 'Review your details, then submit your introduction directly from this page. Nothing has been sent yet.'}</p>
       {application && <dl>{[
         ['Interest', application.area], ['Name', application.name], ['Phone', application.phone], ['City', application.city],
         ['Experience', application.experience], ['Available', application.availability], ['Travel', application.travel ? 'Open to travel' : 'To be discussed'],
         ...(application.portfolio ? [['Portfolio', application.portfolio]] : []), ['Skills', application.skills],
       ].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>}
-      <div className="hire-send-actions">
-        <a className="hire-submit" href={`https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} /> Introduce myself on WhatsApp <ArrowUpRight size={16} /></a>
-        <a className="hire-email" href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent('Join the SJ team — expression of interest')}&body=${encodeURIComponent(message)}`}><Mail size={17} /> Open email draft</a>
-      </div>
-      <button type="button" className="hire-edit" onClick={() => { setApplication(null); requestAnimationFrame(() => formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus()); }}><Pencil size={14} /> Edit my introduction</button>
-      <p className="hire-form-note">Please finish sending in your chosen app. Your introduction does not guarantee a role; the team will discuss opportunities and next steps if there is a suitable fit.</p>
+      {sendError && <p role="alert" className="hire-error">{sendError}</p>}
+      {sent ? <p role="status" className="hire-form-note">Thank you. Your introduction has been submitted.</p> : <>
+        <div className="hire-send-actions"><button type="button" className="hire-submit disabled:opacity-60" disabled={sending} onClick={sendIntroduction}><Send size={17} /> {sending ? 'Submitting…' : 'Send introduction'}</button></div>
+        <button type="button" disabled={sending} className="hire-edit" onClick={() => { setApplication(null); requestAnimationFrame(() => formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus()); }}><Pencil size={14} /> Edit my introduction</button>
+        <p className="hire-form-note">Your details are submitted to the SJ team. Your introduction does not guarantee a role; opportunities and next steps are discussed personally.</p>
+      </>}
     </div>
   </div>;
 }

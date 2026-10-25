@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { Sparkles, MapPin, Phone, Mail, Music } from 'lucide-react';
 import { siteConfig, getConfiguredSocials, hasDirectContactInfo } from '@/content/siteConfig';
 import SocialIcon from '@/components/common/SocialIcons';
+import { notificationsConfigured } from '@/lib/server-notifications';
 import EnquiryForm from '@/components/enquiry/EnquiryForm';
 
 export const metadata: Metadata = {
@@ -140,11 +141,7 @@ export default function ContactPage() {
                 </div>
               }
             >
-              <EnquiryForm
-                deliveryAvailable={siteConfig.enquiryDeliveryConfigured || Boolean(siteConfig.enquiryFormAction)}
-                hostedAction={siteConfig.enquiryDeliveryConfigured ? undefined : siteConfig.enquiryFormAction}
-                returnUrl={process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')}/contact/thank-you` : undefined}
-              />
+              <EnquiryForm deliveryAvailable={notificationsConfigured()} />
             </Suspense>
           </div>
         </div>

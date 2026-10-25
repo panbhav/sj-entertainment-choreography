@@ -27,8 +27,6 @@ export interface SiteConfig {
   spotifyPlaylistUrl?: string; // Hidden until real link provided
   budgetRangesConfigured: boolean;
   budgetRanges: string[];
-  enquiryDeliveryConfigured: boolean;
-  enquiryFormAction: string;
 }
 
 /**
@@ -105,9 +103,6 @@ export const siteConfig: SiteConfig = {
     "₹5,00,000+",
   ],
 
-  // Set to true once a real backend provider (e.g. Resend, SendGrid, Webhook) is integrated
-  enquiryFormAction: 'https://formsubmit.co/sjentertainmentch@gmail.com',
-  enquiryDeliveryConfigured: process.env.ENQUIRY_DELIVERY_ENABLED === 'true' && Boolean(process.env.ENQUIRY_WEBHOOK_URL?.startsWith('https://')),
 };
 
 /**

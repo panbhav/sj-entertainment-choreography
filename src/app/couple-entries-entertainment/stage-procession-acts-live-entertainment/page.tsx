@@ -13,6 +13,7 @@ import {
 import { artistCategories } from '@/content/entriesAndArtists';
 import { withBasePath } from '@/lib/basePath';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
   title: 'Stage & Procession Acts, Artists & Live Entertainment | Sajid & Joya',
@@ -69,6 +70,7 @@ export default function StageProcessionActsPage() {
 
             {/* Quick jump pills */}
             <div className="pt-6 flex flex-wrap gap-2">
+              <a href="#background-artists" className="px-3.5 py-1.5 rounded-full bg-[#4A1525] text-white text-xs font-medium">Background artists by function</a>
               {publishedArtists.map((a) => (
                 <a
                   key={a.id}
@@ -96,6 +98,8 @@ export default function StageProcessionActsPage() {
           </div>
         </div>
       </section>
+
+      <BackgroundArtists />
 
       <p className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-xs text-[#70656A] leading-relaxed">Images illustrate performance styles and do not confirm a particular artist booking. Artist availability and the final act are agreed during planning.</p>
 

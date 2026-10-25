@@ -1,6 +1,7 @@
 import { weddingCelebrations, signaturePerformances } from './services';
 import { coupleEntryConcepts, artistCategories } from './entriesAndArtists';
 import { experienceCombinations } from './packages';
+import { backgroundArtistServiceOptions } from './backgroundArtists';
 
 const baseServiceOptions = [
   { value: '', label: 'Select celebration service...' },
@@ -22,7 +23,7 @@ const baseServiceOptions = [
 ];
 
 const additionalServices = [...weddingCelebrations, ...signaturePerformances, ...coupleEntryConcepts.filter(item => item.isPublished), ...artistCategories.filter(item => item.isPublished), ...experienceCombinations];
-export const serviceOptions = [...baseServiceOptions, ...additionalServices.filter(item => !baseServiceOptions.some(option => option.value === item.queryParam)).map(item => ({ value: item.queryParam, label: item.name }))];
+export const serviceOptions = [...baseServiceOptions, ...backgroundArtistServiceOptions, ...additionalServices.filter(item => !baseServiceOptions.some(option => option.value === item.queryParam)).map(item => ({ value: item.queryParam, label: item.name }))];
 const categoryServices: Record<string, string> = { choreography: 'sangeet-spectacular', 'couple-entry': 'grand-entry-experience', artists: 'artists-entertainment', 'artists-live-entertainment': 'artists-entertainment' };
 
 export const resolveEnquiryService = (value: string) => Object.hasOwn(categoryServices, value) ? categoryServices[value] : value;

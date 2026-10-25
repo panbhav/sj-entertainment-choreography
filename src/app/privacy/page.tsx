@@ -46,13 +46,9 @@ export default function PrivacyPolicyPage() {
 
         <div className="prose prose-stone max-w-none text-sm leading-relaxed text-[#575253] space-y-6">
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Contact form delivery</h2>
-            <p>Contact enquiries are submitted over HTTPS to FormSubmit, which processes the information you enter and emails it to sjentertainmentch@gmail.com. Its security check may use reCAPTCHA. FormSubmit states that form submissions are retained in its archive for 30 days. Only include details needed to plan your celebration.</p>
-            <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer" className="text-[#4A1525] underline underline-offset-4">FormSubmit privacy information</a>
-          </section>
-          <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Team introductions</h2>
-            <p>The Join Our Team introduction is prepared locally in your browser. Choosing WhatsApp or email opens your selected app with the details you entered; you review and send the message there. The website does not automatically deliver or store this introduction. WhatsApp and your email provider handle messages under their own privacy policies.</p>
+            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Enquiries and team introductions</h2>
+            <p>When online submissions are enabled, Contact enquiries and Join Our Team introductions are sent through the website backend. Resend processes email notifications and Twilio processes WhatsApp notifications to Sajid. The email contains the submitted details; the WhatsApp notification contains a short summary. These providers process the details needed to deliver the notifications. No messaging or email app needs to open on your device.</p>
+            <p>Only include details needed for your enquiry or introduction. Portfolio links are shared as text and are not fetched by this website. If online submissions are not connected, the form tells you that your details have not been sent.</p>
           </section>
           <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#2C0713]">
@@ -73,7 +69,7 @@ export default function PrivacyPolicyPage() {
             <p>
               We treat wedding celebration details with strict privacy. Information submitted
               through our website is never sold, leased, or broadcast to unauthorized third parties.
-              Sajid & Joya and necessary event planning coordinators review enquiries. The form delivery provider processes contact submissions as described above.
+              Sajid & Joya and necessary event planning coordinators review enquiries. The delivery providers process submissions as described above.
             </p>
           </section>
 

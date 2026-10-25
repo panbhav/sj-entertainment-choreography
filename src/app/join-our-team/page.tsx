@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/content/siteConfig';
+import { notificationsConfigured } from '@/lib/server-notifications';
 import TeamInterestForm from '@/components/enquiry/TeamInterestForm';
 import SocialLounge from '@/components/common/SocialLounge';
 import '@/components/enquiry/Hire.css';
@@ -32,6 +33,6 @@ export default function JoinOurTeamPage() {
         <Link href="/contact">Planning a celebration? Enquire here <ArrowUpRight size={15} /></Link>
       </div>
     </section>
-    <TeamInterestForm />
+    <TeamInterestForm deliveryAvailable={notificationsConfigured()} />
   </div><SocialLounge /></div>;
 }

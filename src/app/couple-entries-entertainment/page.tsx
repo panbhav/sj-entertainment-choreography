@@ -16,6 +16,7 @@ import { withBasePath } from '@/lib/basePath';
 import VideoPreview from '@/components/media/VideoPreview';
 import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
   title: 'Grand Couple Entries & Live Entertainment | Sajid & Joya',
@@ -69,6 +70,7 @@ export default function CoupleEntriesEntertainmentPage() {
                 >
                   Explore The Two Categories ↓
                 </a>
+                <a href="#background-artists" className="text-sm font-semibold text-[#4A1525] underline underline-offset-4">Background artists &amp; dancers</a>
               </div>
             </div>
 
@@ -372,6 +374,8 @@ export default function CoupleEntriesEntertainmentPage() {
       {/* =========================================================================
           FINAL ENQUIRY CTA
           ========================================================================= */}
+      <BackgroundArtists />
+
       <EnquiryCTA
         title="Ready to create a memorable wedding entry?"
         description="Share your venue style, song preferences, and guest count to brainstorm custom entry choreography and artist curation."

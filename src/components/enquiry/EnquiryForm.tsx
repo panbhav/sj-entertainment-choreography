@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { serviceOptions, resolveEnquiryService } from '@/content/enquiryOptions';
 import { withBasePath } from '@/lib/basePath';
@@ -10,7 +10,7 @@ import ServiceMultiSelect from './ServiceMultiSelect';
 import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 
-export default function EnquiryForm({ deliveryAvailable = false, hostedAction, returnUrl }: { deliveryAvailable?: boolean; hostedAction?: string; returnUrl?: string }) {
+export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
   const requestedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
@@ -31,7 +31,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<
-    'idle' | 'preview' | 'success' | 'backend_unconfigured' | 'error'
+    'idle' | 'success' | 'backend_unconfigured' | 'error'
   >('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -41,12 +41,6 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
     ? serviceSelection.values
     : serviceOptions.some(option => option.value && option.value === resolvedService) ? [resolvedService] : [];
   const selectedConcept = serviceInterests.includes(resolvedService) ? requestedConcept : undefined;
-  const selectedLabels = serviceOptions.filter(option => option.value && serviceInterests.includes(option.value)).map(option => option.label);
-  useEffect(() => {
-    const restore = () => setIsSubmitting(false);
-    window.addEventListener('pageshow', restore);
-    return () => window.removeEventListener('pageshow', restore);
-  }, []);
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
@@ -82,22 +76,16 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setSubmissionStatus('idle');
 
     if (!validate()) {
-      e.preventDefault();
       return;
     }
 
-    if (hostedAction) {
-      setIsSubmitting(true);
-      return; // Native HTTPS POST opens the provider's CAPTCHA and delivery flow.
-    }
-    e.preventDefault();
-
     if (!deliveryAvailable) {
-      setSubmissionStatus('preview');
-      setStatusMessage('Your details passed the form checks. This is a demo: no enquiry has been sent and no booking has been made.');
+      setSubmissionStatus('backend_unconfigured');
+      setStatusMessage('Automatic submissions are not connected yet. Your details have not been sent. Please contact Sajid directly.');
       return;
     }
 
@@ -132,8 +120,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
         // Backend not configured yet
         setSubmissionStatus('backend_unconfigured');
         setStatusMessage(
-          data.message ||
-            'Online submission is currently being finalized. Please reach out via our direct contact channels or try again soon.'
+          data.message || 'Online submissions are not connected yet. Please contact Sajid directly.'
         );
       } else {
         setSubmissionStatus('error');
@@ -173,8 +160,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
         </div>
       )}
 
-      {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <div role="status" className="mb-8 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438] leading-relaxed">Demo mode: you can test the enquiry form. Your details stay on this page and no message is sent.</div>}
-      {submissionStatus === 'preview' && <div role="status" className="mb-6 p-4 rounded-xl bg-[#FAF6EF] border border-[#BD954E] text-sm text-[#4A1525] leading-relaxed"><p className="font-semibold">Demo enquiry checked</p><p className="mt-1">{statusMessage}</p></div>}
+      {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <p role="status" className="mb-6 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438]">Online submissions are not connected yet. Please use the direct contact details to reach Sajid.</p>}
       {/* Submission Feedback Notices */}
       {submissionStatus === 'success' && (
         <div className="mb-8 p-5 rounded-2xl bg-[#FAF6EF] border border-[#BD954E] flex items-start gap-3">
@@ -190,10 +176,10 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
         <div className="mb-8 p-5 rounded-2xl bg-[#FFFDF9] border border-[#D4AF67] flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
           <div className="text-sm text-[#2C0713]">
-            <p className="font-semibold text-[#4A1525]">Online enquiries opening soon</p>
+            <p className="font-semibold text-[#4A1525]">Online submissions unavailable</p>
             <p className="mt-1 text-[#575253] leading-relaxed">
-              Online enquiries are not open yet. Your details have not been sent. Contact Sajid & Joya
-              through a direct contact option if available, or return when bookings open. Your details remain in this form.
+              Your details have not been sent. Contact Sajid & Joya
+              using the direct contact details. Your details remain in this form.
             </p>
           </div>
         </div>
@@ -210,15 +196,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
       )}
 
       {submissionStatus !== 'success' && (
-        <form action={hostedAction} method="post" onSubmit={handleSubmit} aria-label="Celebration enquiry" noValidate className="space-y-6">
-          {hostedAction && <>
-            <input type="hidden" name="_subject" value="New celebration enquiry — SJ Entertainment" />
-            <input type="hidden" name="_template" value="table" />
-            {returnUrl && <input type="hidden" name="_next" value={returnUrl} />}
-            <input type="hidden" name="Service interests" value={selectedLabels.join(' | ')} />
-            <input type="hidden" name="Date status" value={formData.dateNotFinalised ? 'Dates not finalised yet' : formData.eventDate ? 'Proposed date supplied' : 'To be discussed'} />
-            {selectedConcept && <input type="hidden" name="Choreography type" value={`${selectedConcept.chapter.shortName} — ${selectedConcept.concept.title}`} />}
-          </>}
+        <form onSubmit={handleSubmit} aria-label="Celebration enquiry" noValidate className="space-y-6">
           {/* Honeypot field for bot spam prevention */}
           <div className="hidden" aria-hidden="true">
             <label htmlFor="website-trap">Leave this blank</label>
@@ -446,7 +424,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
               ) : (
                 <>
                   <Send className="w-4 h-4 text-[#D4B272]" />
-                  <span>{deliveryAvailable ? 'Send Celebration Enquiry' : 'Preview Enquiry'}</span>
+                  <span>Send Celebration Enquiry</span>
                 </>
               )}
             </button>
@@ -454,7 +432,7 @@ export default function EnquiryForm({ deliveryAvailable = false, hostedAction, r
 
           {/* Non-binding disclaimer */}
           <p className="text-xs text-[#888182] leading-relaxed pt-2 border-t border-[#F4ECE1]">
-            {deliveryAvailable ? <>{hostedAction && <>Your details are sent through FormSubmit to Sajid’s email. You may be asked to complete a security check. </>}Submitting an enquiry starts a planning conversation. A booking is confirmed only after the schedule and arrangements are agreed.</> : <>Demo only: previewing this form validates your details on this page. It does not send an enquiry or reserve a date.</>}
+            Your details are submitted securely to the SJ team. No WhatsApp or email app opens. A booking is confirmed only after the schedule and arrangements are agreed.
           </p>
         </form>
       )}

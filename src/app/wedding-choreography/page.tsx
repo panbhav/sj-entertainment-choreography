@@ -17,6 +17,7 @@ import Accordion from '@/components/ui/Accordion';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 import CelebrationCard from '@/components/celebrations/CelebrationCard';
 import { celebrationChapters } from '@/content/celebrations';
+import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
   title: 'Wedding Choreography & Celebrations',
@@ -67,6 +68,7 @@ export default function WeddingChoreographyPage() {
                 >
                   Explore Ceremonies ↓
                 </a>
+                <a href="#background-artists" className="text-sm font-semibold text-[#4A1525] underline underline-offset-4">Add supporting artists</a>
               </div>
             </div>
 
@@ -377,6 +379,8 @@ export default function WeddingChoreographyPage() {
       {/* =========================================================================
           FINAL ENQUIRY CTA
           ========================================================================= */}
+      <BackgroundArtists />
+
       <EnquiryCTA
         title="Ready to choreograph your sangeet or couple dance?"
         description="Connect with Sajid & Joya to discuss your song list, ceremony timeline, and rehearsal availability across India."
