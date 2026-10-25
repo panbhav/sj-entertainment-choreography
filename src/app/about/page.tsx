@@ -71,7 +71,7 @@ export default function AboutPage() {
               <div className="relative rounded-3xl p-3 bg-[#FAF7F2] border border-[#DFCBB0] shadow-xl">
                 <div className="absolute top-6 left-6 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2C0713]/85 backdrop-blur-md text-[#D4B272] border border-[#BD954E]/40 text-xs font-semibold tracking-wider uppercase shadow-lg">
                   <Sparkles className="w-3 h-3 text-[#D4B272]" />
-                  <span>10+ Years of Craft</span>
+                  <span>15+ Years of Craft</span>
                 </div>
                 <ResponsiveImage
                   media={jointMedia}

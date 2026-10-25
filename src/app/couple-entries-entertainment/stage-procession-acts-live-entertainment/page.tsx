@@ -97,6 +97,8 @@ export default function StageProcessionActsPage() {
         </div>
       </section>
 
+      <p className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-xs text-[#70656A] leading-relaxed">Images illustrate performance styles and do not confirm a particular artist booking. Artist availability and the final act are agreed during planning.</p>
+
       {/* =========================================================================
           DETAILED ARTISTS SHOWCASE
           ========================================================================= */}
@@ -115,14 +117,14 @@ export default function StageProcessionActsPage() {
                 idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'
               }`}
             >
-              <Image
+              {artist.imageUrl ? (<Image
                 src={withBasePath(artist.imageUrl)}
                 alt={artist.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 unoptimized
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
+              />) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-[#EAD9B7]"><span className="font-serif text-2xl">Wedding hosts & emcees</span><span className="text-xs">Hosting · Introductions · Audience interaction</span></div>)}
               <div className="absolute inset-0 bg-gradient-to-t from-[#2C0713]/70 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute top-4 left-4">

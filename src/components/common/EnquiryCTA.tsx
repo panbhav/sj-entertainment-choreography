@@ -7,6 +7,7 @@ interface EnquiryCTAProps {
   description?: string;
   buttonText?: string;
   serviceQuery?: string;
+  buttonHref?: string;
   className?: string;
 }
 
@@ -15,11 +16,12 @@ export default function EnquiryCTA({
   description = 'Share your wedding dates, envisioned songs, or entry concepts. Sajid & Joya work closely with you to craft an unforgettable musical celebration.',
   buttonText = 'Plan Your Celebration',
   serviceQuery,
+  buttonHref,
   className = '',
 }: EnquiryCTAProps) {
-  const enquiryHref = serviceQuery
+  const enquiryHref = buttonHref || (serviceQuery
     ? `/contact?service=${encodeURIComponent(serviceQuery)}`
-    : '/contact';
+    : '/contact');
 
   return (
     <section className={`py-16 md:py-20 relative overflow-hidden ${className}`}>

@@ -17,7 +17,7 @@ export interface ArtistCategory {
   name: string;
   subtitle: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   suggestedMoments: string[];
   productionNotes: string;
   queryParam: string;
@@ -251,7 +251,6 @@ export const artistCategories: ArtistCategory[] = [
     subtitle: 'Charismatic, articulate hosting that keeps the celebration flowing',
     description:
       'Warm, engaging hosts who understand wedding etiquette, maintain high room energy, introduce family chapters smoothly, and keep guests entertained throughout the sangeet.',
-    imageUrl: '/images/artists/emcees.webp',
     suggestedMoments: ['Sangeet Night Compering', 'Interactive Family Games', 'Reception Welcomes'],
     productionNotes: 'Script walkthrough and family pronunciation guide conducted prior to event day.',
     queryParam: 'emcees',

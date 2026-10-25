@@ -94,3 +94,4 @@
   .celebration-card { padding:0; }
   .celebration-card-body { padding:20px; }
 }
+.celebration-intro-grid > .celebration-intro:only-child { grid-column: 1 / -1; }

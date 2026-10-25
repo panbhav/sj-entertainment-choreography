@@ -130,6 +130,7 @@ export default function Footer() {
                   Plan Your Celebration
                 </Link>
               </li>
+              <li><Link href="/join-our-team" className="text-[#EAD9B7]/80 hover:text-white transition-colors">Join Our Team</Link></li>
             </ul>
           </div>
 
@@ -150,7 +151,7 @@ export default function Footer() {
                     href={`tel:${siteConfig.contact.phone}`}
                     className="flex items-center gap-2 text-[#FAF7F2] hover:text-[#D4B272] transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#D4B272]" />
+                    <Phone className="w-3.5 h-3.5 text-[#D4B272] shrink-0" />
                     <span>{siteConfig.contact.phone}</span>
                   </a>
                 )}
@@ -159,8 +160,8 @@ export default function Footer() {
                     href={`mailto:${siteConfig.contact.email}`}
                     className="flex items-center gap-2 text-[#FAF7F2] hover:text-[#D4B272] transition-colors"
                   >
-                    <Mail className="w-3.5 h-3.5 text-[#D4B272]" />
-                    <span>{siteConfig.contact.email}</span>
+                    <Mail className="w-3.5 h-3.5 text-[#D4B272] shrink-0" />
+                    <span className="break-all min-w-0">{siteConfig.contact.email}</span>
                   </a>
                 )}
               </div>
@@ -179,8 +180,9 @@ export default function Footer() {
             {configuredSocials.length > 0 && (
               <div className="pt-2">
                 <div className="text-[11px] uppercase tracking-wider text-[#D4B272] mb-2 font-medium">
-                  Follow Us
+                  Find our rhythm
                 </div>
+                {configuredSocials.some(social => social.isPlaceholder) && <p className="text-xs text-[#EAD9B7]/75 mb-3">Profile links coming soon · platform previews</p>}
                 <div className="flex items-center gap-2">
                   {configuredSocials.map((social) => (
                     <a
@@ -188,8 +190,8 @@ export default function Footer() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] hover:text-[#D4B272] transition-colors"
-                      aria-label={social.label}
+                      className="p-3 rounded-full bg-[#4A1525] hover:bg-[#641C32] text-[#FAF7F2] hover:text-[#D4B272] transition-colors"
+                      aria-label={`${social.label}${social.isPlaceholder ? ' — placeholder platform link' : ''}`}
                     >
                       <SocialIcon platform={social.platform} className="w-4 h-4" />
                     </a>

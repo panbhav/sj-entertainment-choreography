@@ -37,6 +37,8 @@ export default function ContactPage() {
               </p>
             </div>
 
+            <a href={`https://wa.me/${siteConfig.contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className="inline-flex gap-2 items-center text-sm font-semibold text-[#4A1525] underline underline-offset-4">Discuss your celebration on WhatsApp →</a>
+
             {/* Nationwide Coverage Notice */}
             <div className="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E8DFD5] space-y-3">
               <div className="flex items-center gap-2 text-sm font-semibold text-[#4A1525]">
@@ -52,7 +54,7 @@ export default function ContactPage() {
             {directContact && (
               <div className="space-y-4 p-6 rounded-2xl bg-white border border-[#E8DFD5] shadow-xs">
                 <h2 className="font-serif text-base font-bold text-[#2C0713]">
-                  Direct Contacts
+                  Speak with Sajid
                 </h2>
                 <div className="space-y-3 text-sm">
                   {siteConfig.contact.phone && (
@@ -75,7 +77,7 @@ export default function ContactPage() {
                       <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD5] flex items-center justify-center text-[#BD954E]">
                         <Mail className="w-4 h-4" />
                       </div>
-                      <span>{siteConfig.contact.email}</span>
+                      <span className="break-all min-w-0">{siteConfig.contact.email}</span>
                     </a>
                   )}
                 </div>
@@ -88,6 +90,7 @@ export default function ContactPage() {
                 <h2 className="text-xs font-semibold uppercase tracking-wider text-[#888182]">
                   Connect on Social
                 </h2>
+                <p className="text-xs text-[#70656A]">Profile links coming soon. These previews open the platforms.</p>
                 <div className="flex items-center gap-3">
                   {configuredSocials.map((social) => (
                     <a
@@ -96,7 +99,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-full bg-white hover:bg-[#F7EDF1] text-[#4A1525] border border-[#E8DFD5] transition-colors shadow-xs"
-                      aria-label={social.label}
+                      aria-label={`${social.label}${social.isPlaceholder ? ' — placeholder platform link' : ''}`}
                     >
                       <SocialIcon platform={social.platform} className="w-4 h-4" />
                     </a>
@@ -137,7 +140,11 @@ export default function ContactPage() {
                 </div>
               }
             >
-              <EnquiryForm deliveryAvailable={siteConfig.enquiryDeliveryConfigured} />
+              <EnquiryForm
+                deliveryAvailable={siteConfig.enquiryDeliveryConfigured || Boolean(siteConfig.enquiryFormAction)}
+                hostedAction={siteConfig.enquiryDeliveryConfigured ? undefined : siteConfig.enquiryFormAction}
+                returnUrl={process.env.NEXT_PUBLIC_SITE_URL ? `${process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')}/contact/thank-you` : undefined}
+              />
             </Suspense>
           </div>
         </div>

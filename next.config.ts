@@ -12,6 +12,31 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  poweredByHeader: false,
+  headers: isGithubPages ? undefined : async () => {
+    const development = process.env.NODE_ENV !== 'production';
+    const policy = [
+      "default-src 'self'",
+      `script-src 'self' 'unsafe-inline'${development ? " 'unsafe-eval'" : ''}`,
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob:",
+      "media-src 'self' blob:",
+      "font-src 'self'",
+      `connect-src 'self'${development ? ' ws: wss:' : ''}`,
+      "frame-src https://www.youtube-nocookie.com https://open.spotify.com",
+      "object-src 'none'", "base-uri 'self'", "form-action 'self' https://formsubmit.co", "frame-ancestors 'self'",
+    ].join('; ');
+    return [
+      { source: '/:path*', headers: [
+        { key: 'Content-Security-Policy', value: policy },
+        { key: 'X-Content-Type-Options', value: 'nosniff' },
+        { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+        { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+      ] },
+      { source: '/api/:path*', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {

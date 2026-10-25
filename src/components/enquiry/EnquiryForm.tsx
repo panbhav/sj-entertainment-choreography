@@ -1,15 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { serviceOptions, resolveEnquiryService } from '@/content/enquiryOptions';
 import { withBasePath } from '@/lib/basePath';
 import { siteConfig } from '@/content/siteConfig';
 import { getSelectedCelebrationConcept } from '@/content/celebrations';
+import ServiceMultiSelect from './ServiceMultiSelect';
 import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 
-export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+export default function EnquiryForm({ deliveryAvailable = false, hostedAction, returnUrl }: { deliveryAvailable?: boolean; hostedAction?: string; returnUrl?: string }) {
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
   const requestedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
@@ -34,12 +35,18 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
   >('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
-  const [serviceSelection, setServiceSelection] = useState<{ query: string; value: string } | null>(null);
+  const [serviceSelection, setServiceSelection] = useState<{ query: string; values: string[] } | null>(null);
   const resolvedService = resolveEnquiryService(preselectedService);
-  const serviceInterest = serviceSelection?.query === preselectedService
-    ? serviceSelection.value
-    : serviceOptions.find(option => option.value === resolvedService)?.value || '';
-  const selectedConcept = serviceInterest === resolvedService ? requestedConcept : undefined;
+  const serviceInterests = serviceSelection?.query === preselectedService
+    ? serviceSelection.values
+    : serviceOptions.some(option => option.value && option.value === resolvedService) ? [resolvedService] : [];
+  const selectedConcept = serviceInterests.includes(resolvedService) ? requestedConcept : undefined;
+  const selectedLabels = serviceOptions.filter(option => option.value && serviceInterests.includes(option.value)).map(option => option.label);
+  useEffect(() => {
+    const restore = () => setIsSubmitting(false);
+    window.addEventListener('pageshow', restore);
+    return () => window.removeEventListener('pageshow', restore);
+  }, []);
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
@@ -63,8 +70,8 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       newErrors.eventCity = 'Please enter your wedding city or celebration destination.';
     }
 
-    if (!serviceInterest) {
-      newErrors.serviceInterest = 'Please select a service interest.';
+    if (!serviceInterests.length) {
+      newErrors.serviceInterest = 'Please select at least one service interest.';
     }
 
     setErrors(newErrors);
@@ -75,12 +82,18 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     setSubmissionStatus('idle');
 
     if (!validate()) {
+      e.preventDefault();
       return;
     }
+
+    if (hostedAction) {
+      setIsSubmitting(true);
+      return; // Native HTTPS POST opens the provider's CAPTCHA and delivery flow.
+    }
+    e.preventDefault();
 
     if (!deliveryAvailable) {
       setSubmissionStatus('preview');
@@ -98,7 +111,8 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
         },
         body: JSON.stringify({
           ...formData,
-          serviceInterest,
+          serviceInterests,
+          serviceInterest: serviceInterests[0],
           message: [
             selectedConcept ? `Choreography type: ${selectedConcept.chapter.shortName} — ${selectedConcept.concept.title}.` : '',
             formData.message,
@@ -196,13 +210,21 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       )}
 
       {submissionStatus !== 'success' && (
-        <form onSubmit={handleSubmit} aria-label="Celebration enquiry" noValidate className="space-y-6">
+        <form action={hostedAction} method="post" onSubmit={handleSubmit} aria-label="Celebration enquiry" noValidate className="space-y-6">
+          {hostedAction && <>
+            <input type="hidden" name="_subject" value="New celebration enquiry — SJ Entertainment" />
+            <input type="hidden" name="_template" value="table" />
+            {returnUrl && <input type="hidden" name="_next" value={returnUrl} />}
+            <input type="hidden" name="Service interests" value={selectedLabels.join(' | ')} />
+            <input type="hidden" name="Date status" value={formData.dateNotFinalised ? 'Dates not finalised yet' : formData.eventDate ? 'Proposed date supplied' : 'To be discussed'} />
+            {selectedConcept && <input type="hidden" name="Choreography type" value={`${selectedConcept.chapter.shortName} — ${selectedConcept.concept.title}`} />}
+          </>}
           {/* Honeypot field for bot spam prevention */}
           <div className="hidden" aria-hidden="true">
             <label htmlFor="website-trap">Leave this blank</label>
             <input
               type="text"
-              id="website-trap"
+              id="website-trap" name="_honey"
               tabIndex={-1}
               autoComplete="off"
               value={formData.honeypot}
@@ -221,7 +243,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="text"
-                maxLength={150} id="enquiry-name" autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "error-name" : undefined}
+                maxLength={150} id="enquiry-name" name="name" autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "error-name" : undefined}
                 required
                 placeholder="e.g. Ananya Sharma"
                 value={formData.name}
@@ -246,7 +268,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="tel" inputMode="tel" maxLength={24}
-                id="enquiry-phone" autoComplete="tel" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "error-phone" : undefined}
+                id="enquiry-phone" name="Phone / WhatsApp" autoComplete="tel" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "error-phone" : undefined}
                 required
                 placeholder="e.g. +91 98765 43210"
                 value={formData.phone}
@@ -273,7 +295,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="email"
-                maxLength={254} id="enquiry-email" autoComplete="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "error-email" : undefined}
+                maxLength={254} id="enquiry-email" name="email" autoComplete="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "error-email" : undefined}
                 placeholder="e.g. ananya@example.com"
                 value={formData.email}
                 onChange={(e) => {
@@ -297,7 +319,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="text"
-                maxLength={150} id="enquiry-city" autoComplete="address-level2" aria-invalid={Boolean(errors.eventCity)} aria-describedby={errors.eventCity ? "error-city" : undefined}
+                maxLength={150} id="enquiry-city" name="Event city / destination" autoComplete="address-level2" aria-invalid={Boolean(errors.eventCity)} aria-describedby={errors.eventCity ? "error-city" : undefined}
                 required
                 placeholder="e.g. Udaipur, Mumbai, Delhi, Jaipur"
                 value={formData.eventCity}
@@ -324,7 +346,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </label>
               <input
                 type="date"
-                id="enquiry-date"
+                id="enquiry-date" name="Proposed event date"
                 disabled={formData.dateNotFinalised}
                 value={formData.eventDate}
                 onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
@@ -359,38 +381,10 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               </div>
             </div>
 
-            {/* Service Interest */}
-            <div>
-              <label
-                htmlFor="enquiry-service"
-                className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
-              >
-                Primary Service Interest <span className="text-[#A6803B]">*</span>
-              </label>
-              <select
-                id="enquiry-service"
-                aria-invalid={Boolean(errors.serviceInterest)}
-                aria-describedby={errors.serviceInterest ? 'error-service' : undefined}
-                required
-                value={serviceInterest}
-                onChange={(e) => {
-                  setServiceSelection({ query: preselectedService, value: e.target.value });
-                  if (errors.serviceInterest) setErrors({ ...errors, serviceInterest: '' });
-                }}
-                className={`w-full px-4 py-3 rounded-xl border text-sm text-[#292526] bg-[#FAF7F2] transition-colors focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#BD954E] ${
-                  errors.serviceInterest ? 'border-red-400 bg-red-50/20' : 'border-[#E8DFD5]'
-                }`}
-              >
-                {serviceOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-              {errors.serviceInterest && (
-                <p id="error-service" className="text-xs text-red-600 mt-1">{errors.serviceInterest}</p>
-              )}
-            </div>
+            <ServiceMultiSelect selected={serviceInterests} onChange={values => {
+              setServiceSelection({ query: preselectedService, values });
+              if (errors.serviceInterest) setErrors({ ...errors, serviceInterest: '' });
+            }} error={errors.serviceInterest} />
           </div>
 
           {/* Budget Range (Hidden until configured by owners) */}
@@ -403,7 +397,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 Envisioned Budget Range <span className="text-[#888182] font-normal normal-case">(Optional)</span>
               </label>
               <select
-                id="enquiry-budget"
+                id="enquiry-budget" name="Budget range"
                 value={formData.budgetRange}
                 onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-[#E8DFD5] text-sm text-[#292526] bg-[#FAF7F2] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#BD954E]"
@@ -428,7 +422,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               <span className="text-[#888182] font-normal normal-case">(Optional)</span>
             </label>
             <textarea
-              maxLength={4500} id="enquiry-message"
+              maxLength={4500} id="enquiry-message" name="message"
               rows={4}
               placeholder="Tell us about your wedding ceremonies, envisioned songs, family branches, or preferred rehearsal format..."
               value={formData.message}
@@ -447,7 +441,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               {isSubmitting ? (
                 <>
                   <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  <span>Submitting Details...</span>
+                  <span>Sending enquiry…</span>
                 </>
               ) : (
                 <>
@@ -460,7 +454,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
 
           {/* Non-binding disclaimer */}
           <p className="text-xs text-[#888182] leading-relaxed pt-2 border-t border-[#F4ECE1]">
-            {deliveryAvailable ? <>Submitting an enquiry starts a planning conversation. A booking is confirmed only after the schedule and arrangements are agreed.</> : <>Demo only: previewing this form validates your details on this page. It does not send an enquiry or reserve a date.</>}
+            {deliveryAvailable ? <>{hostedAction && <>Your details are sent through FormSubmit to Sajid’s email. You may be asked to complete a security check. </>}Submitting an enquiry starts a planning conversation. A booking is confirmed only after the schedule and arrangements are agreed.</> : <>Demo only: previewing this form validates your details on this page. It does not send an enquiry or reserve a date.</>}
           </p>
         </form>
       )}

@@ -291,8 +291,8 @@ export default function Header() {
             </Link>
           </nav>
 
-          <Link href="/contact" className="header-cta">
-            Let’s celebrate <ArrowUpRight size={15} />
+          <Link href="/join-our-team" className="header-cta" aria-current={pathname === '/join-our-team' ? 'page' : undefined}>
+            Join Our Team <ArrowUpRight size={15} />
           </Link>
 
           <button
@@ -421,11 +421,11 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/join-our-team"
               onClick={close}
-              aria-current={pathname === '/contact' ? 'page' : undefined}
+              aria-current={pathname === '/join-our-team' ? 'page' : undefined}
             >
-              Let’s celebrate <ArrowUpRight size={16} />
+              Join Our Team <ArrowUpRight size={16} />
             </Link>
           </nav>
         )}

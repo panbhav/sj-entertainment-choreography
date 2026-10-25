@@ -46,6 +46,15 @@ export default function PrivacyPolicyPage() {
 
         <div className="prose prose-stone max-w-none text-sm leading-relaxed text-[#575253] space-y-6">
           <section className="space-y-3">
+            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Contact form delivery</h2>
+            <p>Contact enquiries are submitted over HTTPS to FormSubmit, which processes the information you enter and emails it to sjentertainmentch@gmail.com. Its security check may use reCAPTCHA. FormSubmit states that form submissions are retained in its archive for 30 days. Only include details needed to plan your celebration.</p>
+            <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer" className="text-[#4A1525] underline underline-offset-4">FormSubmit privacy information</a>
+          </section>
+          <section className="space-y-3">
+            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Team introductions</h2>
+            <p>The Join Our Team introduction is prepared locally in your browser. Choosing WhatsApp or email opens your selected app with the details you entered; you review and send the message there. The website does not automatically deliver or store this introduction. WhatsApp and your email provider handle messages under their own privacy policies.</p>
+          </section>
+          <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#2C0713]">
               1. Purpose of Enquiry Collection
             </h2>
@@ -64,7 +73,7 @@ export default function PrivacyPolicyPage() {
             <p>
               We treat wedding celebration details with strict privacy. Information submitted
               through our website is never sold, leased, or broadcast to unauthorized third parties.
-              Data is reviewed exclusively by Sajid & Joya and necessary event planning coordinators.
+              Sajid & Joya and necessary event planning coordinators review enquiries. The form delivery provider processes contact submissions as described above.
             </p>
           </section>
 

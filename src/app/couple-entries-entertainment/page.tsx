@@ -85,6 +85,8 @@ export default function CoupleEntriesEntertainmentPage() {
         </div>
       </section>
 
+      <p className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#70656A] leading-relaxed">Entry and artist images are visual references for planning. Visit Our Work for real event films.</p>
+
       {/* =========================================================================
           SUBHEADING 01: COUPLE & BRIDAL ENTRY CONCEPTS
           ========================================================================= */}
@@ -236,14 +238,14 @@ export default function CoupleEntriesEntertainmentPage() {
                 className="group flex flex-col bg-white rounded-2xl border border-[#E8DFD5] overflow-hidden hover:border-[#BD954E] hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] bg-[#2C0713] overflow-hidden">
-                  <Image
+                  {artist.imageUrl ? (<Image
                     src={withBasePath(artist.imageUrl)}
                     alt={artist.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
                     unoptimized
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  />) : (<div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-[#EAD9B7]"><span className="font-serif text-2xl">Wedding hosts & emcees</span><span className="text-xs">Hosting · Introductions · Audience interaction</span></div>)}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <span className="absolute bottom-2.5 left-2.5 text-[10px] text-white/90 font-medium px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm line-clamp-1">
                     {artist.subtitle}

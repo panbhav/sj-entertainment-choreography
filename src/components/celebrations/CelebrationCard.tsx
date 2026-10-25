@@ -19,13 +19,13 @@ export default function CelebrationCard({
   return (
     <article className="celebration-card group">
       {/* Edge-to-Edge Image Header */}
-      <Link
+      {chapter.imageUrl && <Link
         href={href}
         className="celebration-card-image-wrap block relative aspect-[16/10] overflow-hidden bg-[#2C0713]"
       >
         <Image
           src={withBasePath(chapter.imageUrl)}
-          alt={service.name}
+          alt={`${service.name} — concept reference`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           unoptimized
@@ -45,7 +45,7 @@ export default function CelebrationCard({
             Explore →
           </span>
         </div>
-      </Link>
+      </Link>}
 
       <div className="celebration-card-body p-6 flex flex-col flex-grow justify-between">
         <div>

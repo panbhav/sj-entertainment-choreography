@@ -3,6 +3,7 @@ export interface SocialLink {
   label: string;
   url: string;
   isConfigured: boolean;
+  isPlaceholder?: boolean;
 }
 
 export interface ContactConfig {
@@ -27,6 +28,7 @@ export interface SiteConfig {
   budgetRangesConfigured: boolean;
   budgetRanges: string[];
   enquiryDeliveryConfigured: boolean;
+  enquiryFormAction: string;
 }
 
 /**
@@ -46,27 +48,29 @@ export const siteConfig: SiteConfig = {
   copyrightYear: 2026,
 
   contact: {
-    // Left unconfigured until genuine business details are provided by Sajid & Joya
-    phone: undefined,
-    whatsapp: undefined,
-    email: undefined,
+    // Sajid's business contact details, supplied by the owner.
+    phone: '+918233277258',
+    whatsapp: '918233277258',
+    email: 'sjentertainmentch@gmail.com',
     availableAcrossIndia: true,
     coverageNote: "Destination and local wedding celebrations across India.",
   },
 
-  // Configured social profiles. Only platforms with isConfigured: true and non-empty URLs are displayed.
+  // Generic platform destinations are intentional previews until real profile URLs arrive.
   socials: [
     {
       platform: 'instagram',
       label: 'Instagram',
-      url: '',
-      isConfigured: false,
+      url: 'https://www.instagram.com/',
+      isConfigured: true,
+      isPlaceholder: true,
     },
     {
       platform: 'youtube',
       label: 'YouTube',
-      url: '',
-      isConfigured: false,
+      url: 'https://www.youtube.com/',
+      isConfigured: true,
+      isPlaceholder: true,
     },
     {
       platform: 'facebook',
@@ -83,8 +87,9 @@ export const siteConfig: SiteConfig = {
     {
       platform: 'spotify',
       label: 'Spotify Wedding Playlist',
-      url: '',
-      isConfigured: false,
+      url: 'https://open.spotify.com/',
+      isConfigured: true,
+      isPlaceholder: true,
     },
   ],
 
@@ -101,11 +106,12 @@ export const siteConfig: SiteConfig = {
   ],
 
   // Set to true once a real backend provider (e.g. Resend, SendGrid, Webhook) is integrated
+  enquiryFormAction: 'https://formsubmit.co/sjentertainmentch@gmail.com',
   enquiryDeliveryConfigured: process.env.ENQUIRY_DELIVERY_ENABLED === 'true' && Boolean(process.env.ENQUIRY_WEBHOOK_URL?.startsWith('https://')),
 };
 
 /**
- * Returns only the social links that have been genuinely configured.
+ * Returns enabled social destinations, including clearly labelled preview links.
  */
 export function getConfiguredSocials(): SocialLink[] {
   return siteConfig.socials.filter((s) => s.isConfigured && s.url.trim().length > 0);

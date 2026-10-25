@@ -12,7 +12,7 @@ export interface CelebrationConcept {
 export interface CelebrationChapter {
   slug: string;
   shortName: string;
-  imageUrl: string;
+  imageUrl?: string;
   introduction: string;
   guidance: string;
   concepts: CelebrationConcept[];
@@ -40,7 +40,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'sangeet',
     shortName: 'Sangeet',
-    imageUrl: '/images/celebrations/sangeet.webp',
+    imageUrl: '/media/portfolio/couple-dance.webp',
     introduction: 'Choose how your sangeet story unfolds: an expressive couple duet, a squad spotlight or a finale with everyone you love. These concepts can be combined into one flowing show.',
     guidance: 'The running order, track edits and rehearsal pace are shaped around your performers. We match movement to confidence, outfits and available stage space.',
     concepts: [
@@ -66,7 +66,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'mehendi',
     shortName: 'Mehendi',
-    imageUrl: '/images/celebrations/mehendi.webp',
+    imageUrl: '/images/celebrations/subtypes/mehendi-bridal-squad.webp',
     introduction: 'Choose a bridal squad moment, a folk circle, a graceful fusion performance or a playful couple routine. Every format is designed around comfortable movement and the flow of your gathering.',
     guidance: 'Routines can use gentle footwork and expressive upper-body movement. We discuss henna appointments, clothing and available rehearsal time before planning the performance.',
     concepts: [

@@ -18,6 +18,7 @@ import {
   getCelebrationChapter,
   getCelebrationService,
 } from '@/content/celebrations';
+import { getConceptVisual } from '@/content/conceptVisuals';
 import { withBasePath } from '@/lib/basePath';
 import '@/components/celebrations/Celebrations.css';
 
@@ -91,12 +92,12 @@ export default async function CelebrationPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="celebration-hero-media relative aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-[#BD954E]/30 bg-[#2C0713] group">
+          {chapter.imageUrl && <div className="celebration-hero-media relative aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-[#BD954E]/30 bg-[#2C0713] group">
             <Image
               src={withBasePath(chapter.imageUrl)}
-              alt={`${chapter.shortName} Choreography by Sajid & Joya`}
+              alt={`${chapter.shortName} choreography — concept reference`}
               fill
-              priority
+              preload
               sizes="(max-width: 1024px) 100vw, 50vw"
               unoptimized
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -104,20 +105,21 @@ export default async function CelebrationPage({ params }: PageProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-[#2C0713]/80 via-transparent to-transparent pointer-events-none" />
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold tracking-wider uppercase border border-white/20">
-                Signature Chapter
+                Visual reference
               </span>
             </div>
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
               <span className="text-xs font-serif italic text-[#E5D7B7]">
-                Authentic Celebration Curation
+                Concept inspiration
               </span>
               <span className="text-[10px] uppercase font-semibold text-[#D4B272] tracking-wider">
-                Sajid & Joya
+                Choreography guide
               </span>
             </div>
-          </div>
+          </div>}
         </header>
 
+        <p className="text-xs text-[#70656A] leading-relaxed mb-8">Images illustrate related movement or entry styling, and are not evidence of the exact function described. Where a matching reference is unavailable, the format is explained in text.</p>
         {/* Performance Formats Section */}
         <section id="types" className="celebration-types-section" aria-labelledby="types-title">
           <div className="celebration-section-heading">
@@ -126,7 +128,7 @@ export default async function CelebrationPage({ params }: PageProps) {
               <h2 id="types-title">Which format feels right for you?</h2>
             </div>
             <p>
-              Explore each performance type below with visual examples. You can combine elements
+              Explore each performance type below, with matching visual references where available. You can combine elements
               into your own custom celebration timeline.
             </p>
           </div>
@@ -152,14 +154,14 @@ export default async function CelebrationPage({ params }: PageProps) {
                 aria-labelledby={`${item.id}-title`}
               >
                 {/* Visual Column */}
-                <div
+                {getConceptVisual(item.id) && <div
                   className={`lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#2C0713] shadow-md group ${
                     i % 2 === 1 ? 'lg:order-2' : 'lg:order-1'
                   }`}
                 >
                   <Image
-                    src={withBasePath(`/images/celebrations/subtypes/${item.id}.webp`)}
-                    alt={`${item.title} — ${chapter.shortName}`}
+                    src={withBasePath(getConceptVisual(item.id)!.src)}
+                    alt={getConceptVisual(item.id)!.caption}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     unoptimized
@@ -173,14 +175,14 @@ export default async function CelebrationPage({ params }: PageProps) {
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <span className="text-xs font-serif italic text-[#E5D7B7] line-clamp-1">
-                      Mood: {item.mood}
+                      {getConceptVisual(item.id)!.caption}
                     </span>
                   </div>
-                </div>
+                </div>}
 
                 {/* Content Column */}
                 <div
-                  className={`lg:col-span-6 space-y-5 ${
+                  className={`${getConceptVisual(item.id) ? 'lg:col-span-6' : 'lg:col-span-12'} space-y-5 ${
                     i % 2 === 1 ? 'lg:order-1' : 'lg:order-2'
                   }`}
                 >

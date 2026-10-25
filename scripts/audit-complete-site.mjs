@@ -102,16 +102,22 @@ await Promise.all(Array.from({ length: 5 }, async () => {
 }));
 for (const route of ['/our-work/nonexistent-audit-project', '/wedding-choreography/not-a-category', '/does-not-exist']) {
   const response = await request(route);
-  if (response.status !== 404 && response.status !== 200) failures.push(`Missing-page handling: ${route} returned ${response.status}`);
+  if (response.status !== 404) failures.push(`Missing-page handling: ${route} returned ${response.status}, expected 404`);
 }
 if (!isStaticHost) {
   const validFields = { name: 'Demo Visitor', phone: '0000000000', eventCity: 'Jaipur', serviceInterest: 'haldi-celebration' };
-  for (const body of ['{', 'null', '[]', '{"name":4,"phone":{},"eventCity":[]}', JSON.stringify({ ...validFields, serviceInterest: 'invented-service' }), JSON.stringify({ ...validFields, eventDate: '2026-02-31' }), JSON.stringify({ ...validFields, message: 'x'.repeat(5001) })]) {
+  for (const body of ['{', 'null', '[]', '{"name":4,"phone":{},"eventCity":[]}', JSON.stringify({ ...validFields, serviceInterest: 'invented-service' }), JSON.stringify({ ...validFields, serviceInterests: [] }), JSON.stringify({ ...validFields, serviceInterests: ['haldi-celebration', 'invented-service'] }), JSON.stringify({ ...validFields, serviceInterests: 'not-an-array' }), JSON.stringify({ ...validFields, serviceInterests: [4] }), JSON.stringify({ ...validFields, eventDate: '2026-02-31' }), JSON.stringify({ ...validFields, message: 'x'.repeat(5001) })]) {
     const response = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body });
     if (response.status !== 400) failures.push(`API accepted invalid payload (${response.status}): ${body}`);
   }
   const oversized = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'x'.repeat(66000) }) });
   if (oversized.status !== 413) failures.push(`Oversized API payload returned ${oversized.status}, expected 413`);
+  const unsupported = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: '{}' });
+  if (unsupported.status !== 415) failures.push(`Non-JSON API payload returned ${unsupported.status}`);
+  const crossOrigin = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://unrelated.example' }, body: JSON.stringify(validFields) });
+  if (crossOrigin.status !== 403) failures.push(`Cross-origin API payload returned ${crossOrigin.status}`);
+  const sameOrigin = await request('/api/enquire', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: base.origin }, body: 'null' });
+  if (sameOrigin.status !== 400) failures.push(`Same-origin submission rejected before validation (${sameOrigin.status})`);
 }
 const result = { pages: documents.size, linksAndAnchors: links.size, assets: assets.size, failures };
 await mkdir('artifacts/site-audit', { recursive: true });

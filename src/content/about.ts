@@ -45,15 +45,15 @@ export const ownersData: {
   coverageStatement: string;
 } = {
   jointIntro:
-    "We are Sajid and Joya — creative partners, founders, and the artistic heartbeat behind SJ Entertainment Choreography. With more than 10 years of dedicated experience and hundreds of couple and family celebrations choreographed across India, we transform your favourite music into wedding moments that look breathtaking on stage and feel joyful in your heart.",
+    "We are Sajid and Joya — creative partners, founders, and the artistic heartbeat behind SJ Entertainment Choreography. With more than 15 years of dedicated experience and hundreds of couple and family celebrations choreographed across India, we transform your favourite music into wedding moments that look breathtaking on stage and feel joyful in your heart.",
   jointMediaId: 'portrait-sajid-joya',
-  experienceYears: '10+',
+  experienceYears: '15+',
   celebrationsCount: '500+',
   stats: [
     {
-      value: '10+ Years',
+      value: '15+ Years',
       label: 'Experience',
-      description: 'Over a decade of choreographing dream wedding moments and stage productions.',
+      description: 'Over fifteen years of choreographing dream wedding moments and stage productions.',
     },
     {
       value: '500+',
@@ -94,7 +94,7 @@ export const ownersData: {
       role: 'Co-Founder & Lead Choreographer',
       portraitMediaId: 'portrait-sajid',
       bioParagraphs: [
-        'With more than a decade of stage mastery and recognized with the National Star Achievers Award 2026 by Bollywood actress Vaishnavi Macdonald, Sajid leads musical arrangements, dynamic staging, and high-energy squad choreography.',
+        'With more than fifteen years of stage mastery and recognized with the National Star Achievers Award 2026 by Bollywood actress Vaishnavi Macdonald, Sajid leads musical arrangements, dynamic staging, and high-energy squad choreography.',
         'His infectious enthusiasm, sharp musicality, and calm, patient instruction put every groom, nervous beginner, and multi-generational family member at absolute ease.',
       ],
       focusAreas: ['Musicality & Medley Mixing', 'High-Energy Squad Formations', 'Stage Confidence', 'Award-Winning Choreography'],
@@ -105,7 +105,7 @@ export const ownersData: {
       role: 'Co-Founder & Performance Stylist',
       portraitMediaId: 'portrait-joya',
       bioParagraphs: [
-        'Bringing 10+ years of artistic sensibility, Joya specializes in graceful movement styling, emotive couple chemistry, and stage posture suited for bridal lehengas and wedding couture. Her sessions are warm, patient, and empowering.',
+        'Bringing 15+ years of artistic sensibility, Joya specializes in graceful movement styling, emotive couple chemistry, and stage posture suited for bridal lehengas and wedding couture. Her sessions are warm, patient, and empowering.',
       ],
       focusAreas: ['Bridal Grace & Mudras', 'Couple Storytelling & Chemistry', 'Patient Step Breakdown'],
       isPublished: true,

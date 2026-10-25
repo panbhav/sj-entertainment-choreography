@@ -5,6 +5,8 @@ import { getPublishedTestimonials } from '@/content/testimonials';
 import VideoPreview from '@/components/media/VideoPreview';
 import ResponsiveImage from '@/components/media/ResponsiveImage';
 import CinematicHero from '@/components/home/CinematicHero';
+import PartnerMarquee from '@/components/home/PartnerMarquee';
+import SocialLounge from '@/components/common/SocialLounge';
 
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
@@ -86,32 +88,17 @@ export default function HomePage() {
       <section className="founder-section">
         <div className="site-container founder-grid">
           <div className="founder-art relative">
-            <ResponsiveImage media={getMedia('portrait-sajid-joya')} variant="wine" />
+            <ResponsiveImage media={{ ...getMedia('portrait-sajid-joya'), caption: undefined }} variant="wine" />
             <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2C0713]/85 backdrop-blur-md text-[#D4B272] border border-[#BD954E]/40 text-xs font-semibold tracking-wider uppercase shadow-lg">
               <Sparkles size={12} className="text-[#D4B272]" />
-              <span>10+ Years of Experience</span>
+              <span>15+ Years of Experience</span>
             </div>
-            <Link
-              href="/about#award-recognition"
-              className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3 rounded-2xl bg-[#2C0713]/90 backdrop-blur-md text-[#FAF7F2] border border-[#BD954E]/40 shadow-xl hover:bg-[#3D101E] transition-all group"
-            >
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#BD954E]/20 text-[#D4B272] flex items-center justify-center shrink-0 border border-[#BD954E]/40">
-                  <Award size={16} />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] uppercase tracking-wider text-[#D4B272] font-semibold">National Award Winner 2026</p>
-                  <p className="text-xs font-serif font-bold text-white">Presented by Vaishnavi Macdonald</p>
-                </div>
-              </div>
-              <ArrowUpRight size={16} className="text-[#D4B272] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
             <span className="founder-signature">Sajid & Joya</span>
           </div>
           <div className="founder-copy">
             <p className="eyebrow">02 / THE PEOPLE BEHIND THE MOMENTS</p>
-            <h2>Over a decade of craft.<br /><em>Two creative hearts.</em></h2>
-            <p>We’re Sajid & Joya. With more than 10 years of wedding choreography experience and hundreds of celebrations across India, we turn the songs you love into dance moments that feel effortless, celebratory, and completely yours.</p>
+            <h2>Fifteen years of craft.<br /><em>Two creative hearts.</em></h2>
+            <p>We’re Sajid & Joya. With more than 15 years of wedding choreography experience and hundreds of celebrations across India, we turn the songs you love into dance moments that feel effortless, celebratory, and completely yours.</p>
             <p>From palace destination weddings in Rajasthan to coastal sunset sangeets in Goa, our passion is making every non-dancer feel poised, confident, and joyful in the spotlight.</p>
 
             <Link
@@ -132,7 +119,7 @@ export default function HomePage() {
 
             <div className="founder-values">
               <span><Check size={15} /> National Award Winner 2026</span>
-              <span><Check size={15} /> 10+ Years Experience</span>
+              <span><Check size={15} /> 15+ Years Experience</span>
               <span><Check size={15} /> 500+ Celebrations</span>
               <span><Check size={15} /> Destination Wedding Specialists</span>
             </div>
@@ -202,10 +189,14 @@ export default function HomePage() {
         </section>
       )}
 
+      <PartnerMarquee />
+      <SocialLounge />
+
       <EnquiryCTA
         title="Let’s make it a moment."
         description="A song you love. A story only you can tell. Let’s create something that feels beautifully yours."
-        buttonText="Start your celebration"
+        buttonText="Let’s create together"
+        buttonHref="/contact"
         className="home-enquiry"
       />
     </div>

@@ -99,7 +99,7 @@ export default function WeddingChoreographyPage() {
                 Destination Wedding Choreography Across India & Worldwide
               </h2>
               <p className="text-sm sm:text-base text-[#EAD9B7]/90 leading-relaxed">
-                Planning a royal palace wedding in Rajasthan, a beachside mandap in Goa, or an overseas celebration? Sajid & Joya bring over 10 years of on-ground destination choreography experience — harmonizing virtual pre-wedding rehearsals across timezones with high-energy on-site tech dry runs, sound-light cues, and multi-ceremony dance direction.
+                Planning a royal palace wedding in Rajasthan, a beachside mandap in Goa, or an overseas celebration? Sajid & Joya bring over 15 years of on-ground destination choreography experience — harmonizing virtual pre-wedding rehearsals across timezones with high-energy on-site tech dry runs, sound-light cues, and multi-ceremony dance direction.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {['Udaipur & Jaipur Palaces', 'Goa Beachfront Resorts', 'Kerala Backwaters', 'Jim Corbett & Hills', 'NRI & Multi-City Relatives'].map((tag) => (
