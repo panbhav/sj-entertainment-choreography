@@ -150,7 +150,7 @@ export default function AwardRecognitionSection() {
 
           {/* Right Column: Interactive Media Showcase */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className={`w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden bg-black/60 border border-[#BD954E]/40 shadow-2xl relative ${activeTab === 'certificate' ? 'aspect-[3/2]' : 'aspect-[4/5]'} flex items-center justify-center`}>
+            <div className={`w-full max-w-sm sm:max-w-md rounded-2xl overflow-hidden bg-black/60 border border-[#BD954E]/40 shadow-2xl relative ${activeTab === 'certificate' ? 'aspect-[3/2]' : activeTab === 'stage' ? 'aspect-video' : 'aspect-[4/5]'} flex items-center justify-center`}>
               {/* VIDEO TAB */}
               {activeTab === 'video' && (
                 <div className="relative w-full h-full flex items-center justify-center bg-black">
@@ -204,13 +204,8 @@ export default function AwardRecognitionSection() {
                     alt={stageMedia.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 480px"
-                    className="object-cover object-[center_60%]"
+                    className="object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 right-4 z-10 text-xs text-[#FAF7F2] bg-black/60 p-3 rounded-xl border border-white/10 backdrop-blur-md">
-                    <p className="font-semibold text-[#D4B272]">{stageMedia.title}</p>
-                    <p className="text-[11px] text-[#C5BDB2] mt-0.5">{stageMedia.caption}</p>
-                  </div>
                 </div>
               )}
 
