@@ -21,3 +21,11 @@
   input:not([type=checkbox]):not([type=radio]), textarea, select { font-size: 16px; }
 }
 .video-dialog button[aria-label="Close video player"] { min-width: 44px; min-height: 44px; }
+.site-header .mobile-navigation a.mobile-client-cta { margin-top: 12px; padding: 15px 16px; border: 0; border-radius: 8px; background: #4a1525; color: #faf7f2; }
+.site-header .mobile-navigation a.mobile-client-cta:hover { background: #641c32; }
+@media (min-width: 801px) and (max-width: 1000px) {
+  .header-inner { gap: 12px; }
+  .desktop-nav, .site-header--film .desktop-nav { gap: 12px; font-size: 11px; }
+  .site-brand strong { font-size: 18px; }
+  .header-cta { gap: 8px; padding: 12px; font-size: 10px; white-space: nowrap; }
+}

@@ -1,8 +1,5 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { Pause, Play, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import '@/components/common/Connection.css';
 
 const partners = [
@@ -12,10 +9,9 @@ const partners = [
 ];
 
 export default function PartnerMarquee() {
-  const [paused, setPaused] = useState(false);
   return <section className="partner-wall" aria-labelledby="partners-title">
-    <div className="site-container partner-wall-heading"><div><p className="eyebrow">BRANDS & PROPERTIES / PREVIEW</p><h2 id="partners-title">Great spaces.<br /><em>Unforgettable stages.</em></h2></div><div><p>A space for the brands, properties, and creative teams we work with.</p><p className="partner-placeholder-note">All names below are fictional placeholders, not confirmed clients.</p><button type="button" onClick={() => setPaused(!paused)} aria-pressed={paused} aria-label={paused ? 'Resume brand animation' : 'Pause brand animation'}>{paused ? <Play size={15} /> : <Pause size={15} />}{paused ? 'Resume motion' : 'Pause motion'}</button></div></div>
-    <div className={`partner-viewport ${paused ? 'is-paused' : ''}`}><div className="partner-track">{[0, 1].map(copy => <ul className="partner-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{partners.map(([name, type]) => <li key={name}><Sparkles size={18} aria-hidden="true" /><span className="partner-name">{name}</span><span className="partner-type">{type} · DEMO</span></li>)}</ul>)}</div></div>
+    <div className="site-container partner-wall-heading"><div><p className="eyebrow">BRANDS & PROPERTIES / PREVIEW</p><h2 id="partners-title">Great spaces.<br /><em>Unforgettable stages.</em></h2></div><div><p>A space for the brands, properties, and creative teams we work with.</p><p className="partner-placeholder-note">All names below are fictional placeholders, not confirmed clients.</p></div></div>
+    <div className="partner-viewport"><div className="partner-track">{[0, 1].map(copy => <ul className="partner-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{partners.map(([name, type]) => <li key={name}><Sparkles size={18} aria-hidden="true" /><span className="partner-name">{name}</span><span className="partner-type">{type} · DEMO</span></li>)}</ul>)}</div></div>
     <div className="site-container partner-wall-footer"><span>YOUR SPACE. OUR MOVEMENT. A SHARED STORY.</span><Link href="/contact">Create something together <ArrowUpRight size={16} /></Link></div>
   </section>;
 }

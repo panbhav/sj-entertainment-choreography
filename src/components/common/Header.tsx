@@ -289,10 +289,13 @@ export default function Header() {
             <Link href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>
               Our story
             </Link>
+            <Link href="/join-our-team" aria-current={pathname === '/join-our-team' ? 'page' : undefined}>
+              Join Our Team
+            </Link>
           </nav>
 
-          <Link href="/join-our-team" className="header-cta" aria-current={pathname === '/join-our-team' ? 'page' : undefined}>
-            Join Our Team <ArrowUpRight size={15} />
+          <Link href="/contact" className="header-cta" aria-current={pathname === '/contact' ? 'page' : undefined}>
+            Let’s celebrate <ArrowUpRight size={15} />
           </Link>
 
           <button
@@ -426,6 +429,14 @@ export default function Header() {
               aria-current={pathname === '/join-our-team' ? 'page' : undefined}
             >
               Join Our Team <ArrowUpRight size={16} />
+            </Link>
+            <Link
+              href="/contact"
+              onClick={close}
+              className="mobile-client-cta"
+              aria-current={pathname === '/contact' ? 'page' : undefined}
+            >
+              Let’s celebrate <ArrowUpRight size={16} />
             </Link>
           </nav>
         )}

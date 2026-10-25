@@ -18,13 +18,12 @@
 .partner-wall-heading { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-bottom:32px; }
 .partner-wall-heading > div:last-child { max-width:430px; justify-self:end; font-size:14px; line-height:1.8; color:#706056; }
 .partner-wall .partner-placeholder-note { font-size:12px; margin-top:12px; }
-.partner-wall button { display:inline-flex; gap:8px; align-items:center; padding:10px 0; min-height:44px; font-size:12px; color:#4a1525; text-decoration:underline; text-underline-offset:4px; }
 .partner-viewport { overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
 .partner-track { display:flex; width:max-content; animation:partner-drift 40s linear infinite; }
 .partner-group { display:flex; flex-shrink:0; margin:0; padding:0; list-style:none; }
 .partner-group li { width:250px; height:145px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; border-inline-end:1px solid #d7c8b4; color:#6d5338; }
 .partner-name { font:500 22px/1.3 var(--font-display),serif; letter-spacing:.04em; }.partner-type { font-size:8px; letter-spacing:.16em; }
-.partner-viewport:hover .partner-track,.partner-viewport.is-paused .partner-track { animation-play-state:paused; }
+.partner-viewport:hover .partner-track { animation-play-state:paused; }
 .partner-wall-footer { display:flex; justify-content:space-between; gap:20px; align-items:center; border-top:1px solid #d7c8b4; margin-top:30px; padding-top:22px; }
 .partner-wall-footer > span { font-size:9px; letter-spacing:.14em; color:#806d58; }.partner-wall-footer a { display:inline-flex; align-items:center; gap:10px; font-size:12px; color:#4a1525; }
 @keyframes partner-drift { to { transform:translateX(-50%); } }
