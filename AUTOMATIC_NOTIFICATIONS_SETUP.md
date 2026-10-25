@@ -1,10 +1,14 @@
 # Automatic email + WhatsApp notifications
 
-## Current status
+## Current default: free FormSubmit email
 
-The code is prepared for both Contact enquiries and Join Our Team introductions to submit in-page. It is **not live**: no API credentials, verified email sender, WhatsApp Business sender/template or server hosting have been configured. No real notification was sent and no provider account was created.
+Contact and Join Our Team now use the fixed public endpoint `https://formsubmit.co/ajax/sjentertainmentch@gmail.com` when the optional dual-provider backend is not configured. AJAX sends email without opening another app and works on static hosting too. Contact emails include all selected services and choreography context; recruitment emails contain the reviewed application. The existing server backend takes priority only when fully configured.
 
-The former FormSubmit native POST and recruitment mailto/WhatsApp draft actions were removed from submission flows. Direct contact links elsewhere remain available for visitors who intentionally choose them. Missing configuration produces a clear not-sent notice rather than a false success.
+An owner-requested sample was submitted on 25 October 2026. FormSubmit responded: “This form needs Activation. We've sent you an email containing an 'Activate Form' link. Just click it and your form will be actived!” The owner must activate it from the inbox or spam folder at sjentertainmentch@gmail.com. This response confirms an activation request, not inbox delivery or completed activation. The owner subsequently confirmed activation; one clearly labelled live Contact sample and one Join Our Team sample were submitted through the local website and accepted by FormSubmit. Inbox receipt and field rendering await owner confirmation. See FORM_SUBMISSION_TEST_2026-10-25.md. A production-origin activation may also be requested by the provider when the final website is first used.
+
+The browser checks the provider response strictly: boolean true or string "true" is accepted; string "false", activation requests, HTTP failures, malformed replies and timeouts are not success. Data stays in the forms after failures. Spam-trap fields are checked; provider CAPTCHA settings are not disabled. Browser-side validation is not a substitute for provider abuse controls. Private provider credentials are not needed for this free email option. FormSubmit states that submission archives are retained for 30 days; the draft privacy page describes this processing.
+
+WhatsApp automation remains unconfigured and is not provided by FormSubmit. The WhatsApp Business mobile app cannot replace an API sender. The remaining sections describe the OPTIONAL Resend + Twilio server backend, not the default free email path.
 
 ## Flow
 

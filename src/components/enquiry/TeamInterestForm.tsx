@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Send, Pencil } from 'lucide-react';
 import { withBasePath } from '@/lib/basePath';
+import { formEmailEndpoint, sendFormEmail } from '@/lib/form-email';
 import { teamAreas as areas, teamExperience as experienceOptions, teamAvailability as availabilityOptions } from '@/content/teamOptions';
 import './Hire.css';
 
@@ -12,7 +13,8 @@ type Application = {
   honeypot: string;
 };
 
-export default function TeamInterestForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+export default function TeamInterestForm({ deliveryAvailable: serverDeliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+  const deliveryAvailable = serverDeliveryAvailable || Boolean(formEmailEndpoint);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [sendError, setSendError] = useState('');
@@ -63,6 +65,17 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
     setSending(true);
     setSendError('');
     try {
+      if (!serverDeliveryAvailable) {
+        const result = await sendFormEmail('team', {
+          Name: application.name, Phone: application.phone, City: application.city,
+          Interest: application.area, Experience: application.experience, Availability: application.availability,
+          Portfolio: application.portfolio || 'Not supplied', Skills: application.skills,
+          Travel: application.travel ? 'Open to travel' : 'To be discussed',
+        }, application.honeypot);
+        if (result.success) setSent(true);
+        else setSendError(result.message);
+        return;
+      }
       const response = await fetch(withBasePath('/api/team'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(30000), body: JSON.stringify(application) });
       const result = await response.json();
       if (response.ok && result.success) setSent(true);

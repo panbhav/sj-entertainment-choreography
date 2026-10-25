@@ -49,7 +49,8 @@ export default function PrivacyPolicyPage() {
         <div className="prose prose-stone max-w-none text-sm leading-relaxed text-[#575253] space-y-6">
           <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#2C0713]">Enquiries and team introductions</h2>
-            <p>When online submissions are enabled, Contact enquiries and Join Our Team introductions are sent through the website backend. Resend processes email notifications and Twilio processes WhatsApp notifications to Sajid. The email contains the submitted details; the WhatsApp notification contains a short summary. These providers process the details needed to deliver the notifications. No messaging or email app needs to open on your device.</p>
+            <p>Contact enquiries and Join Our Team introductions use FormSubmit to send the submitted details by email to Sajid. Your browser sends those details directly to FormSubmit, which requires the recipient to activate email delivery. No messaging or email app needs to open on your device. FormSubmit states that it retains submissions in its archive for 30 days.</p>
+            <p>If a separately configured website backend is enabled, Resend processes email notifications and Twilio processes short WhatsApp notifications instead. The current FormSubmit email option does not automatically send WhatsApp messages.</p>
             <p>Only include details needed for your enquiry or introduction. Portfolio links are shared as text and are not fetched by this website. If online submissions are not connected, the form tells you that your details have not been sent.</p>
           </section>
           <section className="space-y-3">

@@ -147,7 +147,7 @@ export const mediaRegistry: Record<string, MediaItem> = {
     caption: 'Sajid',
     published: true,
     expectedFilename: 'sajid-individual-2026.webp',
-    recommendedDimensions: '900x1200 (3:4)',
+    recommendedDimensions: '1200x1600 (3:4)',
   },
   'portrait-joya': {
     id: 'portrait-joya',
@@ -161,7 +161,7 @@ export const mediaRegistry: Record<string, MediaItem> = {
     caption: 'Joya',
     published: true,
     expectedFilename: 'joya-individual-2026.webp',
-    recommendedDimensions: '900x1200 (3:4)',
+    recommendedDimensions: '1200x1600 (3:4)',
   },
   'about-bts-rehearsal': {
     id: 'about-bts-rehearsal',

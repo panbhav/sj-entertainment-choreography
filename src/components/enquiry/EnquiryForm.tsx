@@ -5,12 +5,14 @@ import { useSearchParams } from 'next/navigation';
 import { serviceOptions, resolveEnquiryService } from '@/content/enquiryOptions';
 import { withBasePath } from '@/lib/basePath';
 import { siteConfig } from '@/content/siteConfig';
+import { formEmailEndpoint, sendFormEmail } from '@/lib/form-email';
 import { getSelectedCelebrationConcept } from '@/content/celebrations';
 import ServiceMultiSelect from './ServiceMultiSelect';
 import { Sparkles, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 
-export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+export default function EnquiryForm({ deliveryAvailable: serverDeliveryAvailable = false }: { deliveryAvailable?: boolean }) {
+  const deliveryAvailable = serverDeliveryAvailable || Boolean(formEmailEndpoint);
   const searchParams = useSearchParams();
   const preselectedService = searchParams.get('service') || '';
   const requestedConcept = getSelectedCelebrationConcept(searchParams.get('concept') || '', preselectedService);
@@ -98,6 +100,20 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
     setIsSubmitting(true);
 
     try {
+      if (!serverDeliveryAvailable) {
+        const data = await sendFormEmail('enquiry', {
+          Name: formData.name.trim(), Phone: formData.phone.trim(), email: formData.email.trim(),
+          'Event city': formData.eventCity.trim(),
+          Services: serviceOptions.filter(option => serviceInterests.includes(option.value)).map(option => option.label).join(', '),
+          'Event date': formData.dateNotFinalised ? 'Not finalised' : formData.eventDate || 'To be discussed',
+          Budget: formData.budgetRange || 'To be discussed',
+          'Choreography type': selectedConcept ? `${selectedConcept.chapter.shortName} — ${selectedConcept.concept.title}` : 'To be discussed',
+          Message: formData.message.trim() || 'Not supplied',
+        }, formData.honeypot);
+        setSubmissionStatus(data.success ? 'success' : 'error');
+        setStatusMessage(data.message);
+        return;
+      }
       const res = await fetch(withBasePath('/api/enquire'), {
         method: 'POST',
         headers: {

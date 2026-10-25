@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
       "img-src 'self' data: blob:",
       "media-src 'self' blob:",
       "font-src 'self'",
-      `connect-src 'self'${development ? ' ws: wss:' : ''}`,
+      `connect-src 'self' https://formsubmit.co${development ? ' ws: wss:' : ''}`,
       "frame-src https://www.youtube-nocookie.com https://open.spotify.com https://www.google.com/maps",
       "object-src 'none'", "base-uri 'self'", "form-action 'self'", "frame-ancestors 'self'",
     ].join('; ');
