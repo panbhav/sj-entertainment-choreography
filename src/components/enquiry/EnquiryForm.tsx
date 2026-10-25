@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { serviceOptions, resolveEnquiryService } from '@/content/enquiryOptions';
 import { withBasePath } from '@/lib/basePath';
@@ -34,6 +34,12 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
     'idle' | 'success' | 'backend_unconfigured' | 'error'
   >('idle');
   const [statusMessage, setStatusMessage] = useState('');
+  const feedbackRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (submissionStatus === 'idle') return;
+    feedbackRef.current?.focus({ preventScroll: true });
+    feedbackRef.current?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  }, [submissionStatus]);
 
   const [serviceSelection, setServiceSelection] = useState<{ query: string; values: string[] } | null>(null);
   const resolvedService = resolveEnquiryService(preselectedService);
@@ -97,6 +103,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
         headers: {
           'Content-Type': 'application/json',
         },
+        signal: AbortSignal.timeout(30000),
         body: JSON.stringify({
           ...formData,
           serviceInterests,
@@ -163,7 +170,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       {!deliveryAvailable && submissionStatus !== 'backend_unconfigured' && <p role="status" className="mb-6 p-4 rounded-xl bg-[#FAF6EF] border border-[#DFCBB0] text-sm text-[#6F5438]">Online submissions are not connected yet. Please use the direct contact details to reach Sajid.</p>}
       {/* Submission Feedback Notices */}
       {submissionStatus === 'success' && (
-        <div className="mb-8 p-5 rounded-2xl bg-[#FAF6EF] border border-[#BD954E] flex items-start gap-3">
+        <div ref={feedbackRef} tabIndex={-1} role="status" className="mb-8 p-5 rounded-2xl bg-[#FAF6EF] border border-[#BD954E] flex items-start gap-3">
           <CheckCircle2 className="w-5 h-5 text-[#8C6A2E] shrink-0 mt-0.5" />
           <div className="text-sm text-[#2C0713]">
             <p className="font-semibold text-[#4A1525]">Celebration Enquiry Received</p>
@@ -173,7 +180,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       )}
 
       {submissionStatus === 'backend_unconfigured' && (
-        <div className="mb-8 p-5 rounded-2xl bg-[#FFFDF9] border border-[#D4AF67] flex items-start gap-3">
+        <div ref={feedbackRef} tabIndex={-1} role="alert" className="mb-8 p-5 rounded-2xl bg-[#FFFDF9] border border-[#D4AF67] flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-[#BA9248] shrink-0 mt-0.5" />
           <div className="text-sm text-[#2C0713]">
             <p className="font-semibold text-[#4A1525]">Online submissions unavailable</p>
@@ -186,7 +193,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
       )}
 
       {submissionStatus === 'error' && (
-        <div className="mb-8 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm flex items-start gap-2">
+        <div ref={feedbackRef} tabIndex={-1} role="alert" className="mb-8 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm flex items-start gap-2">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold">Unable to Send</p>
@@ -217,7 +224,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-name"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Your Name <span className="text-[#A6803B]">*</span>
+                Your Name <span className="text-[#8C6A2E]">*</span>
               </label>
               <input
                 type="text"
@@ -242,7 +249,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-phone"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Phone / WhatsApp <span className="text-[#A6803B]">*</span>
+                Phone / WhatsApp <span className="text-[#8C6A2E]">*</span>
               </label>
               <input
                 type="tel" inputMode="tel" maxLength={24}
@@ -269,7 +276,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-email"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Email Address <span className="text-[#888182] font-normal normal-case">(Optional)</span>
+                Email Address <span className="text-[#70656A] font-normal normal-case">(Optional)</span>
               </label>
               <input
                 type="email"
@@ -293,7 +300,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-city"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Event City / Destination <span className="text-[#A6803B]">*</span>
+                Event City / Destination <span className="text-[#8C6A2E]">*</span>
               </label>
               <input
                 type="text"
@@ -320,7 +327,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-date"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Event Date <span className="text-[#888182] font-normal normal-case">(Optional)</span>
+                Event Date <span className="text-[#70656A] font-normal normal-case">(Optional)</span>
               </label>
               <input
                 type="date"
@@ -372,7 +379,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
                 htmlFor="enquiry-budget"
                 className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
               >
-                Envisioned Budget Range <span className="text-[#888182] font-normal normal-case">(Optional)</span>
+                Envisioned Budget Range <span className="text-[#70656A] font-normal normal-case">(Optional)</span>
               </label>
               <select
                 id="enquiry-budget" name="Budget range"
@@ -397,7 +404,7 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
               className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2"
             >
               Celebration Details & Song Preferences{' '}
-              <span className="text-[#888182] font-normal normal-case">(Optional)</span>
+              <span className="text-[#70656A] font-normal normal-case">(Optional)</span>
             </label>
             <textarea
               maxLength={4500} id="enquiry-message" name="message"
@@ -431,8 +438,8 @@ export default function EnquiryForm({ deliveryAvailable = false }: { deliveryAva
           </div>
 
           {/* Non-binding disclaimer */}
-          <p className="text-xs text-[#888182] leading-relaxed pt-2 border-t border-[#F4ECE1]">
-            Your details are submitted securely to the SJ team. No WhatsApp or email app opens. A booking is confirmed only after the schedule and arrangements are agreed.
+          <p className="text-xs text-[#70656A] leading-relaxed pt-2 border-t border-[#F4ECE1]">
+            {deliveryAvailable ? 'Submit directly to the SJ team without opening another app.' : 'Online submission is unavailable. Contact Sajid directly to discuss your plans.'} A booking is confirmed only after the schedule and arrangements are agreed.
           </p>
         </form>
       )}

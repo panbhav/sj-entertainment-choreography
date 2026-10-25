@@ -58,12 +58,12 @@ while (pending.length) {
     }
   }
 }
-const enquiryFiles = ['src/content/enquiryOptions.ts', 'src/content/services.ts', 'src/content/entriesAndArtists.ts', 'src/content/packages.ts'];
+const enquiryFiles = ['src/content/enquiryOptions.ts', 'src/content/services.ts', 'src/content/entriesAndArtists.ts', 'src/content/packages.ts', 'src/content/backgroundArtists.ts', 'src/content/weddingContent.ts'];
 const knownServices = new Set(['choreography', 'couple-entry', 'artists', 'artists-live-entertainment']);
 for (const file of enquiryFiles) {
   try {
     const code = await readFile(file, 'utf8');
-    for (const [, val] of code.matchAll(/(?:value|queryParam):\s*['"]([^'"]+)['"]/g)) {
+    for (const [, val] of code.matchAll(/(?:value|queryParam|service):\s*['"]([^'"]+)['"]/g)) {
       knownServices.add(val);
     }
   } catch {}

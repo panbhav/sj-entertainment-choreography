@@ -35,5 +35,6 @@ export const backgroundArtistFormats = [
 
 export const backgroundArtistServiceOptions = [
   { value: 'background-artists', label: 'Background Artists & Supporting Dancers' },
+  { value: 'background-artists-bhaat-mayra', label: 'Bhaat / Mayra supporting dancers' },
   ...backgroundArtistFormats.map(format => ({ value: format.service, label: format.name })),
 ];

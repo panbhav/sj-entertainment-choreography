@@ -74,7 +74,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${plusJakarta.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#221E1F] font-sans antialiased selection:bg-[#4A1525] selection:text-[#FAF7F2]">
         <Header />
-        <main id="main-content" className="flex-1 focus:outline-none">
+        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
           {children}
         </main>
         <Footer />

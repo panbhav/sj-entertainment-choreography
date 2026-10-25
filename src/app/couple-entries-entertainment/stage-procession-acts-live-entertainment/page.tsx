@@ -16,6 +16,7 @@ import EnquiryCTA from '@/components/common/EnquiryCTA';
 import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/couple-entries-entertainment/stage-procession-acts-live-entertainment' },
   title: 'Stage & Procession Acts, Artists & Live Entertainment | Sajid & Joya',
   description:
     'Curated live wedding entertainment by Sajid & Joya across India: symphonic dhol ensembles, professional dance troupes, folk performers, live vocalists, classical instrumentalists, celebrity emcees, and visual spectacles.',
@@ -34,7 +35,7 @@ export default function StageProcessionActsPage() {
           {/* Breadcrumb Navigation */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-xs text-[#888182] mb-6 flex-wrap"
+            className="flex items-center gap-2 text-xs text-[#70656A] mb-6 flex-wrap"
           >
             <Link href="/" className="hover:text-[#4A1525] transition-colors">
               Home
@@ -154,7 +155,7 @@ export default function StageProcessionActsPage() {
                 <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#F7EDF1] text-[#641C32] border border-[#BD954E]/20">
                   Live Artist Ensemble
                 </span>
-                <span className="text-xs text-[#BD954E] font-medium">
+                <span className="text-xs text-[#8C6A2E] font-medium">
                   Curated & Directed
                 </span>
               </div>
@@ -163,7 +164,7 @@ export default function StageProcessionActsPage() {
                 {artist.name}
               </h2>
 
-              <p className="text-xs font-medium text-[#BD954E]">
+              <p className="text-xs font-medium text-[#8C6A2E]">
                 {artist.subtitle}
               </p>
 
@@ -194,11 +195,11 @@ export default function StageProcessionActsPage() {
               {/* Production & Rider Notes */}
               {artist.productionNotes && (
                 <div className="pt-2">
-                  <h3 className="text-[11px] font-semibold text-[#888182] uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                    <Settings className="w-3.5 h-3.5 text-[#888182]" />
+                  <h3 className="text-[11px] font-semibold text-[#70656A] uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                    <Settings className="w-3.5 h-3.5 text-[#70656A]" />
                     <span>Technical & Rider Coordination</span>
                   </h3>
-                  <p className="text-xs text-[#888182] leading-relaxed">
+                  <p className="text-xs text-[#70656A] leading-relaxed">
                     {artist.productionNotes}
                   </p>
                 </div>
@@ -215,7 +216,7 @@ export default function StageProcessionActsPage() {
 
                 <a
                   href="#top"
-                  className="text-xs text-[#888182] hover:text-[#4A1525] transition-colors"
+                  className="text-xs text-[#70656A] hover:text-[#4A1525] transition-colors"
                 >
                   ↑ Back to top
                 </a>

@@ -9,6 +9,7 @@ import './Hire.css';
 type Application = {
   area: string; name: string; phone: string; city: string; experience: string;
   availability: string; portfolio: string; skills: string; travel: boolean;
+  honeypot: string;
 };
 
 export default function TeamInterestForm({ deliveryAvailable = false }: { deliveryAvailable?: boolean }) {
@@ -46,7 +47,7 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
     setError(null);
     setSendError('');
     setSent(false);
-    setApplication({ area, name: get('name'), phone: get('phone'), city: get('city'), experience: get('experience'), availability: get('availability'), portfolio: get('portfolio'), skills: get('skills'), travel: form.get('travel') === 'on' });
+    setApplication({ area, name: get('name'), phone: get('phone'), city: get('city'), experience: get('experience'), availability: get('availability'), portfolio: get('portfolio'), skills: get('skills'), travel: form.get('travel') === 'on', honeypot: get('honeypot') });
     requestAnimationFrame(() => {
       reviewRef.current?.focus();
       reviewRef.current?.scrollIntoView({ behavior: 'instant', block: 'center' });
@@ -62,7 +63,7 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
     setSending(true);
     setSendError('');
     try {
-      const response = await fetch(withBasePath('/api/team'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(application) });
+      const response = await fetch(withBasePath('/api/team'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(30000), body: JSON.stringify(application) });
       const result = await response.json();
       if (response.ok && result.success) setSent(true);
       else setSendError(result.message || 'Your introduction could not be submitted. Please try again.');
@@ -80,6 +81,7 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
     </div>
     {!deliveryAvailable && <p className="hire-form-note mb-5">Online submissions are not connected yet. You can prepare your introduction here and contact Sajid directly.</p>}
     <form ref={formRef} onSubmit={review} hidden={!!application} className="hire-form">
+      <div hidden aria-hidden="true"><label>Leave this blank<input name="honeypot" tabIndex={-1} autoComplete="off" /></label></div>
       <fieldset>
         <legend><span>01</span> Where do you find your rhythm?</legend>
         <div className="hire-intents">{areas.map(item => <label key={item} className={area === item ? 'is-selected' : ''}>
@@ -102,7 +104,7 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
       </fieldset>
       {error && <p id="team-error" role="alert" className="hire-error">{error.message}</p>}
       <button type="submit" className="hire-submit">Review my introduction <ArrowRight size={18} /></button>
-      <p className="hire-form-note">Fields marked * are required. Review your details before submitting them securely to the SJ team. No messaging app or email app opens.</p>
+      <p className="hire-form-note">Fields marked * are required. {deliveryAvailable ? 'Review your details before submitting to the SJ team. No messaging app or email app opens.' : 'You can prepare and review your details here. Contact Sajid directly while online submissions are unavailable.'}</p>
     </form>
     <div ref={reviewRef} tabIndex={-1} hidden={!application} className="hire-review" aria-labelledby="team-review-title">
       <span className="hire-step">03 / MAKE YOUR INTRODUCTION</span>
@@ -117,7 +119,7 @@ export default function TeamInterestForm({ deliveryAvailable = false }: { delive
       {sent ? <p role="status" className="hire-form-note">Thank you. Your introduction has been submitted.</p> : <>
         <div className="hire-send-actions"><button type="button" className="hire-submit disabled:opacity-60" disabled={sending} onClick={sendIntroduction}><Send size={17} /> {sending ? 'Submitting…' : 'Send introduction'}</button></div>
         <button type="button" disabled={sending} className="hire-edit" onClick={() => { setApplication(null); requestAnimationFrame(() => formRef.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus()); }}><Pencil size={14} /> Edit my introduction</button>
-        <p className="hire-form-note">Your details are submitted to the SJ team. Your introduction does not guarantee a role; opportunities and next steps are discussed personally.</p>
+        <p className="hire-form-note">{deliveryAvailable ? 'Use Send introduction to submit these details to the SJ team.' : 'Your introduction has not been sent. Contact Sajid directly to discuss joining the team.'} Opportunities and next steps are discussed personally.</p>
       </>}
     </div>
   </div>;

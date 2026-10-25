@@ -7,6 +7,7 @@ import SectionHeading from '@/components/common/SectionHeading';
 import EnquiryCTA from '@/components/common/EnquiryCTA';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/packages' },
   title: 'Experiences & Tailored Combinations',
   description:
     'Curated wedding choreography combinations, grand couple entries, and complete celebration entertainment by Sajid & Joya.',
@@ -62,7 +63,7 @@ export default function PackagesPage() {
                   <h2 className="font-serif text-2xl font-bold text-[#2C0713]">
                     {combo.name}
                   </h2>
-                  <p className="text-xs sm:text-sm text-[#BD954E] font-medium mt-1">
+                  <p className="text-xs sm:text-sm text-[#8C6A2E] font-medium mt-1">
                     {combo.tagline}
                   </p>
                 </div>
@@ -97,13 +98,13 @@ export default function PackagesPage() {
 
                 {/* What We Discuss */}
                 <div className="space-y-2 mb-8 pt-4 border-t border-[#F4ECE1]">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[#888182]">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[#70656A]">
                     What We Discuss During Planning
                   </h3>
                   <ul className="space-y-1.5 text-xs text-[#575253]">
                     {combo.planningFocus.map((item, i) => (
                       <li key={i} className="flex items-start gap-1.5">
-                        <span className="text-[#BD954E]">•</span>
+                        <span className="text-[#8C6A2E]">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -161,7 +162,7 @@ export default function PackagesPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center text-xs text-[#888182] max-w-xl mx-auto">
+          <div className="mt-12 text-center text-xs text-[#70656A] max-w-xl mx-auto">
             All destination wedding quotes include open discussions regarding travel, stay,
             and on-site preparation timelines to ensure seamless production.
           </div>
@@ -185,7 +186,7 @@ export default function PackagesPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 01
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
@@ -206,7 +207,7 @@ export default function PackagesPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 02
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
@@ -227,6 +228,10 @@ export default function PackagesPage() {
       {/* =========================================================================
           FINAL ENQUIRY CTA
           ========================================================================= */}
+      <aside className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-sm text-[#575253] leading-relaxed">
+        <p>Want something to share after the celebration? <Link href="/#wedding-content" className="font-semibold text-[#4A1525] underline underline-offset-4">Add wedding content creators &amp; social reels to your plans →</Link></p>
+      </aside>
+
       <EnquiryCTA
         title="Ready for your tailored celebration quote?"
         description="Share your wedding dates, destination, and envisioned sequence. Sajid & Joya will prepare a personalized proposal."

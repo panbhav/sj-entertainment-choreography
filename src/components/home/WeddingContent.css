@@ -1,0 +1,24 @@
+.wedding-content-section{width:min(1280px,calc(100% - 64px));margin:clamp(48px,7vw,90px) auto;color:#2c0713;scroll-margin-top:0}
+.wedding-content-panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);padding:clamp(28px,4vw,52px);border:1px solid #dfcbb0;border-radius:24px;background:#f5eee5}
+.wedding-content-eyebrow{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#77582b;margin-bottom:18px}
+.wedding-content-section h2{font-family:var(--font-display),Georgia,serif;font-size:clamp(30px,3.3vw,44px);line-height:1.15;font-weight:500;margin:0 0 20px}
+.wedding-content-section h2 em{color:#641c32}
+.wedding-content-intro>p:not(.wedding-content-eyebrow){font-size:14px;line-height:1.85;color:#575253;max-width:470px}
+.wedding-content-cta{display:inline-flex;align-items:center;gap:16px;margin:20px 0 18px;min-height:44px;font-size:13px;font-weight:600;color:#4a1525;border-bottom:1px solid #bd954e}
+.wedding-content-intro>p.wedding-content-note{font-size:11px;line-height:1.8;color:#70656a;max-width:430px}
+.wedding-content-hint{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#77582b;margin-bottom:12px}
+.wedding-content-hint span{font-size:10px;letter-spacing:0;text-transform:none;font-weight:400;color:#70656a}
+.wedding-content-format{border-top:1px solid #dfcbb0}
+.wedding-content-format:last-child{border-bottom:1px solid #dfcbb0}
+.wedding-content-format summary{display:flex;align-items:center;gap:14px;min-height:68px;list-style:none;cursor:pointer;padding-block:16px;color:#4a1525}
+.wedding-content-format summary::-webkit-details-marker{display:none}
+.wedding-content-format summary>svg{flex-shrink:0}
+.wedding-content-format h3{font-size:14px;font-family:var(--font-body),sans-serif;font-weight:500;line-height:1.55;flex:1;min-width:0}
+.wedding-content-format[open] .wedding-content-plus{transform:rotate(45deg)}
+.wedding-content-format-body{padding:0 0 22px 33px}
+.wedding-content-format-body p{font-size:13px;line-height:1.8;color:#575253;margin:0 0 14px}
+.wedding-content-format-body strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#77582b;font-weight:600;margin-bottom:3px}
+.wedding-content-format-body a{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:12px;font-weight:600;color:#4a1525}
+.wedding-content-section a:hover{text-decoration:underline;text-underline-offset:4px}
+.wedding-content-section a:focus-visible,.wedding-content-format summary:focus-visible{outline:2px solid #641c32;outline-offset:4px;border-radius:3px}
+@media(max-width:800px){.wedding-content-panel{grid-template-columns:1fr;gap:28px}.wedding-content-section{width:calc(100% - 32px)}.wedding-content-format summary{min-height:64px}.wedding-content-hint{font-size:9px}.wedding-content-format-body{padding-left:0}.wedding-content-panel{padding:28px 22px}}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowUpRight, Award, Check, Music2, Sparkles } from 'lucide-react';
 import { getMedia } from '@/content/media';
 import { getPublishedTestimonials } from '@/content/testimonials';
@@ -7,8 +8,11 @@ import ResponsiveImage from '@/components/media/ResponsiveImage';
 import CinematicHero from '@/components/home/CinematicHero';
 import PartnerMarquee from '@/components/home/PartnerMarquee';
 import SocialLounge from '@/components/common/SocialLounge';
+import WeddingContent from '@/components/home/WeddingContent';
 
 import EnquiryCTA from '@/components/common/EnquiryCTA';
+
+export const metadata: Metadata = { alternates: { canonical: '/' } };
 
 const experiences = [
   {
@@ -156,6 +160,8 @@ export default function HomePage() {
         </div>
         <p className="showcase-note"><Sparkles size={13} /> Tap any film to watch wedding choreography highlights by Sajid & Joya.</p>
       </section>
+
+      <WeddingContent />
 
       <section className="journey-section">
         <div className="site-container">

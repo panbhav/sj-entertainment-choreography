@@ -26,6 +26,12 @@ const experiences = [
     desc: 'Curated combinations & tailored quotes',
     href: '/packages',
   },
+  {
+    num: '04',
+    name: 'Wedding content & reels',
+    desc: 'Creators, candid moments & social edits',
+    href: '/#wedding-content',
+  },
 ];
 
 export default function Header() {

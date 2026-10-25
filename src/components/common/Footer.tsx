@@ -4,6 +4,7 @@ import Monogram from './Monogram';
 import SocialIcon from './SocialIcons';
 import { siteConfig, getConfiguredSocials, hasDirectContactInfo } from '@/content/siteConfig';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { businessLocations } from '@/content/locations';
 
 export default function Footer() {
   const configuredSocials = getConfiguredSocials();
@@ -36,6 +37,9 @@ export default function Footer() {
               <MapPin className="w-3.5 h-3.5 text-[#D4B272] shrink-0" />
               <span>Available for wedding celebrations across India</span>
             </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#EAD9B7]" aria-label="Our locations">
+              {businessLocations.map(location => <Link key={location.id} href={`/contact#location-${location.id}`} className="inline-flex items-center gap-1.5 min-h-11 underline underline-offset-4 hover:text-white"><MapPin size={13} aria-hidden="true" />{location.city}, {location.region}</Link>)}
+            </div>
           </div>
 
           {/* Experiences Links */}
@@ -44,6 +48,7 @@ export default function Footer() {
               Celebration Pages
             </h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/#wedding-content" className="text-[#EAD9B7]/80 hover:text-white transition-colors">Wedding Content &amp; Reels</Link></li>
               <li>
                 <Link
                   href="/wedding-choreography"

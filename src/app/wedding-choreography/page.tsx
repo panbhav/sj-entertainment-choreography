@@ -20,6 +20,7 @@ import { celebrationChapters } from '@/content/celebrations';
 import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/wedding-choreography' },
   title: 'Wedding Choreography & Celebrations',
   description:
     'Sangeet, Haldi, Mehendi, Couple dance, and Dance Along with SJ interactive sessions choreographed by Sajid & Joya across India.',
@@ -251,7 +252,7 @@ export default function WeddingChoreographyPage() {
               className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E8DFD5] shadow-xs relative flex flex-col justify-between"
             >
               <div>
-                <span className="font-serif text-3xl font-bold text-[#BD954E] block mb-2">
+                <span className="font-serif text-3xl font-bold text-[#8C6A2E] block mb-2">
                   {step.step}
                 </span>
                 <h3 className="font-serif text-lg font-bold text-[#2C0713] mb-2">
@@ -293,7 +294,7 @@ export default function WeddingChoreographyPage() {
                 <p className="text-xs sm:text-sm text-[#575253] leading-relaxed">
                   {opt.description}
                 </p>
-                <div className="text-[11px] text-[#888182] font-medium pt-1">
+                <div className="text-[11px] text-[#70656A] font-medium pt-1">
                   {opt.availabilityNote}
                 </div>
               </div>
@@ -337,7 +338,7 @@ export default function WeddingChoreographyPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 02
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
@@ -358,7 +359,7 @@ export default function WeddingChoreographyPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 03
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">

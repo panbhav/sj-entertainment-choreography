@@ -66,7 +66,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, posterUrl, title
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+            className="min-h-11 min-w-11 p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             aria-label="Close video player"
           >
             <X className="w-5 h-5" />

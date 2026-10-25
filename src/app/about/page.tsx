@@ -11,6 +11,7 @@ import EnquiryCTA from '@/components/common/EnquiryCTA';
 import AwardRecognitionSection from '@/components/about/AwardRecognitionSection';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'About Sajid & Joya',
   description:
     'Learn about Sajid & Joya, the choreographers and creative partners behind SJ Entertainment Choreography, creating elegant wedding moments across India.',
@@ -96,7 +97,7 @@ export default function AboutPage() {
               <div className="font-serif text-3xl sm:text-4xl font-bold text-[#4A1525]">
                 {stat.value}
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-[#BD954E]">
+              <div className="text-xs font-semibold uppercase tracking-wider text-[#8C6A2E]">
                 {stat.label}
               </div>
               <p className="text-[11px] sm:text-xs text-[#575253] leading-relaxed pt-1">
@@ -141,7 +142,7 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#BD954E]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#8C6A2E]">
                       {owner.role}
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#2C0713] mt-1 mb-4">

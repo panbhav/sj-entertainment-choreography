@@ -13,8 +13,8 @@ export default function ServiceMultiSelect({ selected, onChange, error }: Props)
   const toggle = (value: string) => onChange(selected.includes(value) ? selected.filter(item => item !== value) : [...selected, value]);
 
   return <fieldset className="md:col-span-2 min-w-0" aria-describedby={`services-help${error ? ' error-service' : ''}`}>
-    <legend className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2">Service Interests <span className="text-[#A6803B]">*</span></legend>
-    <p id="services-help" className="text-xs text-[#70656A] mb-3">Choose one or more services. You can combine choreography, entries and live entertainment.</p>
+    <legend className="block text-xs font-semibold uppercase tracking-wider text-[#2C0713] mb-2">Service Interests <span className="text-[#8C6A2E]">*</span></legend>
+    <p id="services-help" className="text-xs text-[#70656A] mb-3">Choose one or more services, from choreography and live entertainment to wedding content creation.</p>
     <details className={`rounded-xl border bg-[#FAF7F2] ${error ? 'border-red-400' : 'border-[#E8DFD5]'}`}>
       <summary id="enquiry-service" aria-invalid={Boolean(error)} aria-describedby={error ? 'error-service' : 'services-help'} className="list-none cursor-pointer flex items-center justify-between gap-3 px-4 py-3 text-sm text-[#292526] focus-visible:outline-2 focus-visible:outline-[#BD954E] rounded-xl">
         <span>{selected.length ? `${selected.length} service${selected.length === 1 ? '' : 's'} selected` : 'Choose your celebration services'}</span><ChevronDown size={17} className="shrink-0" aria-hidden="true" />

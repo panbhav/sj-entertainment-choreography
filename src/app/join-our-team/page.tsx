@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import { siteConfig } from '@/content/siteConfig';
 import { notificationsConfigured } from '@/lib/server-notifications';
+import { connection } from 'next/server';
 import TeamInterestForm from '@/components/enquiry/TeamInterestForm';
 import SocialLounge from '@/components/common/SocialLounge';
 import '@/components/enquiry/Hire.css';
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/join-our-team' },
 };
 
-export default function JoinOurTeamPage() {
+export default async function JoinOurTeamPage() {
+  if (process.env.GITHUB_PAGES !== 'true') await connection();
   return <div className="interior-page hire-page"><div className="site-container hire-layout">
     <section className="hire-intro" aria-labelledby="team-title">
       <span className="hire-pill"><Sparkles size={13} /> THE PEOPLE BEHIND THE MOMENTS</span>

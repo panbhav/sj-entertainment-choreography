@@ -1,18 +1,22 @@
 import React, { Suspense } from 'react';
 import { Metadata } from 'next';
+import { connection } from 'next/server';
 import { Sparkles, MapPin, Phone, Mail, Music } from 'lucide-react';
 import { siteConfig, getConfiguredSocials, hasDirectContactInfo } from '@/content/siteConfig';
 import SocialIcon from '@/components/common/SocialIcons';
 import { notificationsConfigured } from '@/lib/server-notifications';
 import EnquiryForm from '@/components/enquiry/EnquiryForm';
+import Locations from '@/components/contact/Locations';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Plan Your Celebration | Enquiry & Booking',
   description:
-    'Enquire about wedding choreography, couple entries, and celebratory entertainment with Sajid & Joya across India.',
+    'Contact Sajid & Joya in Alwar, Rajasthan and Lokhandwala, Mumbai for wedding choreography, couple entries and entertainment across India.',
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  if (process.env.GITHUB_PAGES !== 'true') await connection();
   const configuredSocials = getConfiguredSocials();
   const directContact = hasDirectContactInfo();
 
@@ -49,6 +53,7 @@ export default function ContactPage() {
               <p className="text-xs sm:text-sm text-[#575253] leading-relaxed">
                 {siteConfig.contact.coverageNote}
               </p>
+              <a href="#locations" className="inline-flex items-center min-h-11 text-xs font-semibold text-[#4A1525] underline underline-offset-4">Find us in Alwar &amp; Mumbai →</a>
             </div>
 
             {/* Direct Contact Details (Shown ONLY if configured; otherwise gracefully omitted) */}
@@ -63,7 +68,7 @@ export default function ContactPage() {
                       href={`tel:${siteConfig.contact.phone}`}
                       className="flex items-center gap-3 text-[#575253] hover:text-[#4A1525] transition-colors"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD5] flex items-center justify-center text-[#BD954E]">
+                      <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD5] flex items-center justify-center text-[#8C6A2E]">
                         <Phone className="w-4 h-4" />
                       </div>
                       <span>{siteConfig.contact.phone}</span>
@@ -75,7 +80,7 @@ export default function ContactPage() {
                       href={`mailto:${siteConfig.contact.email}`}
                       className="flex items-center gap-3 text-[#575253] hover:text-[#4A1525] transition-colors"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD5] flex items-center justify-center text-[#BD954E]">
+                      <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#E8DFD5] flex items-center justify-center text-[#8C6A2E]">
                         <Mail className="w-4 h-4" />
                       </div>
                       <span className="break-all min-w-0">{siteConfig.contact.email}</span>
@@ -88,7 +93,7 @@ export default function ContactPage() {
             {/* Configured Social Profiles */}
             {configuredSocials.length > 0 && (
               <div className="space-y-3">
-                <h2 className="text-xs font-semibold uppercase tracking-wider text-[#888182]">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-[#70656A]">
                   Connect on Social
                 </h2>
                 <p className="text-xs text-[#70656A]">Profile links coming soon. These previews open the platforms.</p>
@@ -136,7 +141,7 @@ export default function ContactPage() {
           <div className="lg:col-span-7">
             <Suspense
               fallback={
-                <div className="bg-white rounded-3xl p-10 border border-[#E8DFD5] text-center text-sm text-[#888182]">
+                <div className="bg-white rounded-3xl p-10 border border-[#E8DFD5] text-center text-sm text-[#70656A]">
                   Loading celebration enquiry form...
                 </div>
               }
@@ -145,6 +150,7 @@ export default function ContactPage() {
             </Suspense>
           </div>
         </div>
+        <Locations />
       </div>
     </div>
   );

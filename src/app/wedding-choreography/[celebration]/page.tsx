@@ -188,10 +188,10 @@ export default async function CelebrationPage({ params }: PageProps) {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3 border-b border-[#F4ECE1] pb-3">
-                    <span className="text-xs uppercase tracking-wider font-semibold text-[#BD954E]">
+                    <span className="text-xs uppercase tracking-wider font-semibold text-[#8C6A2E]">
                       Choreography Concept 0{i + 1}
                     </span>
-                    <span className="text-xs font-serif italic text-[#888182]">
+                    <span className="text-xs font-serif italic text-[#70656A]">
                       {item.mood}
                     </span>
                   </div>
@@ -242,7 +242,7 @@ export default async function CelebrationPage({ params }: PageProps) {
 
                     <a
                       href="#types"
-                      className="text-xs text-[#888182] hover:text-[#4A1525] transition-colors"
+                      className="text-xs text-[#70656A] hover:text-[#4A1525] transition-colors"
                     >
                       ↑ All formats
                     </a>

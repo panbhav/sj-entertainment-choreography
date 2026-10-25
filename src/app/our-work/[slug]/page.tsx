@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   return {
     title: `${project.title} | Our Work`,
     description: project.shortDescription,
+    alternates: { canonical: `/our-work/${project.slug}` },
   };
 }
 
@@ -158,7 +159,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               {project.approvedTestimonial.author}
             </div>
             {project.approvedTestimonial.role && (
-              <div className="text-xs text-[#888182]">
+              <div className="text-xs text-[#70656A]">
                 {project.approvedTestimonial.role}
               </div>
             )}

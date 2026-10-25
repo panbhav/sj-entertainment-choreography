@@ -79,7 +79,7 @@ export const celebrationChapters: CelebrationChapter[] = [
   {
     slug: 'bhaat-mayra',
     shortName: 'Bhaat / Mayra',
-    imageUrl: '/images/celebrations/bhaat-mayra.webp',
+    imageUrl: '/media/portfolio/family-celebration.webp',
     introduction: 'Explore choreography that gives maternal relatives and family generations a meaningful place in the celebration, from a warm dance welcome to an emotional tribute performance.',
     guidance: 'Bhaat and Mayra customs vary between families and regions. These are optional dance concepts, planned around your family’s traditions rather than a replacement for any ritual.',
     concepts: [

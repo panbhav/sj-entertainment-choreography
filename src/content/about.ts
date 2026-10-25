@@ -139,5 +139,5 @@ export const ownersData: {
     },
   ],
   coverageStatement:
-    'Sajid & Joya travel for destination and local weddings across India. Whether your celebration is hosted in Rajasthan palaces, Goa coastal resorts, metro ballrooms, or intimate ancestral estates, our team coordinates seamlessly with your wedding planners and production crews.',
+    'Based in Alwar, Rajasthan and Mumbai, Sajid & Joya travel for destination and local weddings across India. Whether your celebration is hosted in Rajasthan palaces, Goa coastal resorts, metro ballrooms, or intimate ancestral estates, our team coordinates seamlessly with your wedding planners and production crews.',
 };

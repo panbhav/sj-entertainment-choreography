@@ -6,9 +6,16 @@ import { withBasePath } from '@/lib/basePath';
 import './BackgroundArtists.css';
 
 export default function BackgroundArtists({ chapter }: { chapter?: string }) {
-  const formats = chapter
+  const selectedFormats = chapter
     ? backgroundArtistFormats.filter(format => format.chapters.includes(chapter))
     : backgroundArtistFormats;
+  const formats = selectedFormats.map(format => chapter === 'bhaat-mayra' ? {
+    ...format,
+    name: 'Bhaat / Mayra supporting dancers',
+    description: 'Supporting artists frame the maternal-family arrival or join a folk-inspired family routine, following your customs and keeping relatives at the centre of the celebration.',
+    includes: 'Family-entry formations, regional music cues and optional artist-led dance sections.',
+    service: 'background-artists-bhaat-mayra',
+  } : format);
   if (!formats.length) return null;
 
   return (
@@ -20,11 +27,11 @@ export default function BackgroundArtists({ chapter }: { chapter?: string }) {
         </div>
         <p>Sajid &amp; Joya also provide background artists and supporting dancers for wedding entries and functions. Add an ensemble to your own performance or choose a complete artist-led act.</p>
       </div>
-      <div className={`background-artists-grid ${formats.length === 1 ? 'background-artists-grid-single' : ''}`}>
+      <div className={`background-artists-grid ${formats.length === 1 ? 'background-artists-grid-single' : formats.length === 2 ? 'background-artists-grid-pair' : ''}`}>
         {formats.map(format => (
           <article key={format.id} id={`background-${format.id}`} className="background-artist-card">
             <div className="background-artist-image">
-              <Image src={withBasePath(format.image)} alt={format.alt} fill sizes={formats.length === 1 ? '(max-width: 700px) 100vw, 45vw' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw'} unoptimized />
+              <Image src={withBasePath(format.image)} alt={format.alt} fill sizes={formats.length <= 2 ? '(max-width: 700px) 100vw, 45vw' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw'} unoptimized />
               <span>AI concept visual</span>
             </div>
             <div className="background-artist-copy">

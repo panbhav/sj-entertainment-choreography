@@ -19,6 +19,7 @@ import EnquiryCTA from '@/components/common/EnquiryCTA';
 import BackgroundArtists from '@/components/celebrations/BackgroundArtists';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/couple-entries-entertainment' },
   title: 'Grand Couple Entries & Live Entertainment | Sajid & Joya',
   description:
     'Theatrical couple arrivals, bridal walks, symphonic dhol ensembles, and live artist curation by Sajid & Joya for luxury weddings across India.',
@@ -142,7 +143,7 @@ export default function CoupleEntriesEntertainmentPage() {
                 </div>
                 <div className="p-4 flex flex-col justify-between flex-grow">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#BD954E]">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#8C6A2E]">
                       Concept 0{idx + 1}
                     </span>
                     <h3 className="font-serif text-base font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mt-0.5 line-clamp-1">
@@ -255,7 +256,7 @@ export default function CoupleEntriesEntertainmentPage() {
                 </div>
                 <div className="p-4 flex flex-col justify-between flex-grow">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#BD954E]">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#8C6A2E]">
                       Act 0{idx + 1}
                     </span>
                     <h3 className="font-serif text-base font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mt-0.5 line-clamp-1">
@@ -332,7 +333,7 @@ export default function CoupleEntriesEntertainmentPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 01
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
@@ -353,7 +354,7 @@ export default function CoupleEntriesEntertainmentPage() {
             className="group flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#E8DFD5] hover:border-[#BD954E]/60 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
             <div>
-              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#BD954E] block mb-2">
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-[#8C6A2E] block mb-2">
                 Dedicated Page 03
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#2C0713] group-hover:text-[#4A1525] transition-colors mb-2">
@@ -375,6 +376,10 @@ export default function CoupleEntriesEntertainmentPage() {
           FINAL ENQUIRY CTA
           ========================================================================= */}
       <BackgroundArtists />
+
+      <aside className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-sm text-[#575253] leading-relaxed">
+        <p>Capture the arrival and everything around it. <Link href="/#wedding-content" className="font-semibold text-[#4A1525] underline underline-offset-4">Explore wedding content creators, reels &amp; candid coverage →</Link></p>
+      </aside>
 
       <EnquiryCTA
         title="Ready to create a memorable wedding entry?"

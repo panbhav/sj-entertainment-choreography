@@ -5,6 +5,8 @@ import { AlertCircle, ArrowLeft } from 'lucide-react';
 import { siteConfig } from '@/content/siteConfig';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms' },
+  robots: { index: false, follow: true },
   title: 'Terms of Service (Draft for Owner Review)',
   description: 'Draft terms of service for review prior to production booking agreements.',
 };
@@ -39,7 +41,7 @@ export default function TermsOfServicePage() {
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#2C0713]">
             Terms of Service (Draft)
           </h1>
-          <p className="text-xs text-[#888182]">
+          <p className="text-xs text-[#70656A]">
             Last Updated: October 2026 • Prepared for SJ Entertainment Choreography
           </p>
         </header>

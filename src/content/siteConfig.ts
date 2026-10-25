@@ -51,7 +51,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: '918233277258',
     email: 'sjentertainmentch@gmail.com',
     availableAcrossIndia: true,
-    coverageNote: "Destination and local wedding celebrations across India.",
+    coverageNote: "Based in Alwar, Rajasthan and Mumbai. Available for destination and local wedding celebrations across India.",
   },
 
   // Generic platform destinations are intentional previews until real profile URLs arrive.

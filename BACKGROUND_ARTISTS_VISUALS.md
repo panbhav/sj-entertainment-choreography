@@ -4,6 +4,16 @@ Generated with the built-in image generation tool. These fictional planning conc
 
 Final assets: `public/images/artists/background-entry.webp`, `background-haldi.webp`, `background-sangeet.webp`, `background-reception.webp`.
 
+## Integration and verification
+
+- Four service visuals are reused across the wedding overview, all seven function pages, the entertainment overview, entry concepts and the live artists page.
+- Each format links to its corresponding contact service; Bhaat / Mayra has its own contextual copy and enquiry option. Existing multi-select supports combining these with choreography services.
+- Production build, TypeScript and ESLint passed. Final HTTP audit: 19 pages, 163 links and anchors, 115 assets, zero failures.
+- Browser checks: 320, 390, 768 and 1280 px widths with no horizontal overflow. All four images loaded, Sangeet service preselection worked, mobile Haldi card checked, browser error log empty.
+- Images are optimized 1200 × 900 WebP files, approximately 185–228 KiB each. Original generation outputs remain in the Codex generated-images directory.
+- Screenshots: `artifacts/site-audit/background-artists-desktop.png` and `artifacts/site-audit/background-artists-mobile.png`.
+- Automatic notification delivery still requires the provider and hosting configuration described in `AUTOMATIC_NOTIFICATIONS_SETUP.md`.
+
 ## Prompts
 
 ### entry

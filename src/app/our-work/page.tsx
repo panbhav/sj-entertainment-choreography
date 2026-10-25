@@ -124,10 +124,10 @@ export default function OurWorkPage() {
                 </div>
 
                 <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#BD954E]">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#8C6A2E]">
                     {slot.categoryLabel}
                   </span>
-                  <span className="text-[10px] text-[#BD954E] uppercase tracking-wider font-semibold">
+                  <span className="text-[10px] text-[#8C6A2E] uppercase tracking-wider font-semibold">
                     {slot.duration} / WATCH FILM
                   </span>
                 </div>
@@ -142,7 +142,7 @@ export default function OurWorkPage() {
               </div>
 
               <div className="pt-4 mt-4 border-t border-[#F4ECE1] flex items-center justify-between text-xs">
-                <span className="text-[#888182]">SJ FILMS</span>
+                <span className="text-[#70656A]">SJ FILMS</span>
                 <Link
                   href={`/contact?service=${encodeURIComponent(slot.enquiryService)}`}
                   className="font-semibold text-[#4A1525] hover:text-[#641C32] inline-flex items-center gap-1"
@@ -181,7 +181,7 @@ export default function OurWorkPage() {
                     )}
                   </div>
                   <div className="p-6">
-                    <span className="text-xs text-[#BD954E] uppercase font-semibold">
+                    <span className="text-xs text-[#8C6A2E] uppercase font-semibold">
                       {project.categoryLabel}
                     </span>
                     <h4 className="font-serif text-xl font-bold text-[#2C0713] mt-1 mb-2">

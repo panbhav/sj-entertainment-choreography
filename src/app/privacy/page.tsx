@@ -5,6 +5,8 @@ import { AlertCircle, ArrowLeft } from 'lucide-react';
 import { siteConfig } from '@/content/siteConfig';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy' },
+  robots: { index: false, follow: true },
   title: 'Privacy Policy (Draft for Owner Review)',
   description: 'Draft privacy policy for review prior to production enquiry collection.',
 };
@@ -39,7 +41,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#2C0713]">
             Privacy Policy (Draft)
           </h1>
-          <p className="text-xs text-[#888182]">
+          <p className="text-xs text-[#70656A]">
             Last Updated: October 2026 • Prepared for SJ Entertainment Choreography
           </p>
         </header>
@@ -49,6 +51,10 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-serif text-xl font-bold text-[#2C0713]">Enquiries and team introductions</h2>
             <p>When online submissions are enabled, Contact enquiries and Join Our Team introductions are sent through the website backend. Resend processes email notifications and Twilio processes WhatsApp notifications to Sajid. The email contains the submitted details; the WhatsApp notification contains a short summary. These providers process the details needed to deliver the notifications. No messaging or email app needs to open on your device.</p>
             <p>Only include details needed for your enquiry or introduction. Portfolio links are shared as text and are not fetched by this website. If online submissions are not connected, the form tells you that your details have not been sent.</p>
+          </section>
+          <section className="space-y-3">
+            <h2 className="font-serif text-xl font-bold text-[#2C0713]">Location maps</h2>
+            <p>The contact page shows our Alwar and Mumbai addresses. Google Maps embeds load only when you choose “Show map”. Loading a map connects your browser to Google, which may process your IP address, browser information and cookies under its own policies. Directions and map links open Google Maps separately.</p>
           </section>
           <section className="space-y-3">
             <h2 className="font-serif text-xl font-bold text-[#2C0713]">

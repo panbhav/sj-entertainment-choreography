@@ -37,7 +37,7 @@ export default function ServiceCard({
           )}
         </div>
 
-        <p className="text-xs sm:text-sm font-medium text-[#BD954E] mb-3">
+        <p className="text-xs sm:text-sm font-medium text-[#8C6A2E] mb-3">
           {subtitle}
         </p>
 

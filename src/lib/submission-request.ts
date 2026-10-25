@@ -8,7 +8,8 @@ export async function submissionBody(req: NextRequest): Promise<Record<string, u
   const expected = new URL(req.url);
   if (req.headers.get('host')) expected.host = req.headers.get('host')!;
   const origin = req.headers.get('origin');
-  if (origin && origin !== expected.origin) return NextResponse.json({ success: false, message: 'Please submit from this website.' }, { status: 403 });
+  const publicOrigin = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).origin : expected.origin;
+  if (origin && origin !== publicOrigin) return NextResponse.json({ success: false, message: 'Please submit from this website.' }, { status: 403 });
   const now = Date.now();
   for (const [key, bucket] of buckets) if (bucket.expires < now) buckets.delete(key);
   // This is defence in depth only: ingress must overwrite the forwarded IP header.
