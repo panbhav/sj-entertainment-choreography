@@ -207,10 +207,22 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Draft Legal Policies */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#EAD9B7]/70">
-          <div>
+        {/* Bottom Bar: Copyright, Agency Credit & Legal Policies */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#EAD9B7]/75">
+          <div className="text-center md:text-left">
             © {siteConfig.copyrightYear} {siteConfig.name}. All rights reserved.
+          </div>
+
+          <div className="text-center">
+            <span>Website Designed &amp; Developed by </span>
+            <a
+              href="https://pixeltocloud.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D4B272] hover:text-[#FAF7F2] font-semibold transition-colors underline-offset-4 hover:underline"
+            >
+              PixelToCloud
+            </a>
           </div>
 
           <div className="flex items-center gap-6">
