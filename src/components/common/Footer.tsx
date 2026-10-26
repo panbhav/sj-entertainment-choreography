@@ -221,7 +221,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-[#D4B272] hover:text-[#FAF7F2] font-semibold transition-colors underline-offset-4 hover:underline"
             >
-              PixelToCloud
+              PixelToCloud (pixeltocloud.com)
             </a>
           </div>
 
