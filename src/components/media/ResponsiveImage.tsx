@@ -10,9 +10,16 @@ interface ResponsiveImageProps {
   className?: string;
   variant?: 'ivory' | 'wine' | 'charcoal';
   priority?: boolean;
+  showCaption?: boolean;
 }
 
-export default function ResponsiveImage({ media, className = '', variant = 'ivory', priority = false }: ResponsiveImageProps) {
+export default function ResponsiveImage({
+  media,
+  className = '',
+  variant = 'ivory',
+  priority = false,
+  showCaption = true,
+}: ResponsiveImageProps) {
   const [failedSource, setFailedSource] = useState<string | null>(null);
   
   // Prefer image URLs (not video files) for <img> rendering
@@ -39,8 +46,8 @@ export default function ResponsiveImage({ media, className = '', variant = 'ivor
         onError={() => setFailedSource(candidateUrl)}
         className="object-cover transition-transform duration-500 hover:scale-105"
       />
-      {media.caption && (
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white text-xs font-medium">
+      {showCaption && media.caption && (
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 text-white text-xs font-medium z-10">
           {media.caption}
         </div>
       )}

@@ -39,7 +39,7 @@ const experiences = [
     name: 'Experiences & packages',
     description: 'Suggested celebration combinations, transparent quote factors, and personalized planning for your multi-day wedding.',
     href: '/packages',
-    media: 'packages-hero',
+    media: 'home-signature-packages',
     tags: 'CURATED COMBINATIONS / TAILORED QUOTES / MULTI-DAY'
   },
 ];
@@ -72,7 +72,7 @@ export default function HomePage() {
           {experiences.map((item) => (
             <article className="experience-card" key={item.number}>
               <Link href={item.href} className={`experience-visual visual-${item.number}`} aria-label={`Explore ${item.name}`}>
-                <ResponsiveImage media={getMedia(item.media)} variant={item.number === '01' ? 'wine' : item.number === '02' ? 'ivory' : 'wine'} />
+                <ResponsiveImage media={{ ...getMedia(item.media), caption: undefined }} showCaption={false} variant={item.number === '01' ? 'wine' : item.number === '02' ? 'ivory' : 'wine'} />
                 <span className="visual-number">{item.number} / SEPARATE PAGE</span>
                 <span className="visual-category">{item.name}</span>
                 <span className="round-arrow"><ArrowUpRight size={22} /></span>
